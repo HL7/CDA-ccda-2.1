@@ -2256,7 +2256,7 @@ Schematron generated from Trifolia on 7/20/2021
       <sch:assert id="a-1098-32746" test="count(cda:code)=1">SHALL contain exactly one [1..1] code, which SHOULD be selected from CodeSystem LOINC (urn:oid:2.16.840.1.113883.6.1) (CONF:1098-32746).</sch:assert>
       <sch:assert id="a-1098-32764" test="not(cda:reference) or cda:reference[@typeCode='REFR']">The reference, if present, SHALL contain exactly one [1..1] @typeCode="REFR" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1098-32764).</sch:assert>
       <sch:assert id="a-1098-32765" test="not(cda:reference) or cda:reference[count(cda:externalDocument[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.115' and @extension='2014-06-09']])=1]">The reference, if present, SHALL contain exactly one [1..1] External Document Reference (identifier: urn:hl7ii:2.16.840.1.113883.10.20.22.4.115:2014-06-09) (CONF:1098-32765).</sch:assert>
-      <sch:assert id="a-1098-32782-c" test="not(tested_here_yet)">SHALL contain at least one [1..*] entryRelationships (CONF:1098-32782).</sch:assert>
+      <sch:assert id="a-1098-32782-c" test="count(cda:entryRelationship)&gt;0">SHALL contain at least one [1..*] entryRelationship (CONF:1098-32782).</sch:assert>
     </sch:rule>
     <sch:rule id="r-urn-oid-2.16.840.1.113883.10.20.22.4.144-errors" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.144']]">
       <sch:extends rule="r-urn-oid-2.16.840.1.113883.10.20.22.4.144-errors-abstract" />
