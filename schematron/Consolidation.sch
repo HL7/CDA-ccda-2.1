@@ -452,10 +452,10 @@ Schematron generated from Trifolia on 7/20/2021
       <sch:let name="root" value="@root" />
       <sch:assert test="../cda:templateId[(@root=$root) and not(@extension)] or not(/cda:ClinicalDocument/cda:templateId[contains(' 2.16.840.1.113883.10.20.22.1.2:2015-08-01 2.16.840.1.113883.10.20.22.1.3:2015-08-01 2.16.840.1.113883.10.20.22.1.4:2015-08-01 2.16.840.1.113883.10.20.22.1.5:2015-08-01 2.16.840.1.113883.10.20.22.1.6:2015-08-01 2.16.840.1.113883.10.20.22.1.7:2015-08-01 2.16.840.1.113883.10.20.22.1.8:2015-08-01 2.16.840.1.113883.10.20.22.1.9:2015-08-01 2.16.840.1.113883.10.20.22.1.10:2015-08-01 2.16.840.1.113883.10.20.22.1.13:2015-08-01 2.16.840.1.113883.10.20.22.1.14:2015-08-01 2.16.840.1.113883.10.20.22.1.15:2015-08-01 2.16.840.1.113883.10.20.29.1:2015-08-01', concat(' ', @root, ':', @extension))])">
         A compatible R1.1 templateId without an extension must be included with an R2.1 templateId (templateId: <sch:value-of select="@root" />:<sch:value-of select="@extension" />).
-        
-        When asserting this templateId, all C-CDA 2.1 section and entry templates that had a previous version in C-CDA R1.1 
-        SHALL include both the C-CDA 2.1 templateId and the C-CDA R1.1 templateId root without an extension. 
-        See C-CDA R2.1 Volume 1 - Design Considerations for additional detail 
+       
+        When asserting this templateId, all C-CDA 2.1 section and entry templates that had a previous version in C-CDA R1.1
+        SHALL include both the C-CDA 2.1 templateId and the C-CDA R1.1 templateId root without an extension.
+        See C-CDA R2.1 Volume 1 - Design Considerations for additional detail
         (CONF:1198-32934 through 1198-32946).
       </sch:assert>
     </sch:rule>
