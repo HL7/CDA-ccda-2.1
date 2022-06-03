@@ -1,5 +1,5 @@
 # cda-ccda-2.1
-Consolidated CDA IG Release 2.1
+Consolidated CDA IG Release 2.1 
 
 ## Overview
 This repository contains supplemental artifacts for the Consolidated CDA IG.
