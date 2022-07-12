@@ -628,14 +628,14 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td ID="substance1">Penicillin</td>
+									<td ID="allergytype1">Penicillin</td>
 									<td>
 										<content ID="reactionseverity1">Mild </content>
 										<content ID="reaction1">Nausea</content>
 									</td>
 								</tr>
 								<tr>
-									<td ID="substance2">Codeine</td>
+									<td ID="allergytype2">Codeine</td>
 									<td>
 										<content ID="reactionseverity2">Moderate </content>
 										<content ID="reaction2">Wheezing</content>
@@ -1189,28 +1189,28 @@
 							<tbody>
 								<tr>
 									<td>
-										<content ID="immi1"/> Influenza, seasonal, IM </td>
+										<content ID="immun1"/> Influenza, seasonal, IM </td>
 									<td>Nov 1999</td>
 									<td>Completed</td>
 									<td>N/A</td>
 								</tr>
 								<tr>
 									<td>
-										<content ID="immi2"/> Influenza, seasonal, IM </td>
+										<content ID="immun2"/> Influenza, seasonal, IM </td>
 									<td>Dec 1998</td>
 									<td>Completed</td>
 									<td>N/A</td>
 								</tr>
 								<tr>
 									<td>
-										<content ID="immi3"/> Pneumococcal polysaccharide vaccine, IM </td>
+										<content ID="immun3"/> Pneumococcal polysaccharide vaccine, IM </td>
 									<td>Dec 1998</td>
 									<td>Completed</td>
 									<td>N/A</td>
 								</tr>
 								<tr>
 									<td>
-										<content ID="immi4"/> Tetanus and diphtheria toxoids, IM </td>
+										<content ID="immun4"/> Tetanus and diphtheria toxoids, IM </td>
 									<td>1997</td>
 									<td>Refused</td>
 									<td>N/A</td>
