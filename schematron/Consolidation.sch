@@ -4995,7 +4995,7 @@ Schematron generated from Trifolia on 7/20/2021
   <sch:pattern id="p-urn-oid-2.16.840.1.113883.10.20.22.4.138-warnings">
     <sch:rule id="r-urn-oid-2.16.840.1.113883.10.20.22.4.138-warnings-abstract" abstract="true">
       <sch:assert id="a-1098-32924" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) &gt; 0">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-32924).</sch:assert>
-      <sch:assert id="a-1098-32925-c" test="not(tested)">If xsi:type=“CD”, **SHOULD** contain a code from SNOMED CT (CodeSystem: 2.16.840.1.113883.6.96) (CONF:1098-32925).</sch:assert>
+      <sch:assert id="a-1098-32925-c" test="not(cda:value/@xsi:type='CD') or (cda:value/@xsi:type='CD' and count(cda:value[@codeSystem='2.16.840.1.113883.6.96'])=1)">If xsi:type=“CD”, **SHOULD** contain a code from SNOMED CT (CodeSystem: 2.16.840.1.113883.6.96) (CONF:1098-32925).</sch:assert>
     </sch:rule>
     <sch:rule id="r-urn-oid-2.16.840.1.113883.10.20.22.4.138-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.138']]">
       <sch:extends rule="r-urn-oid-2.16.840.1.113883.10.20.22.4.138-warnings-abstract" />
