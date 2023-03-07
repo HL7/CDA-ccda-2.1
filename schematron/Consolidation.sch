@@ -2713,7 +2713,7 @@ Schematron generated from Trifolia on 7/20/2021
       <sch:assert id="a-1198-8649" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1198-8649).</sch:assert>
       <sch:assert id="a-1198-8654" test="count(cda:id) &gt; 0">SHALL contain at least one [1..*] id (CONF:1198-8654).</sch:assert>
       <sch:assert id="a-1198-19082" test="cda:statusCode[@code='completed']">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19082).</sch:assert>
-      <sch:assert id="a-1198-32449-c" test="not(tested)">If the Advance Directive does not have a specified ending time, the &lt;high&gt; element **SHALL** have the nullFlavor attribute set to *NA* (CONF:1198-32449).</sch:assert>
+      <sch:assert id="a-1198-32449-c" test="cda:effectiveTime/cda:high/@value or cda:effectiveTime/cda:high/@nullFlavor='NA'">If the Advance Directive does not have a specified ending time, the &lt;high&gt; element **SHALL** have the nullFlavor attribute set to *NA* (CONF:1198-32449).</sch:assert>
       <sch:assert id="a-1198-28719" test="cda:effectiveTime[count(cda:low)=1]">This effectiveTime SHALL contain exactly one [1..1] low (CONF:1198-28719).</sch:assert>
       <sch:assert id="a-1198-32842" test="cda:code[count(cda:translation[@code='75320-2'][@codeSystem='2.16.840.1.113883.6.1'])=1]">This code SHALL contain exactly one [1..1] translation (CONF:1198-32842) such that it SHALL contain exactly one [1..1] @code="75320-2" Advance directive (CONF:1198-32843). SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32844).</sch:assert>
     </sch:rule>
@@ -4995,7 +4995,7 @@ Schematron generated from Trifolia on 7/20/2021
   <sch:pattern id="p-urn-oid-2.16.840.1.113883.10.20.22.4.138-warnings">
     <sch:rule id="r-urn-oid-2.16.840.1.113883.10.20.22.4.138-warnings-abstract" abstract="true">
       <sch:assert id="a-1098-32924" test="count(cda:author[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.119']]) &gt; 0">SHOULD contain zero or more [0..*] Author Participation (identifier: urn:oid:2.16.840.1.113883.10.20.22.4.119) (CONF:1098-32924).</sch:assert>
-      <sch:assert id="a-1098-32925-c" test="not(tested)">If xsi:type=“CD”, **SHOULD** contain a code from SNOMED CT (CodeSystem: 2.16.840.1.113883.6.96) (CONF:1098-32925).</sch:assert>
+      <sch:assert id="a-1098-32925-c" test="not(cda:value/@xsi:type='CD') or (cda:value/@xsi:type='CD' and count(cda:value[@codeSystem='2.16.840.1.113883.6.96'])=1)">If xsi:type=“CD”, **SHOULD** contain a code from SNOMED CT (CodeSystem: 2.16.840.1.113883.6.96) (CONF:1098-32925).</sch:assert>
     </sch:rule>
     <sch:rule id="r-urn-oid-2.16.840.1.113883.10.20.22.4.138-warnings" context="cda:observation[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.138']]">
       <sch:extends rule="r-urn-oid-2.16.840.1.113883.10.20.22.4.138-warnings-abstract" />
