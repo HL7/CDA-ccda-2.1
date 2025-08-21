@@ -9,7 +9,7 @@ Manual updates:
 07/25/2025 - Allow nullFlavor on CONF:81-10127 (Jira: CDA-20445)
 07/25/2025 - Fix MedicationActivity effectiveTime rule (Jira: CDA-21382)
 07/30/2025 - Update Vital Signs Organizer to allow LOINC-only when only 2.1 templateId is present (Jira: CDA-21374)
-07/30/2025 - Update every extension-less templateId requirements to verify not(@extension) (Jira: CDA-21367)
+08/21/2025 - Update every extension-less templateId requirements to verify not(@extension) (Jira: CDA-21367)
 
 -->
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
