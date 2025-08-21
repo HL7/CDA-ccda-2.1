@@ -8,6 +8,7 @@ Manual updates:
 07/25/2025 - Require CD on CONF:1098-28042 (Jira: CDA-20068)
 07/25/2025 - Allow nullFlavor on CONF:81-10127 (Jira: CDA-20445)
 07/25/2025 - Fix MedicationActivity effectiveTime rule (Jira: CDA-21382)
+07/30/2025 - Update Vital Signs Organizer to allow LOINC-only when only 2.1 templateId is present (Jira: CDA-21374)
 
 -->
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
@@ -2527,14 +2528,27 @@ Manual updates:
       <sch:assert id="a-1198-7282" test="count(cda:id) &gt; 0">SHALL contain at least one [1..*] id (CONF:1198-7282).</sch:assert>
       <sch:assert id="a-1198-19120" test="cda:statusCode[@code='completed']">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19120).</sch:assert>
       <sch:assert id="a-1198-7288" test="count(cda:effectiveTime)=1">SHALL contain exactly one [1..1] effectiveTime (CONF:1198-7288).</sch:assert>
-      <sch:assert id="a-1198-32741" test="cda:code[@code='46680005']">This code SHALL contain exactly one [1..1] @code="46680005" Vital Signs (CONF:1198-32741).</sch:assert>
-      <sch:assert id="a-1198-32742" test="cda:code[@codeSystem='2.16.840.1.113883.6.96']">This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" SNOMED CT (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:1198-32742).</sch:assert>
-      <sch:assert id="a-1198-32743-c" test="not(tested)">This code SHALL contain exactly one [1..1] translation (CONF:1198-32743) such that it SHALL contain exactly one [1..1] @code="74728-7" Vital signs, weight, height, head circumference, oximetry, BMI, and BSA panel - HL7.CCDAr1.1 (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32744). SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" LOINC (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32746).</sch:assert>
     </sch:rule>
-    <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.26-2015-08-01-errors" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.26' and @extension='2015-08-01']]">
+    <!-- Making main rule abstract because you can't have multiple rules executing at the same context otherwise 
+        The two new contexts below are mutually exclusive, so this will always be executed -->
+    <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.26-2015-08-01-errors" abstract="true">
       <sch:extends rule="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.26-2015-08-01-errors-abstract" />
       <sch:assert id="a-1198-7281" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.26'][@extension='2015-08-01'])=1">SHALL contain exactly one [1..1] templateId (CONF:1198-7281) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.26" (CONF:1198-10528). SHALL contain exactly one [1..1] @extension="2015-08-01" (CONF:1198-32582).</sch:assert>
     </sch:rule>
+    
+    <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.26-1.1-and-2.1" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.26' and @extension='2015-08-01'] and (cda:templateId[@root='2.16.840.1.113883.10.20.22.4.26' and not(@extension)])]">
+      <sch:extends rule="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.26-2015-08-01-errors" />
+      <sch:assert id="a-1198-32741-1.1" test="cda:code[@code='46680005']">(When conformant to both C-CDA 1.1 and 2.1) This code SHALL contain exactly one [1..1] @code="46680005" Vital Signs (CONF:1198-32741).</sch:assert>
+      <sch:assert id="a-1198-32742-1.1" test="cda:code[@codeSystem='2.16.840.1.113883.6.96']">(When conformant to both C-CDA 1.1 and 2.1) This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" SNOMED CT (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:1198-32742).</sch:assert>
+      <sch:assert id="a-1198-32743-c-1.1" test="cda:code/cda:translation[@code='74728-7' and @codeSystem='2.16.840.1.113883.6.1']">(When conformant to both C-CDA 1.1 and 2.1) This code SHALL contain exactly one [1..1] translation (CONF:1198-32743) such that it SHALL contain exactly one [1..1] @code="74728-7" Vital signs, weight, height, head circumference, oximetry, BMI, and BSA panel (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32744). SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" LOINC (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32746).</sch:assert>
+    </sch:rule>
+    
+    <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.26-2.1-only" context="cda:organizer[cda:templateId[@root='2.16.840.1.113883.10.20.22.4.26' and @extension='2015-08-01'] and not(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.26' and not(@extension)])]">
+      <sch:extends rule="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.26-2015-08-01-errors" />
+      <sch:assert id="a-1198-32744-2.1" test="cda:code[@code='74728-7']">(When conformant to only 2.1) This code SHALL contain exactly one [1..1] @code="74728-7" Vital Signs (CONF:1198-32744).</sch:assert>
+      <sch:assert id="a-1198-32746-2.1" test="cda:code[@codeSystem='2.16.840.1.113883.6.1']">(When conformant to only and 2.1) This code SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.96" SNOMED CT (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:1198-32746).</sch:assert>
+    </sch:rule>
+    
     <sch:rule id="r-urn-hl7ii-2.16.840.1.113883.10.20.22.4.26-2015-08-01-32743-branch-32743-errors-abstract" abstract="true">
       <sch:assert id="a-1198-32744-branch-32743-c" test="not(tested)">SHALL contain exactly one [1..1] @code="74728-7" Vital signs, weight, height, head circumference, oximetry, BMI, and BSA panel - HL7.CCDAr1.1 (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32744).</sch:assert>
       <sch:assert id="a-1198-32746-branch-32743-c" test="not(tested)">SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" LOINC (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32746).</sch:assert>
