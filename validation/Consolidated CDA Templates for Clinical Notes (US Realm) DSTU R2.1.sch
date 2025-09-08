@@ -11,6 +11,7 @@ Manual updates:
 07/30/2025 - Update Vital Signs Organizer to allow LOINC-only when only 2.1 templateId is present (Jira: CDA-21374)
 08/21/2025 - Update every extension-less templateId requirements to verify not(@extension) (Jira: CDA-21367)
 09/08/2025 - Remove C-CDA 1.1 backwards compatibility requirement (Jira: CDA-21381)
+09/08/2025 - Remove AdvanceDirective high time nullFlavor fixed value on (CONF:1198-32449) (Jira: CDA-21398)
 
 -->
 <sch:schema xmlns:voc="http://www.lantanagroup.com/voc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
@@ -2725,7 +2726,8 @@ Manual updates:
       <sch:assert id="a-1198-8649" test="@moodCode='EVN'">SHALL contain exactly one [1..1] @moodCode="EVN" Event (CodeSystem: HL7ActMood urn:oid:2.16.840.1.113883.5.1001 STATIC) (CONF:1198-8649).</sch:assert>
       <sch:assert id="a-1198-8654" test="count(cda:id) &gt; 0">SHALL contain at least one [1..*] id (CONF:1198-8654).</sch:assert>
       <sch:assert id="a-1198-19082" test="cda:statusCode[@code='completed']">This statusCode SHALL contain exactly one [1..1] @code="completed" Completed (CodeSystem: HL7ActStatus urn:oid:2.16.840.1.113883.5.14 STATIC) (CONF:1198-19082).</sch:assert>
-      <sch:assert id="a-1198-32449-c" test="cda:effectiveTime/cda:high/@value or cda:effectiveTime/cda:high/@nullFlavor='NA'">If the Advance Directive does not have a specified ending time, the &lt;high&gt; element **SHALL** have the nullFlavor attribute set to *NA* (CONF:1198-32449).</sch:assert>
+      <!-- Removing per https://jira.hl7.org/browse/CDA-21398 -->
+      <!-- <sch:assert id="a-1198-32449-c" test="cda:effectiveTime/cda:high/@value or cda:effectiveTime/cda:high/@nullFlavor='NA'">If the Advance Directive does not have a specified ending time, the &lt;high&gt; element **SHALL** have the nullFlavor attribute set to *NA* (CONF:1198-32449).</sch:assert> -->
       <sch:assert id="a-1198-28719" test="cda:effectiveTime[count(cda:low)=1]">This effectiveTime SHALL contain exactly one [1..1] low (CONF:1198-28719).</sch:assert>
       <sch:assert id="a-1198-32842" test="cda:code[count(cda:translation[@code='75320-2'][@codeSystem='2.16.840.1.113883.6.1'])=1]">This code SHALL contain exactly one [1..1] translation (CONF:1198-32842) such that it SHALL contain exactly one [1..1] @code="75320-2" Advance directive (CONF:1198-32843). SHALL contain exactly one [1..1] @codeSystem="2.16.840.1.113883.6.1" (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:1198-32844).</sch:assert>
     </sch:rule>
