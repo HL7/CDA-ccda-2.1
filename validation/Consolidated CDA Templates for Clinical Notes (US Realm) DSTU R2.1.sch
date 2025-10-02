@@ -1253,7 +1253,7 @@ Manual updates:
   </sch:pattern>
   <sch:pattern id="p-urn-oid-2.16.840.1.113883.10.20.22.4.128-errors">
     <sch:rule id="r-urn-oid-2.16.840.1.113883.10.20.22.4.128-errors-abstract" abstract="true">
-      <sch:assert id="a-1098-28042" test="count(cda:value[xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHOULD be selected from ValueSet Ability urn:oid:2.16.840.1.113883.11.20.9.46 DYNAMIC (CONF:1098-28042).</sch:assert>
+      <sch:assert id="a-1098-28042" test="count(cda:value[@xsi:type='CD'])=1">SHALL contain exactly one [1..1] value with @xsi:type="CD", where the code SHOULD be selected from ValueSet Ability urn:oid:2.16.840.1.113883.11.20.9.46 DYNAMIC (CONF:1098-28042).</sch:assert>
       <sch:assert id="a-1098-28153" test="count(cda:code)=1">SHALL contain exactly one [1..1] code, which SHOULD be selected from ValueSet ADL Result Type urn:oid:2.16.840.1.113883.11.20.9.47 DYNAMIC (CONF:1098-28153).</sch:assert>
       <sch:assert id="a-1098-28190" test="count(cda:templateId[@root='2.16.840.1.113883.10.20.22.4.128' and not(@extension)])=1">SHALL contain exactly one [1..1] templateId (CONF:1098-28190) such that it SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.128" (CONF:1098-28457).</sch:assert>
       <sch:assert id="a-1098-31389" test="@classCode='OBS'">SHALL contain exactly one [1..1] @classCode="OBS" (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6) (CONF:1098-31389).</sch:assert>
