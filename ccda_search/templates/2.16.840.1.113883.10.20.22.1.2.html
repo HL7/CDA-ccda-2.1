@@ -1,0 +1,512 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Continuity of Care Document (CCD) (V3)
+        <small class="text-muted">[ClinicalDocument, 2.16.840.1.113883.10.20.22.1.2, release
+          2015-08-01, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.1.2.pdf"><i class="fas fa-file-pdf"></i> view pdf</a><a href="https://hl7.org/cda/us/ccda/StructureDefinition-ContinuityofCareDocumentCCD.html" target="_blank" style="color: green">
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a></small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          This document type was originally based on the Continuity of Care
+          Document (CCD) Release 1.1 which itself was derived from HITSP C32 and
+          CCD Release 1.0.
+        </p>
+        <p>
+          The Continuity of Care Document (CCD) represents a core data set of
+          the most relevant administrative, demographic, and clinical
+          information facts about a patient's healthcare, covering one or more
+          healthcare encounters. It provides a means for one healthcare
+          practitioner, system, or setting to aggregate all of the pertinent
+          data about a patient and forward it to another to support the
+          continuity of care.
+        </p>
+        <p>
+          The primary use case for the CCD is to provide a snapshot in time
+          containing the germane clinical, demographic, and administrative data
+          for a specific patient. The key characteristic of a CCD is that the
+          ServiceEvent is constrained to "PCPR". This means it does not function
+          to report new ServiceEvents associated with performing care. It
+          reports on care that has already been provided. The CCD provides a
+          historical tally of the care over a range of time and is not a record
+          of new services delivered.
+        </p>
+        <p>
+          More specific use cases, such as a Discharge Summary, Transfer
+          Summary, Referral Note, Consultation Note, or Progress Note, are
+          available as alternative documents in this guide.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">none</td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.2.21.html">Advance Directives Section (entries optional) </a><br><a href="2.16.840.1.113883.10.20.22.2.6.1.html">Allergies and Intolerances Section (entries required) </a><br><a href="2.16.840.1.113883.10.20.22.2.1.1.html">Medications Section (entries required) </a><br><a href="2.16.840.1.113883.10.20.22.2.5.1.html">Problem Section (entries required) </a><br><a href="2.16.840.1.113883.10.20.22.2.7.1.html">Procedures Section (entries required) </a><br><a href="2.16.840.1.113883.10.20.22.2.3.1.html">Results Section (entries required) </a><br><a href="2.16.840.1.113883.10.20.22.2.22.html">Encounters Section (entries optional) </a><br><a href="2.16.840.1.113883.10.20.22.2.15.html">Family History Section </a><br><a href="2.16.840.1.113883.10.20.22.2.14.html">Functional Status Section </a><br><a href="2.16.840.1.113883.10.20.22.2.2.1.html">Immunizations Section (entries required) </a><br><a href="2.16.840.1.113883.10.20.22.2.23.html">Medical Equipment Section </a><br><a href="2.16.840.1.113883.10.20.22.2.18.html">Payers Section </a><br><a href="2.16.840.1.113883.10.20.22.2.10.html">Plan of Treatment Section </a><br><a href="2.16.840.1.113883.10.20.22.2.17.html">Social History Section </a><br><a href="2.16.840.1.113883.10.20.22.2.4.1.html">Vital Signs Section (entries required) </a><br><a href="2.16.840.1.113883.10.20.22.2.56.html">Mental Status Section </a><br><a href="2.16.840.1.113883.10.20.22.2.57.html">Nutrition Section</a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          Conforms to US Realm Header (V3) template
+          (urn:hl7ii:2.16.840.1.113883.10.20.22.1.1:2015-08-01)
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1198-8450)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.1.2"</b><b> (CONF:1198-10038)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b>"2015-08-01"</b><b> (CONF:1198-32516)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                When asserting this templateId, all C-CDA 2.1 section and entry
+                templates that had a previous version in C-CDA R1.1
+                <strong>SHALL</strong> include both the C-CDA 2.1 templateId and
+                the C-CDA R1.1 templateId root without an extension. See C-CDA
+                R2.1 Volume 1 - Design Considerations for additional detail
+                (CONF:1198-32936).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>code</b><b> (CONF:1198-17180)</b>.
+          <ul>
+            <li>
+              This code <b>SHALL</b> contain exactly one [1..1] <b>@code</b>=<b>"34133-9"</b>
+              Summarization of Episode Note<b> (CONF:1198-17181)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              This code <b>SHALL</b> contain exactly one [1..1]
+              <b>@codeSystem</b>=<b>"2.16.840.1.113883.6.1"</b> (CodeSystem:
+              <b>LOINC:
+                <a href="https://loinc.org/" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.6.1</a></b>)<b> (CONF:1198-32138)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain at least one [1..*] <b>author</b><b> (CONF:1198-9442)</b>.
+          <ul>
+            <li>
+              Such authors <b>SHALL</b> contain exactly one [1..1]
+              <b>assignedAuthor</b><b> (CONF:1198-9443)</b>.
+              <ul>
+                <li>
+                  <p>
+                    Such assignedAuthors <strong>SHALL</strong> contain (exactly
+                    one [1..1] assignedPerson) or (exactly one [1..1]
+                    assignedAuthoringDevice and exactly one [1..1]
+                    representedOrganization) (CONF:1198-8456).
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                If assignedAuthor has an associated representedOrganization with
+                no assignedPerson or assignedAuthoringDevice, then the value for
+                ClinicalDocument/author/assignedAuthor/id/@NullFlavor
+                <strong>SHALL</strong> be "NA" Not applicable
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-NullFlavor.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1008</a>
+                NullFlavor STATIC (CONF:1198-8457).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            The main activity being described by a CCD is the provision of
+            healthcare over a period of time. This is shown by setting the value
+            of serviceEvent/@classCode to "PCPR" (care provision) and indicating
+            the duration over which care was provided in
+            serviceEvent/effectiveTime. Additional data from outside this
+            duration may also be included if it is relevant to care provided
+            during that time range (e.g., reviewed during the stated time
+            range). <br>NOTE: Implementations originating a CCD should take
+            care to discover what the episode of care being summarized is. For
+            example, when a patient fills out a form providing relevant health
+            history, the episode of care being documented might be from birth to
+            the present.
+          </p>
+          <p>
+            Heading: documentationOf<br>The documentationOf relationship in a
+            Continuity Care Document contains the representation of providers
+            who are wholly or partially responsible for the safety and
+            well-being of a subject of care.<br>
+          </p>
+          <b>SHALL</b> contain exactly one [1..1] <b>documentationOf</b><b> (CONF:1198-8452)</b>.
+          <ul>
+            <li>
+              This documentationOf <b>SHALL</b> contain exactly one [1..1]
+              <b>serviceEvent</b><b> (CONF:1198-8480)</b>.
+              <ul>
+                <li>
+                  This serviceEvent <b>SHALL</b> contain exactly one [1..1]
+                  <b>@classCode</b>=<b>"PCPR"</b> Care Provision (CodeSystem:
+                  <b>HL7ActClass
+                    <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActClass.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.5.6</a>&nbsp;</b><b> STATIC</b>)<b> (CONF:1198-8453)</b>.
+                </li>
+                <li>
+                  This serviceEvent <b>SHALL</b> contain exactly one [1..1]
+                  <b>effectiveTime</b><b> (CONF:1198-8481)</b>.
+                  <ul>
+                    <li>
+                      This effectiveTime <b>SHALL</b> contain exactly one [1..1]
+                      <b>low</b><b> (CONF:1198-8454)</b>.
+                    </li>
+                    <li>
+                      This effectiveTime <b>SHALL</b> contain exactly one [1..1]
+                      <b>high</b><b> (CONF:1198-8455)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This serviceEvent <b>SHOULD</b> contain zero or more [0..*]
+                  <b>performer</b><b> (CONF:1198-8482)</b>.
+                  <ul>
+                    <li>
+                      The performer, if present, <b>SHALL</b> contain exactly
+                      one [1..1] <b>@typeCode</b>=<b>"PRF"</b> Participation
+                      physical performer (CodeSystem:
+                      <b>HL7ParticipationType
+                        <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.5.90</a>)</b><b> STATIC</b>)<b> (CONF:1198-8458)</b>.
+                    </li>
+                    <li>
+                      The performer, if present, <b>MAY</b> contain zero or one
+                      [0..1] <b>assignedEntity</b><b> (CONF:1198-8459)</b>.
+                      <ul>
+                        <li>
+                          The assignedEntity, if present, <b>SHALL</b> contain
+                          at least one [1..*] <b>id</b><b> (CONF:1198-30882)</b> such that it
+                        </li>
+                        <li>
+                          <p>
+                            If this assignedEntity is an assignedPerson, the
+                            assignedEntity/id <strong>SHOULD</strong> contain
+                            zero or one [0..1] @root="2.16.840.1.113883.4.6"
+                            National Provider Identifier (CONF:1198-32466).
+                          </p>
+                        </li>
+                        <li>
+                          The assignedEntity, if present, <b>MAY</b> contain
+                          zero or one [0..1] <b>assignedPerson</b><b> (CONF:1198-32467)</b>.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>component</b><b> (CONF:1198-30659)</b>.
+          <ul>
+            <li>
+              This component <b>SHALL</b> contain exactly one [1..1]
+              <b>structuredBody</b><b> (CONF:1198-30660)</b>.
+              <ul>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30661)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Allergies and
+                      Intolerances Section (entries required) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.6.1)</b><b> (CONF:1198-30662)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30663)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Medications
+                      Section (entries required) (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.1.1)</b><b> (CONF:1198-30664)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30665)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Problem Section
+                      (entries required) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.5.1)</b><b> (CONF:1198-30666)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHOULD</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30667)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Procedures Section
+                      (entries required) (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.7.1)</b><b> (CONF:1198-30668)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30669)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Results Section
+                      (entries required) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.3.1)</b><b> (CONF:1198-30670)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30671)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Advance Directives
+                      Section (entries optional) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.21)</b><b> (CONF:1198-30672)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30673)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Encounters Section
+                      (entries optional) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.22)</b><b> (CONF:1198-30674)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30675)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Family History
+                      Section (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.15)</b><b> (CONF:1198-30676)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30677)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Functional Status
+                      Section (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.14)</b><b> (CONF:1198-30678)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30679)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Immunizations
+                      Section (entries required) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.2.1)</b><b> (CONF:1198-30680)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30681)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Medical Equipment
+                      Section (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.23)</b><b> (CONF:1198-30682)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30683)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Payers Section
+                      (V3)<b> (identifier: 2.16.840.1.113883.10.20.22.2.18)</b><b> (CONF:1198-30684)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHOULD</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30685)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Plan of Treatment
+                      Section (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.10)</b><b> (CONF:1198-30686)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30687)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Social History
+                      Section (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.17)</b><b> (CONF:1198-30688)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30689)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Vital Signs
+                      Section (entries required) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.4.1)</b><b> (CONF:1198-30690)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-32143)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Mental Status
+                      Section (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.56)</b><b> (CONF:1198-32144)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-32624)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Nutrition
+                      Section<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.57)</b><b> (CONF:1198-32625)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-ccd-header-example.html" file="2.16.840.1.113883.10.20.22.1.2.html">ccd-header-example</a></li>
+</ul>
+      <br>
+
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Policy Activity (V3)
+        <small class="text-muted">[act, 2.16.840.1.113883.10.20.22.4.61, release 2015-08-01, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.4.61.pdf"><i class="fas fa-file-pdf"></i> view pdf</a><a href="https://hl7.org/cda/us/ccda/StructureDefinition-PolicyActivity.html" target="_blank" style="color: green">
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a></small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          A policy activity represents the policy or program providing the
+          coverage. The person for whom payment is being provided (i.e., the
+          patient) is the covered party. The subscriber of the policy or program
+          is represented as a participant that is the holder of the coverage.
+          The payer is represented as the performer of the policy activity.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">
+              <a href="2.16.840.1.113883.10.20.22.4.60.html">Coverage Activity </a><br>
+            </td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.5.2.html">US Realm Address (AD.US.FIELDED)</a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@classCode</b>=<b>"ACT"</b>
+          Act (CodeSystem:
+          <b>HL7ActClass
+            <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActClass.html" target="_blank"><i class="fas fa-external-link-alt"></i> 2.16.840.1.113883.5.6</a>&nbsp;</b><b> STATIC</b>)<b> (CONF:1198-8898)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@moodCode</b>=<b>"EVN"</b>
+          Event (CodeSystem:
+          <b>HL7ActMood
+            <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActMood.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.5.1001</a></b><b> STATIC</b>)<b> (CONF:1198-8899)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1198-8900)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.61"</b><b> (CONF:1198-10516)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b>"2015-08-01"</b><b> (CONF:1198-32595)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            This id is a unique identifier for the policy or program providing
+            the coverage<br>
+          </p>
+          <b>SHALL</b> contain at least one [1..*] <b>id</b><b> (CONF:1198-8901)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>code</b>, which
+          <b>SHOULD</b> be selected from ValueSet
+          <b>Health Insurance Type 2.16.840.1.113883.3.88.12.3221.5.2</b><b> DYNAMIC</b><b> (CONF:1198-8903)</b>.
+          <ul>
+            <li>
+              This code <b>SHALL</b> contain at least one [1..*]
+              <b>translation (CONF:4537-32852)</b> such that it
+              <ul>
+                <li>
+                  <b>SHOULD</b> contain zero or one [0..1] @code, which SHOULD
+                  be selected from
+                  <b>Payer
+                    <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.114222.4.11.3591/expansion/Latest" target="_blank">
+                      <i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.114222.4.11.3591
+                    </a> </b><b> (CONF::4537-33066) </b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>statusCode</b><b> (CONF:1198-8902)</b>.
+          <ul>
+            <li>
+              This statusCode <b>SHALL</b> contain exactly one [1..1]
+              <b>@code</b>=<b>"completed"</b> Completed (CodeSystem:
+              <b>HL7ActStatus
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActStatus.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.14</a></b><b> STATIC</b>)<b> (CONF:1198-19109)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>This performer represents the Payer.<br></p>
+          <b>SHALL</b> contain exactly one [1..1] <b>performer</b><b> (CONF:1198-8906)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"PRF"</b>
+              Performer (CodeSystem:
+              <b>HL7ParticipationType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a>)</b><b> STATIC</b>)<b> (CONF:1198-8907)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1198-16808)</b>.
+              <ul>
+                <li>
+                  This templateId <b>SHALL</b> contain exactly one [1..1]
+                  <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.87"</b> Payer
+                  Performer<b> (CONF:1198-16809)</b>.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>assignedEntity</b><b> (CONF:1198-8908)</b>.
+              <br>
+              This is the Payer id. The root is a unique identifier to an openly
+              available assigning authority, such as National Association of
+              Insurance Commissioners (NAIC) (2.16.840.1.113883.6.300), and the
+              extension identifiers the payer within that authority.
+              <ul>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-8909)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHOULD</b> contain zero or one [0..1]
+                  <b>code</b><b> (CONF:1198-8914)</b>.
+                  <ul>
+                    <li>
+                      The code, if present, <b>SHALL</b> contain exactly one
+                      [1..1] <b>@code</b>, which <b>SHOULD</b> be selected from
+                      ValueSet
+                      <b>Financially Responsible Party Type Value Set
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.10416/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.1.11.10416</a></b><b> DYNAMIC</b><b> (CONF:1198-15992)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>MAY</b> contain zero or one [0..1] US
+                  Realm Address (AD.US.FIELDED)<b>
+                    (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-8910)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>MAY</b> contain zero or more [0..*]
+                  <b>telecom</b><b> (CONF:1198-8911)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHOULD</b> contain zero or one [0..1]
+                  <b>representedOrganization</b><b> (CONF:1198-8912)</b>.
+                  <ul>
+                    <li>
+                      The representedOrganization, if present,
+                      <b>SHOULD</b> contain zero or one [0..1] <b>name</b><b> (CONF:1198-8913)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>This performer represents the Guarantor.<br></p>
+          <b>SHOULD</b> contain zero or more [0..*]
+          <b>performer (CONF:1198-8961) </b>such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1]
+              <b>@typeCode="PRF"</b> Performer (CodeSystem:
+              <b>HL7ParticipationType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a>)</b><b> STATIC) (CONF:1198-32971)</b>
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1198-16810)</b>.
+              <ul>
+                <li>
+                  This templateId <b>SHALL</b> contain exactly one [1..1]
+                  <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.88"</b>
+                  Guarantor Performer<b> (CONF:1198-16811)</b>.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>SHOULD</b> contain zero or one [0..1] <b>time</b><b> (CONF:1198-8963)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>assignedEntity</b><b> (CONF:1198-8962)</b>.
+              <ul>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain exactly one [1..1]
+                  <b>code</b><b> (CONF:1198-8968)</b>.
+                  <ul>
+                    <li>
+                      This code <b>SHALL</b> contain exactly one [1..1]
+                      <b>@code</b>=<b>"GUAR"</b> Guarantor<b>
+                        (CONF:1198-16096)</b>.
+                    </li>
+                    <li>
+                      This code <b>SHALL</b> contain exactly one [1..1]
+                      <b>@codeSystem</b>=<b>"<a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-RoleClass.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.5.110</a>"</b><b> (CONF:1198-32165)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>SHOULD</b> contain zero or one [0..1]
+                  US Realm Address (AD.US.FIELDED)<b>
+                    (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-8964)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHOULD</b> contain zero or more [0..*]
+                  <b>telecom</b><b> (CONF:1198-8965)</b>.
+                </li>
+                <li>
+                  <p>
+                    <strong>SHOULD</strong> include
+                    assignedEntity/assignedPerson/name AND/OR
+                    assignedEntity/representedOrganization/name
+                    (CONF:1198-8967).
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul></ul>
+          <ul></ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>participant</b><b> (CONF:1198-8916)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"COV"</b>
+              Coverage target (CodeSystem:
+              <b>HL7ParticipationType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a>)</b><b> STATIC</b>)<b> (CONF:1198-8917)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1198-16812)</b>.
+              <ul>
+                <li>
+                  This templateId <b>SHALL</b> contain exactly one [1..1]
+                  <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.89"</b> Covered
+                  Party Participant<b> (CONF:1198-16814)</b>.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>SHOULD</b> contain zero or one [0..1] <b>time</b><b> (CONF:1198-8918)</b>.
+              <ul>
+                <li>
+                  The time, if present, <b>SHOULD</b> contain zero or one [0..1]
+                  <b>low</b><b> (CONF:1198-8919)</b>.
+                </li>
+                <li>
+                  The time, if present, <b>SHOULD</b> contain zero or one [0..1]
+                  <b>high</b><b> (CONF:1198-8920)</b>.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>participantRole</b><b> (CONF:1198-8921)</b>.
+              <ul>
+                <li>
+                  This participantRole <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-8922)</b>.
+                  <ul>
+                    <li>
+                      <p>
+                        This id is a unique identifier for the covered party
+                        member. Implementers <strong>SHOULD</strong> use the
+                        same GUID for each instance of a member identifier from
+                        the same health plan (CONF:1198-8984).
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This participantRole <b>SHALL</b> contain exactly one [1..1]
+                  <b>code</b><b> (CONF:1198-8923)</b>.
+                  <ul>
+                    <li>
+                      This code <b>SHOULD</b> contain zero or one [0..1]
+                      <b>@code</b>, which <b>SHOULD</b> be selected from
+                      ValueSet
+                      <b>Coverage Role Type Value Set
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.18877/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.1.11.18877</a></b><b> DYNAMIC</b><b> (CONF:1198-16078)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This participantRole <b>SHOULD</b> contain zero or one [0..1]
+                  US Realm Address (AD.US.FIELDED)
+                  (2.16.840.1.113883.10.20.22.5.2) (CONF:1198-8956).
+                  <br>
+                  This playingEntity records the covered party name and
+                  birthTime as represented by the health plan. This could match
+                  the information in recordTarget, or be different due to
+                  marriage or other reasons.
+                </li>
+                <li>
+                  This participantRole <b>SHOULD</b> contain zero or one [0..1]
+                  <b>playingEntity</b><b> (CONF:1198-8932)</b>.
+                  <ul>
+                    <li>
+                      The playingEntity, if present, <b>SHALL</b> contain at
+                      least one [1..*] <b>name</b><b> (CONF:1198-8930)</b>.
+                    </li>
+                    <li>
+                      The playingEntity, if present, <b>SHALL</b> contain
+                      exactly one [1..1] <b>sdtc:birthTime</b><b> (CONF:1198-31344)</b>.
+                      <ul>
+                        <li>
+                          <p>
+                            The prefix sdtc: <strong>SHALL</strong> be bound to
+                            the namespace urn:hl7-org:sdtc. The use of the
+                            namespace provides a necessary extension to CDA R2
+                            for the use of the birthTime element
+                            (CONF:1198-31345).
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            When the Subscriber is the patient, the participant element
+            describing the subscriber <i>SHALL NOT</i> be present. This
+            information will be recorded instead in the data elements used to
+            record member information.<br>
+          </p>
+          <b>SHOULD</b> contain zero or one [0..1] <b>participant</b><b> (CONF:1198-8934)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"HLD"</b>
+              Holder (CodeSystem:
+              <b>HL7ParticipationType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a>)</b><b> STATIC</b>)<b> (CONF:1198-8935)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1198-16813)</b>.
+              <ul>
+                <li>
+                  This templateId <b>SHALL</b> contain exactly one [1..1]
+                  <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.90"</b> Policy
+                  Holder Participant<b> (CONF:1198-16815)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>MAY</b> contain zero or one [0..1] <b>time</b><b> (CONF:1198-8938)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>participantRole</b><b> (CONF:1198-8936)</b>.
+              <ul>
+                <li>
+                  This participantRole <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-8937)</b>.
+                  <ul>
+                    <li>
+                      <p>
+                        This id is a unique identifier for the subscriber of the
+                        coverage (CONF:1198-10120).
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  This participantRole <b>SHOULD</b> contain zero or one [0..1]
+                  US Realm Address (AD.US.FIELDED)
+                  (2.16.840.1.113883.10.20.22.5.2) (CONF:1198-8925).
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                When the Subscriber is the patient, the participant element
+                describing the subscriber <strong>SHALL NOT</strong> be present.
+                This information will be recorded instead in the data elements
+                used to record member information (CONF:1198-17139).
+              </p>
+            </li>
+          </ul>
+        </li>
+
+        <li class="list-group-item">
+          <b>SHALL</b> contain at least one [1..*] <b>entryRelationship</b><b> (CONF:1198-8939)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"REFR"</b>
+              Refers to (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b><b> STATIC</b>)<b> (CONF:1198-8940)</b>.
+            </li>
+            <li>
+              The target of a policy activity with
+              act/entryRelationship/@typeCode="REFR" <strong>SHALL</strong> be
+              an authorization activity (templateId
+              2.16.840.1.113883.10.20.1.19) <em>OR</em> an act, with
+              act[@classCode="ACT"] and act[@moodCode="DEF"], representing a
+              description of the coverage plan <b>(CONF:1198-8942)</b>.
+            </li>
+            <li>
+              A description of the coverage plan <strong>SHALL</strong> contain
+              one or more act/id, to represent the plan identifier, and an
+              act/text with the name of the plan <b>(CONF:1198-8943)</b>.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-coverage-activity-example.html" file="2.16.840.1.113883.10.20.22.4.61.html">coverage-activity-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-payers-section-example.html" file="2.16.840.1.113883.10.20.22.4.61.html">payers-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-policy-activity-example.html" file="2.16.840.1.113883.10.20.22.4.61.html">policy-activity-example</a></li>
+</ul>
+      <br>
+
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

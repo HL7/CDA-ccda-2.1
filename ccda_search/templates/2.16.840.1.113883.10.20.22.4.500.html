@@ -1,0 +1,383 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Care Team Organizer (V2)
+        <small class="text-muted">[organizer, 2.16.840.1.113883.10.20.22.4.500, release 2022-06-01,
+          open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.4.500.pdf"><i class="fas fa-file-pdf"></i> view pdf</a>
+        <a href="https://hl7.org/cda/us/ccda/StructureDefinition-CareTeamOrganizer.html" target="_blank" style="color: green"><i class="fas fa-external-link-alt"></i> View Updated C-CDA</a>
+        
+        </small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          This organizer template contains information about a single care
+          team.The author of the organizer is the person who documented the care
+          team information.The participants of the organizer are the care team
+          lead(s) and the care team organization.
+        </p>
+        <p>
+          The components of the organizer contain the following information:
+        </p>
+        <ul>
+          <li>The encounter that caused the care team to be formed</li>
+          <li>Narrative information about the care team</li>
+          <li>The care team members</li>
+          <li>Reasons for the care team</li>
+          <li>
+            The care team type(s) - a care team can have multiple care team
+            types
+          </li>
+        </ul>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">
+              <a href="2.16.840.1.113883.10.20.22.2.500.html">Care Teams Section </a><br>
+            </td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.4.500.2.html">Care Team Type Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.119.html">Author Participation</a><br><a href="2.16.840.1.113883.10.20.22.4.122.html">Entry Reference</a><br><a href="2.16.840.1.113883.10.20.22.4.202.html">Note Activity</a><br><a href="2.16.840.1.113883.10.20.22.4.500.1.html">Care Team Member Act </a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@classCode</b>=<b>"CLUSTER"</b>
+          CLUSTER (CodeSystem:
+          <b>HL7ActClass
+            <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActClass.html" target="_blank"><i class="fas fa-external-link-alt"></i> 2.16.840.1.113883.5.6</a>&nbsp;</b><b> STATIC</b>)<b> (CONF:4515-124)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@moodCode</b>=<b>"EVN"</b>
+          Event (CodeSystem:
+          <b>HL7ActMood
+            <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActMood.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.5.1001</a></b><b> STATIC</b>)<b> (CONF:4515-125)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:4515-112)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.500"</b><b> (CONF:4515-117)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b>"2022-06-01"</b><b> (CONF:4515-118)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain at least one [1..*] <b>id</b><b> (CONF:4515-126)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>code</b><b> (CONF:4515-114)</b>.
+          <ul>
+            <li>
+              This code <b>SHALL</b> contain exactly one [1..1] <b>@code</b>=<b>"86744-0"</b>
+              Care Team<b> (CONF:4515-120)</b>.
+            </li>
+            <li>
+              This code <b>SHALL</b> contain exactly one [1..1]
+              <b>@codeSystem</b>=<b>"2.16.840.1.113883.6.1"</b> LOINC
+              (CodeSystem:
+              <b>LOINC:
+                <a href="https://loinc.org/" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.6.1</a></b>)<b> (CONF:4515-121)</b>.
+            </li>
+            <li>
+              This code <b>SHOULD</b> contain zero or one [0..1]
+              <b>originalText</b><b> (CONF:4515-154)</b> such that it
+              <ul>
+                <li>
+                  <b>SHALL</b> contain exactly one [1..1] <b>reference</b><b> (CONF:4515-155)</b>.
+                  <ul>
+                    <li>
+                      The value attribute references the narrative in
+                      section.text where the care team name is rendered. The
+                      intention of this reference is to clarify which care team
+                      this Organizer refers to. <br>This reference
+                      <b>SHALL</b> contain exactly one [1..1] <b>@value</b><b> (CONF:4515-156)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>statusCode</b><b> (CONF:4515-113)</b>.
+          <ul>
+            <li>
+              This statusCode <b>SHALL</b> contain exactly one [1..1]
+              <b>@code</b>, which <b>SHALL</b> be selected from ValueSet
+              <b>ActStatus
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.15933/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.1.11.15933</a></b><b> STATIC</b><b> (CONF:4515-119)</b>.<br>Note: When statusCode
+              has a value set, its value MAY be rendered in the narrative.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>effectiveTime</b><b> (CONF:4515-127)</b>.
+          <ul>
+            <li>
+              This effectiveTime <b>SHALL</b> contain exactly one [1..1]
+              <b>low</b><b> (CONF:4515-157)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              This effectiveTime <b>MAY</b> contain zero or one [0..1]
+              <b>high</b><b> (CONF:4515-158)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or more [0..*] Author Participation<b>
+            (identifier: 2.16.840.1.113883.10.20.22.4.119)</b><b> (CONF:4515-116)</b>.
+        </li>
+        <li class="list-group-item">
+          <p>This Participant represents the Care Team lead.<br></p>
+          <b>SHOULD</b> contain zero or more [0..*] <b>participant</b><b> (CONF:4515-128)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"PPRF"</b>
+              Primary Performer (CodeSystem:
+              <b>HL7ParticipationType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a>)</b>)<b> (CONF:4515-129)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>MAY</b> contain zero or one [0..1] <b>sdtc:functionCode</b>,
+              which <b>SHOULD</b> be selected from ValueSet
+              <b>Care Team Member Function
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.30/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113762.1.4.1099.30</a></b><b> DYNAMIC</b><b> (CONF:4515-130)</b>.<br>Note: Describes the
+              person's, caregiver's or health care provider's functional role on
+              the care team.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>participantRole</b><b> (CONF:4515-131)</b>.
+              <ul>
+                <li>
+                  This participantRole <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:4515-132)</b>.
+                  <ul>
+                    <li>
+                      <p>
+                        This id <strong>SHALL</strong> match a
+                        performer/assignedEntity/id of at least one Care Team
+                        Member described in component/act (CONF:4515-133).
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>participant</b><b> (CONF:4515-134)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"LOC"</b>
+              Location (CodeSystem:
+              <b>HL7ParticipationType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a>)</b>)<b> (CONF:4515-137)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>participantRole</b><b> (CONF:4515-135)</b>.
+
+              <ul>
+                <li>
+                  This participantRole <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:4515-138)</b>.
+                </li>
+                <li>
+                  This participantRole <b>SHOULD</b> contain zero or one [0..1]
+                  <b>addr</b><b> (CONF:4515-139)</b>.
+                </li>
+                <li>
+                  This participantRole <b>SHOULD</b> contain zero or more [0..*]
+                  <b>telecom</b><b> (CONF:4515-140)</b>.
+                </li>
+                <li>
+                  This participantRole <b>SHALL</b> contain exactly one [1..1]
+                  <b>playingEntity</b><b> (CONF:4515-136)</b>.
+                  <ul>
+                    <li>
+                      This playingEntity <b>SHALL</b> contain exactly one [1..1]
+                      <b>@classCode</b>=<b>"PLC"</b> Place (CodeSystem:
+                      <b>HL7EntityClass
+                        <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-EntityClass.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.5.41</a></b>)<b> (CONF:4515-141)</b>.
+                    </li>
+                    <li>
+                      This playingEntity <b>SHALL</b> contain exactly one [1..1]
+                      <b>name</b><b> (CONF:4515-142)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>component</b><b> (CONF:4515-110)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Care Team Type
+              Observation<b> (identifier: 2.16.840.1.113883.10.20.22.4.500.2)</b><b> (CONF:4515-163)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            The following components represent the reasons for the existence of
+            the care team.<br>These entry references are typically a health
+            concern, risk concern or problem but can also be some other entry
+            present in the document.<br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>component</b><b> (CONF:4515-146)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Entry Reference<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.122)</b><b> (CONF:4515-147)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>component</b><b> (CONF:4515-148)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>encounter</b><b> (CONF:4515-164)</b>.
+              <ul>
+                <li>
+                  This encounter <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:4515-165)</b>.<br>Note: 1. If the id does
+                  not match an encounter/id from an encounter elsewhere within
+                  the same document and the id does not contain @nullFlavor=NA,
+                  then this entry SHALL conform to the Encounter Activity (V3)
+                  (identifier: 2.16.840.1.113883.10.20.22.4.49) (CONF:4435-145).
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>component</b><b> (CONF:4515-150)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Note Activity<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.202)</b><b> (CONF:4515-151)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain at least one [1..*] <b>component</b><b> (CONF:4515-152)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Care Team Member Act
+              (V2)<b> (identifier: 2.16.840.1.113883.10.20.22.4.500.1)</b><b> (CONF:4515-166)</b>.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-care-team-organizer-example.html" file="2.16.840.1.113883.10.20.22.4.500.html">care-team-organizer-example</a></li>
+</ul>
+      <br>
+
+      <h4 id="cdasearch">CDA Search Examples</h4>
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

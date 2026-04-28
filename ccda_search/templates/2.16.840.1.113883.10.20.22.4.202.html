@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Note Activity
+        <small class="text-muted">[act, 2.16.840.1.113883.10.20.22.4.202, release 2016-11-01, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.4.202.pdf"><i class="fas fa-file-pdf"></i> view pdf</a>
+        <a href="https://hl7.org/cda/us/ccda/StructureDefinition-NoteActivity.html" target="_blank" style="color: green"><i class="fas fa-external-link-alt"></i> View Updated C-CDA</a>
+        
+        </small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          The Note Activity represents a clinical note. Notes require
+          authorship, authentication, timing information, and references to
+          other discrete data such as encounters. Similar to the Comment
+          Activity, the Note Activity permits a more specific code to
+          characterize the type of information available in the note. The Note
+          Activity template SHOULD NOT be used in place of a more specific C-CDA
+          entry. Note information included needs to be relevant and pertinent to
+          the information being communicated in the document.When the note
+          information augments data represented in a more specific entry
+          template, the Note Activity can be used in an entryRelationship to the
+          associated standard C-CDA entry. For example, a Procedure Note added
+          as an entryRelationship to a Procedure Activity Procedure entry).The
+          Note Activity template can be used as a standalone entry within a
+          standard C-CDA section (e.g., a note about various procedures which
+          have occurred during a visit as an entry in the Procedures Section)
+          when it does not augment another standard entry. It may also be used
+          to provide additional data about the source of a currently
+          narrative-only section, such as Hospital Course.Finally, if the type
+          of data in the note is not known or no single C-CDA section is
+          appropriate enough, the Note Activity should be placed in a Notes
+          Section. (e.g., a free-text consultation note or a note which includes
+          subjective, objective, assessment, and plan information combined).An
+          alternative is to place the Note Activity as an entryRelationship to
+          an Encounter Activity entry in the Encounters Section, but
+          implementers may wish to group notes categorically into a separate
+          location in CDA documents rather than overloading the Encounters
+          Section.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">
+              <a href="2.16.840.1.113883.10.20.22.2.65.html">Notes Section</a><br><a href="2.16.840.1.113883.10.20.22.4.500.1.html">Care Team Member Act </a><br><a href="2.16.840.1.113883.10.20.22.4.500.html">Care Team Organizer </a><br>
+            </td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.4.119.html">Author Participation</a><br><a href="2.16.840.1.113883.10.20.22.5.1.1.html">US Realm Person Name (PN.US.FIELDED)</a><br><a href="2.16.840.1.113883.10.20.22.5.3.html">US Realm Date and Time (DT.US.FIELDED)</a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@classCode</b>=<b>"ACT"</b>
+          Act<b> (CONF:3250-16899)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@moodCode</b>=<b>"EVN"</b>
+          Event<b> (CONF:3250-16900)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:3250-16933)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.202"</b><b> (CONF:3250-16934)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b>"2016-11-01"</b><b> (CONF:3250-16937)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>code</b><b> (CONF:3250-16895)</b>.
+          <ul>
+            <li>
+              This code <b>SHALL</b> contain exactly one [1..1] <b>@code</b>=<b>"34109-9"</b>
+              Note (CodeSystem: <b>LOINC 2.16.840.1.113883.6.1</b>)<b>
+                (CONF:3250-16940)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              This code <b>SHALL</b> contain exactly one [1..1]
+              <b>@codeSystem</b>=<b>"2.16.840.1.113883.6.1"</b> LOINC<b>
+                (CONF:3250-16941)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              This code <b>SHOULD</b> contain zero or more [0..*]
+              <b>translation</b>, which <b>SHOULD</b> be selected from ValueSet
+              <b>Note Types
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.68/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.11.20.9.68</a></b><b> DYNAMIC</b><b> (CONF:3250-16939)</b>.
+              <ul>
+                <li>
+                  If the Note Activity is within a Note Section, the translation
+                  SHOULD match or specialize the section code
+                  (CONF:3250-16942).<br>Note: For example, a cardiologist
+                  consult note may specialize a consult note but not a progress
+                  note.
+                </li>
+                <li>
+                  <p>
+                    If the Note Activity is within a narrative-only section
+                    (e.g. Hospital Course), the translation MAY match the
+                    section code (CONF:3250-16943).
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>text</b><b> (CONF:3250-16896)</b>.
+          <ul>
+            <li>
+              This text <b>MAY</b> contain zero or one [0..1] <b>@mediaType</b>,
+              which <b>SHOULD</b> be selected from ValueSet
+              <b>SupportedFileFormats
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.7.1/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.11.20.7.1</a></b><b> DYNAMIC</b><b> (CONF:3250-16906)</b>.
+              <ul>
+                <li>
+                  <p>
+                    If @mediaType is present, the text SHALL contain exactly one
+                    [1..1] @representation="B64" and mixed content corresponding
+                    to the contents of the note (CONF:3250-16912).
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              This text <b>SHALL</b> contain exactly one [1..1] <b>reference</b><b> (CONF:3250-16897)</b>.
+              <ul>
+                <li>
+                  The note activity must reference human-readable content in the
+                  narrative, so this reference must not be null. <br>This
+                  reference <b>SHALL NOT</b> contain [0..0] <b>@nullFlavor</b><b> (CONF:3250-16920)</b>.
+                </li>
+                <li>
+                  This reference <b>SHALL</b> contain exactly one [1..1]
+                  <b>@value</b><b> (CONF:3250-16898)</b>.
+                  <ul>
+                    <li>
+                      <p>
+                        This reference/@value SHALL begin with a '#' and SHALL
+                        point to its corresponding narrative (using the approach
+                        defined in CDA Release 2, section 4.3.5.1)
+                        (CONF:3250-16902).
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          Indicates the status of the note. The most common statusCode is
+          completed indicating the note is signed and finalized<br>
+          <b>SHALL</b> contain exactly one [1..1] <b>statusCode</b><b> (CONF:3250-16916)</b>.
+        </li>
+        <li class="list-group-item">
+          The effectiveTime represents the clinically relevant time of the note.
+          The precise timestamp of creation / updating should be conveyed in
+          author/time. <br>
+          <b>SHALL</b> contain exactly one [1..1] <b>effectiveTime</b><b> (CONF:3250-16903)</b>.
+          <ul>
+            <li>
+              This effectiveTime <b>SHOULD</b> contain zero or one [0..1]
+              <b>@value</b><b> (CONF:3250-16917)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          Represents the person(s) who wrote the note<br><b>SHALL</b> contain
+          at least one [1..*] Author Participation<b>
+            (identifier: 2.16.840.1.113883.10.20.22.4.119)</b><b> (CONF:3250-16913)</b>.
+        </li>
+        <li class="list-group-item">
+          Represents the person(s) legally responsible for the contents of the
+          note<br>
+          <b>MAY</b> contain zero or more [0..*] <b>participant</b><b> (CONF:3250-16923)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"LA"</b>
+              Legal Authenticator<b> (CONF:3250-16925)</b>.
+            </li>
+            <li>
+              Indicates the time of signing the note<br><b>SHALL</b> contain
+              exactly one [1..1] US Realm Date and Time (DT.US.FIELDED)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.5.3)</b><b> (CONF:3250-16926)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>participantRole</b><b> (CONF:3250-16924)</b>.
+              <ul>
+                <li>
+                  This may be the ID of the note author. If so, no additional
+                  information in this participant is required.<br>This
+                  participantRole <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:3250-16927)</b>.
+                </li>
+                <li>
+                  This participantRole <b>MAY</b> contain zero or one [0..1]
+                  <b>playingEntity</b><b> (CONF:3250-16928)</b>.
+                  <ul>
+                    <li>
+                      The playingEntity, if present, <b>SHALL</b> contain at
+                      least one [1..*] US Realm Person Name (PN.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:3250-16929)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>
+                    If no id matches an author or participant elsewhere in the
+                    document, then playingEntity SHALL be present
+                    (CONF:3250-16930).
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          Links the note to an encounter. If the Note Activity is present within
+          a document containing an encompassingEncounter, then this
+          entryRelationship is optional and the note is associated with the
+          encounter represented by the encompassingEncounter.<br>
+          <b>SHOULD</b> contain zero or more [0..*] <b>entryRelationship</b><b> (CONF:3250-16907)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"COMP"</b><b> (CONF:3250-16921)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@inversionInd</b>=<b>"true"</b><b> (CONF:3250-16922)</b>.
+            </li>
+            <li>
+              To communicate that the note is not associated with any encounter,
+              this entryRelationship MAY be included with @negationInd="true"
+              and encounter/id/@nullFlavor="NA". The negationInd + encounter
+              indicate this note is not associated with any encounter<br><b>MAY</b>
+              contain zero or one [0..1] <b>@negationInd</b><b> (CONF:3250-16931)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>encounter</b><b> (CONF:3250-16908)</b>.
+              <ul>
+                <li>
+                  This encounter <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:3250-16909)</b>.
+                  <ul>
+                    <li>
+                      <p>
+                        If the id does not match an encounter/id from the
+                        Encounters Section or encompassingEncounter within the
+                        same document and the id does not contain
+                        @nullFlavor="NA", then this entry SHALL conform to the
+                        Encounter Activity (V3) (identifier:
+                        2.16.840.1.113883.10.20.22.4.49) (CONF:3250-16914).
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          Represents an unstructured C-CDA document containing the original
+          contents of the note in the original format <br><b>MAY</b> contain
+          zero or more [0..*] <b>reference</b><b> (CONF:3250-16910)</b>
+          such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>externalDocument</b><b> (CONF:3250-16911)</b>.
+              <ul>
+                <li>
+                  This externalDocument <b>SHALL</b> contain exactly one [1..1]
+                  <b>id</b><b> (CONF:3250-16915)</b>.
+                </li>
+                <li>
+                  This externalDocument <b>SHOULD</b> contain zero or one [0..1]
+                  <b>code</b><b> (CONF:3250-16918)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-note-activity-as-entryrelationship-to-ccda-entry-example.html" file="2.16.840.1.113883.10.20.22.4.202.html">note-activity-as-entryrelationship-to-ccda-entry-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-note-activity-as-standalone-entry-example.html" file="2.16.840.1.113883.10.20.22.4.202.html">note-activity-as-standalone-entry-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-note-section-example.html" file="2.16.840.1.113883.10.20.22.4.202.html">note-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-progress-note-header-example.html" file="2.16.840.1.113883.10.20.22.4.202.html">progress-note-header-example</a></li>
+</ul>
+      <br>
+
+      <h4 id="cdasearch">CDA Search Examples</h4>
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

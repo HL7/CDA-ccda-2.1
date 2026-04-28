@@ -1,0 +1,596 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Care Plan (V2)
+        <small class="text-muted">[ClinicalDocument, 2.16.840.1.113883.10.20.22.1.15, release
+          2015-08-01, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.1.15.pdf"><i class="fas fa-file-pdf"></i> view pdf</a><a href="https://hl7.org/cda/us/ccda/StructureDefinition-CarePlan.html" target="_blank" style="color: green">
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a></small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>CARE PLAN FRAMEWORK</p>
+        <p>
+          A Care Plan (including Home Health Plan of Care (HHPoC)) is a
+          consensus-driven dynamic plan that represents a patient's and Care
+          Team Members' prioritized concerns, goals, and planned interventions.
+          It serves as a blueprint shared by all Care Team Members (including
+          the patient, their caregivers and providers), to guide the patient's
+          care. A Care Plan integrates multiple interventions proposed by
+          multiple providers and disciplines for multiple conditions.
+        </p>
+        <p>
+          A Care Plan represents one or more Plan(s) of Care and serves to
+          reconcile and resolve conflicts between the various Plans of Care
+          developed for a specific patient by different providers. While both a
+          plan of care and a care plan include the patient's life goals and
+          require Care Team Members (including patients) to prioritize goals and
+          interventions, the reconciliation process becomes more complex as the
+          number of plans of care increases. The Care Plan also serves to enable
+          longitudinal coordination of care.
+        </p>
+        <p>
+          The CDA Care Plan represents an instance of this dynamic Care Plan at
+          a point in time. The CDA document itself is NOT dynamic.
+        </p>
+        <div>
+          Key differentiators between a Care Plan CDA and CCD (another 'snapshot
+          in time' document):<br>
+          <ul>
+            <li>
+              There are 2 required sections:
+              <ul>
+                <li>Health Concerns</li>
+                <li>Goals</li>
+              </ul>
+            </li>
+            <li>
+              There are 2 optional sections:
+              <ul>
+                <li>Interventions</li>
+                <li>Outcomes</li>
+              </ul>
+            </li>
+            <li>
+              Provides the ability to identify patient and provider priorities
+              with each act<br>
+            </li>
+            <li>
+              Provides a header participant to indicate occurrences of Care Plan
+              review<br>
+            </li>
+          </ul>
+          A care plan document can include entry references from the information
+          in these sections to the information (entries) in other sections.
+        </div>
+        <p>
+          Please see Volume 1 of this guide to view a Care Plan Relationship
+          diagram and story board.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">none</td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.2.58.html">Health Concerns Section </a><br><a href="2.16.840.1.113883.10.20.22.2.60.html">Goals Section</a><br><a href="2.16.840.1.113883.10.20.21.2.3.html">Interventions Section </a><br><a href="2.16.840.1.113883.10.20.22.2.61.html">Health Status Evaluations and Outcomes Section</a><br><a href="2.16.840.1.113883.10.20.22.5.1.1.html">US Realm Person Name (PN.US.FIELDED)</a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          Conforms to US Realm Header (V3) template
+          (urn:hl7ii:2.16.840.1.113883.10.20.22.1.1:2015-08-01)
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1198-28741)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.1.15"</b><b> (CONF:1198-28742)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b>"2015-08-01"</b><b> (CONF:1198-32877)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                When asserting this templateId, all C-CDA 2.1 section and entry
+                templates that had a previous version in C-CDA R1.1
+                <strong>SHALL</strong> include both the C-CDA 2.1 templateId and
+                the C-CDA R1.1 templateId root without an extension. See C-CDA
+                R2.1 Volume 1 - Design Considerations for additional detail
+                (CONF:1198-32934).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>code</b><b> (CONF:1198-28745)</b>.
+          <ul>
+            <li>
+              This code <b>SHALL</b> contain exactly one [1..1] <b>@code</b>,
+              which <b>SHALL</b> be selected from ValueSet
+              <b>Care Plan Document Type
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.10/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113762.1.4.1099.10</a></b><b> DYNAMIC</b><b> (CONF:1198-32959)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>setId</b><b> (CONF:1198-32321)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>versionNumber</b><b> (CONF:1198-32322)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or more [0..*] <b>informationRecipient</b><b> (CONF:1198-31993)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>intendedRecipient</b><b> (CONF:1198-31994)</b>.
+              <ul>
+                <li>
+                  This intendedRecipient <b>SHALL</b> contain at least one
+                  [1..*] <b>id</b><b> (CONF:1198-31996)</b>.
+                </li>
+                <li>
+                  This intendedRecipient <b>SHOULD</b> contain zero or more
+                  [0..*] <b>addr</b><b> (CONF:1198-31997)</b>.
+                </li>
+                <li>
+                  This intendedRecipient <b>SHOULD</b> contain zero or more
+                  [0..*] <b>telecom</b><b> (CONF:1198-31998)</b>.
+                </li>
+                <li>
+                  This intendedRecipient <b>SHOULD</b> contain zero or one
+                  [0..1] <b>informationRecipient</b><b> (CONF:1198-31999)</b>.
+                  <ul>
+                    <li>
+                      The informationRecipient, if present, <b>SHALL</b> contain
+                      exactly one [1..1] US Realm Person Name (PN.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:1198-32320)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This intendedRecipient <b>SHOULD</b> contain zero or one
+                  [0..1] <b>receivedOrganization</b><b> (CONF:1198-32000)</b>.
+                  <ul>
+                    <li>
+                      The receivedOrganization, if present,
+                      <b>SHOULD</b> contain zero or more [0..*] <b>id</b><b> (CONF:1198-32001)</b>.
+                    </li>
+                    <li>
+                      The receivedOrganization, if present, <b>SHALL</b> contain
+                      at least one [1..*] <b>name</b><b> (CONF:1198-32002)</b>.
+                    </li>
+                    <li>
+                      The receivedOrganization, if present,
+                      <b>SHOULD</b> contain zero or one [0..1]
+                      <b>standardIndustryClassCode</b>, which <b>SHALL</b> be
+                      selected from ValueSet
+                      <b>Healthcare Provider Taxonomy
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.114222.4.11.1066/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.114222.4.11.1066</a></b><b> DYNAMIC</b><b> (CONF:1198-32003)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>authenticator</b><b> (CONF:1198-31910)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>time</b><b> (CONF:1198-31911)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>signatureCode</b><b> (CONF:1198-31912)</b>.
+            </li>
+            <li>
+              <b>MAY</b> contain zero or one [0..1] <b>sdtc:signatureText</b><b> (CONF:1198-31913)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>assignedEntity</b><b> (CONF:1198-31914)</b>.
+              <ul>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-31915)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain exactly one [1..1]
+                  <b>code</b><b> (CONF:1198-31916)</b>.
+                  <ul>
+                    <li>
+                      This code <b>SHALL</b> contain exactly one [1..1]
+                      <b>@code</b>=<b>"ONESELF"</b> Self<b> (CONF:1198-31917)</b>.
+                    </li>
+                    <li>
+                      This code <b>SHALL</b> contain exactly one [1..1]
+                      <b>@codeSystem</b>=<b>"<a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-RoleCode.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.5.111</a>"</b>
+                      (CodeSystem:
+                      <b>HL7RoleCode
+                        <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-RoleCode.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.5.111</a></b>)<b> (CONF:1198-31918)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or more [0..*] <b>participant</b><b> (CONF:1198-31677)</b>
+          such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"VRF"</b>
+              Verifier (CodeSystem:
+              <b>HL7ParticipationType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a>)</b>)<b> (CONF:1198-31678)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>functionCode</b><b> (CONF:1198-31679)</b>.
+              <ul>
+                <li>
+                  This functionCode <b>SHALL</b> contain exactly one [1..1]
+                  <b>@code</b>=<b>"425268008"</b> Review of Care Plan<b>
+                    (CONF:1198-31680)</b>.
+                </li>
+                <li>
+                  This functionCode <b>SHALL</b> contain exactly one [1..1]
+                  <b>@codeSystem</b>=<b>"2.16.840.1.113883.6.96"</b>
+                  (CodeSystem: <b>SNOMED CT 2.16.840.1.113883.6.96</b>)<b>
+                    (CONF:1198-31681)</b>.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>time</b><b> (CONF:1198-31682)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>associatedEntity</b><b> (CONF:1198-31683)</b>.
+              <ul>
+                <li>
+                  This associatedEntity <b>SHALL</b> contain exactly one [1..1]
+                  <b>@classCode</b>=<b>"ASSIGNED"</b> (CodeSystem:
+                  <b>HL7RoleClass
+                    <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-RoleClass.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.5.110</a></b>)<b> (CONF:1198-31686)</b>.
+                </li>
+                <li>
+                  This associatedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-31684)</b>.
+                </li>
+                <li>
+                  This associatedEntity <b>SHOULD</b> contain zero or one [0..1]
+                  <b>code</b><b> (CONF:1198-31685)</b>.
+                  <ul>
+                    <li>
+                      The code, if present, <b>SHALL</b> contain exactly one
+                      [1..1] <b>@code</b>, which <b>SHOULD</b> be selected from
+                      ValueSet
+                      <b>Personal And Legal Relationship Role Type
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.12.1/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.11.20.12.1</a></b><b> DYNAMIC</b><b> (CONF:1198-32367)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or more [0..*] <b>participant</b><b> (CONF:1198-31895)</b>
+          such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"IND"</b>
+              Indirect (CodeSystem:
+              <b>HL7ParticipationType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a>)</b>)<b> (CONF:1198-31896)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>associatedEntity</b><b> (CONF:1198-31897)</b>.
+              <ul>
+                <li>
+                  This associatedEntity <b>SHALL</b> contain exactly one [1..1]
+                  <b>@classCode</b>, which <b>SHALL</b> be selected from
+                  ValueSet
+                  <b>INDRoleclassCodes
+                    <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.33/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.11.20.9.33</a></b><b> DYNAMIC</b><b> (CONF:1198-31898)</b>.
+                </li>
+                <li>
+                  This associatedEntity <b>SHALL</b> contain exactly one [1..1]
+                  <b>associatedPerson</b><b> (CONF:1198-31899)</b>.
+                  <ul>
+                    <li>
+                      This associatedPerson <b>SHALL</b> contain at least one
+                      [1..*] <b>name</b><b> (CONF:1198-31900)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: documentationOf<br>The serviceEvent describes the
+            provision of healthcare over a period of time. The duration over
+            which care was provided is indicated in serviceEvent/effectiveTime.
+            Additional data from outside this duration may also be included if
+            it is relevant to care provided during that time range (e.g.,
+            reviewed during the stated time range).<br>
+          </p>
+          <b>SHALL</b> contain exactly one [1..1] <b>documentationOf</b><b> (CONF:1198-31901)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>serviceEvent</b><b> (CONF:1198-31902)</b>.
+              <ul>
+                <li>
+                  This serviceEvent <b>SHALL</b> contain exactly one [1..1]
+                  <b>@classCode</b>=<b>"PCPR"</b> Care Provision (CodeSystem:
+                  <b>HL7ActClass
+                    <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActClass.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.5.6</a>&nbsp;</b>)<b> (CONF:1198-31903)</b>.
+                </li>
+                <li>
+                  This serviceEvent <b>SHALL</b> contain exactly one [1..1]
+                  <b>effectiveTime</b><b> (CONF:1198-31904)</b>.
+                  <ul>
+                    <li>
+                      This effectiveTime <b>SHALL</b> contain exactly one [1..1]
+                      <b>low</b><b> (CONF:1198-32330)</b>.
+                    </li>
+                    <li>
+                      This effectiveTime <b>MAY</b> contain zero or one [0..1]
+                      <b>high</b><b> (CONF:1198-32331)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This serviceEvent <b>SHALL</b> contain at least one [1..*]
+                  <b>performer</b><b> (CONF:1198-31905)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1]
+                      <b>assignedEntity</b><b> (CONF:1198-31907)</b>.
+                      <ul>
+                        <li>
+                          This assignedEntity <b>SHALL</b> contain at least one
+                          [1..*] <b>id</b><b> (CONF:1198-31908)</b>.
+                        </li>
+                        <li>
+                          This assignedEntity <b>MAY</b> contain zero or one
+                          [0..1] <b>code</b><b> (CONF:1198-31909)</b>.
+                        </li>
+                        <li>
+                          This assignedEntity <b>SHALL</b> contain exactly one
+                          [1..1] <b>assignedPerson</b><b> (CONF:1198-32328)</b>.
+                          <ul>
+                            <li>
+                              This assignedPerson <b>SHALL</b> contain exactly
+                              one [1..1] US Realm Person Name (PN.US.FIELDED)<b>
+                                (identifier:
+                                2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:1198-32329)</b>.
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>relatedDocument</b><b> (CONF:1198-29893)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>, which
+              <b>SHALL</b> be selected from ValueSet
+              <b>x_ActRelationshipDocument
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.11610/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.1.11.11610</a></b><b> STATIC</b><b> (CONF:1198-31889)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>parentDocument</b><b> (CONF:1198-29894)</b>.
+              <ul>
+                <li>
+                  This parentDocument <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-32949)</b>.
+                </li>
+                <li>
+                  This parentDocument <b>SHALL</b> contain exactly one [1..1]
+                  <b>setId</b><b> (CONF:1198-29895)</b>.
+                </li>
+                <li>
+                  This parentDocument <b>SHALL</b> contain exactly one [1..1]
+                  <b>versionNumber</b><b> (CONF:1198-29896)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>componentOf</b><b> (CONF:1198-32004)</b>
+          such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1]
+              <b>encompassingEncounter</b><b> (CONF:1198-32005)</b>.
+              <ul>
+                <li>
+                  This encompassingEncounter <b>SHALL</b> contain exactly one
+                  [1..1] <b>effectiveTime</b><b> (CONF:1198-32007)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>component</b><b> (CONF:1198-28753)</b>.
+          <ul>
+            <li>
+              This component <b>SHALL</b> contain exactly one [1..1]
+              <b>structuredBody</b><b> (CONF:1198-28754)</b>.
+              <ul>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-28755)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Health Concerns
+                      Section (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.58)</b><b> (CONF:1198-28756)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-28761)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Goals Section<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.60)</b><b> (CONF:1198-28762)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHOULD</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-28763)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Interventions
+                      Section (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.21.2.3)</b><b> (CONF:1198-28764)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHOULD</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-29596)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Health Status
+                      Evaluations and Outcomes Section<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.61)</b><b> (CONF:1198-29597)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>
+                    This structuredBody <strong>SHALL NOT</strong> contain a
+                    Plan of Treatment Section (V2) (identifier:
+                    2.16.840.1.113883.10.20.22.2.10) (CONF:1198-31044).
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-care-plan-complete-example.html" file="2.16.840.1.113883.10.20.22.1.15.html">care-plan-complete-example</a></li>
+</ul>
+      <br>
+
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

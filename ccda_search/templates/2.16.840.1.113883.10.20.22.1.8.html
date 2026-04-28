@@ -1,0 +1,586 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Discharge Summary (V3)
+        <small class="text-muted">[ClinicalDocument, 2.16.840.1.113883.10.20.22.1.8, release
+          2015-08-01, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.1.8.pdf"><i class="fas fa-file-pdf"></i> view pdf</a><a href="https://hl7.org/cda/us/ccda/StructureDefinition-DischargeSummary.html" target="_blank" style="color: green">
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a></small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          The Discharge Summary is a document which synopsizes a patient's
+          admission to a hospital, LTPAC provider, or other setting. It provides
+          information for the continuation of care following discharge. The
+          Joint Commission requires the following information to be included in
+          the Discharge Summary (<a href="http://www.jointcommission.org/">http://www.jointcommission.org/</a>):' The reason for hospitalization (the admission)' The procedures
+          performed, as applicable' The care, treatment, and services provided'
+          The patient's condition and disposition at discharge' Information
+          provided to the patient and family' Provisions for follow-up care
+        </p>
+        <p>
+          The best practice for a Discharge Summary is to include the discharge
+          disposition in the display of the header.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">none</td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.2.6.html">Allergies and Intolerances Section (entries optional) </a><br><a href="1.3.6.1.4.1.19376.1.5.3.1.3.5.html">Hospital Course Section</a><br><a href="2.16.840.1.113883.10.20.22.2.24.html">Discharge Diagnosis Section </a><br><a href="2.16.840.1.113883.10.20.22.2.11.html">Discharge Medications Section (entries optional) </a><br><a href="2.16.840.1.113883.10.20.22.2.10.html">Plan of Treatment Section </a><br><a href="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1.html">Chief Complaint Section</a><br><a href="2.16.840.1.113883.10.20.22.2.13.html">Chief Complaint and Reason for Visit Section</a><br><a href="2.16.840.1.113883.10.20.22.2.57.html">Nutrition Section</a><br><a href="2.16.840.1.113883.10.20.22.2.15.html">Family History Section </a><br><a href="2.16.840.1.113883.10.20.22.2.14.html">Functional Status Section </a><br><a href="2.16.840.1.113883.10.20.22.2.20.html">Past Medical History </a><br><a href="1.3.6.1.4.1.19376.1.5.3.1.3.4.html">History of Present Illness Section</a><br><a href="2.16.840.1.113883.10.20.22.2.43.html">Admission Diagnosis Section </a><br><a href="2.16.840.1.113883.10.20.22.2.44.html">Admission Medications Section (entries optional) </a><br><a href="2.16.840.1.113883.10.20.22.2.42.html">Hospital Consultations Section</a><br><a href="2.16.840.1.113883.10.20.22.2.41.html">Hospital Discharge Instructions Section</a><br><a href="1.3.6.1.4.1.19376.1.5.3.1.3.26.html">Hospital Discharge Physical Section</a><br><a href="2.16.840.1.113883.10.20.22.2.16.html">Hospital Discharge Studies Summary Section</a><br><a href="2.16.840.1.113883.10.20.22.2.2.html">Immunizations Section (entries optional) </a><br><a href="2.16.840.1.113883.10.20.22.2.5.html">Problem Section (entries optional) </a><br><a href="2.16.840.1.113883.10.20.22.2.7.html">Procedures Section (entries optional) </a><br><a href="2.16.840.1.113883.10.20.22.2.12.html">Reason for Visit Section</a><br><a href="1.3.6.1.4.1.19376.1.5.3.1.3.18.html">Review of Systems Section</a><br><a href="2.16.840.1.113883.10.20.22.2.17.html">Social History Section </a><br><a href="2.16.840.1.113883.10.20.22.2.4.html">Vital Signs Section (entries optional) </a><br><a href="2.16.840.1.113883.10.20.22.2.11.1.html">Discharge Medications Section (entries required) </a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          Conforms to US Realm Header (V3) template
+          (urn:hl7ii:2.16.840.1.113883.10.20.22.1.1:2015-08-01)
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1198-8463)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.1.8"</b><b> (CONF:1198-10044)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b>"2015-08-01"</b><b> (CONF:1198-32517)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                When asserting this templateId, all C-CDA 2.1 section and entry
+                templates that had a previous version in C-CDA R1.1
+                <strong>SHALL</strong> include both the C-CDA 2.1 templateId and
+                the C-CDA R1.1 templateId root without an extension. See C-CDA
+                R2.1 Volume 1 - Design Considerations for additional detail
+                (CONF:1198-32938).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            The Discharge Summary recommends use of a single document type code,
+            18842-5 "Discharge summary", with further specification provided by
+            author or performer, setting, or specialty. When pre-coordinated
+            codes are used, any coded values describing the author or performer
+            of the service act or the practice setting must be consistent with
+            the LOINC document type. <br>
+          </p>
+          <b>SHALL</b> contain exactly one [1..1] <b>code</b><b> (CONF:1198-17178)</b>.
+          <ul>
+            <li>
+              This code <b>SHALL</b> contain exactly one [1..1] <b>@code</b>,
+              which <b>SHALL</b> be selected from ValueSet
+              <b>DischargeSummaryDocumentTypeCode
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.4.1/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.11.20.4.1</a></b><b> DYNAMIC</b><b> (CONF:1198-17179)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: participant<br>The participant element in the Discharge
+            Summary header follows the General Header Constraints for
+            participants. Discharge Summary does not specify any use for
+            functionCode for participants. Local policies will determine how
+            this element should be used in implementations.<br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>participant</b><b> (CONF:1198-8467)</b>.
+          <ul>
+            <li>
+              <p>
+                When participant/@typeCode is IND, associatedEntity/@classCode
+                <strong>SHALL</strong> be selected from ValueSet
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.33/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.11.20.9.33 </a>INDRoleclassCodes DYNAMIC (CONF:1198-8469).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: componentOf<br>The Discharge Summary is always associated
+            with a Hospital Admission using the encompassingEncounter element in
+            the header.<br>
+          </p>
+          <b>SHALL</b> contain exactly one [1..1] <b>componentOf</b><b> (CONF:1198-8471)</b>.
+          <ul>
+            <li>
+              This componentOf <b>SHALL</b> contain exactly one [1..1]
+              <b>encompassingEncounter</b><b> (CONF:1198-8472)</b>.
+              <ul>
+                <li>
+                  This encompassingEncounter <b>SHALL</b> contain exactly one
+                  [1..1] <b>effectiveTime</b><b> (CONF:1198-32611)</b>.
+                  <ul>
+                    <li>
+                      This effectiveTime <b>SHALL</b> contain exactly one [1..1]
+                      <b>low</b><b> (CONF:1198-8473)</b>.
+                    </li>
+                    <li>
+                      This effectiveTime <b>SHALL</b> contain exactly one [1..1]
+                      <b>high</b><b> (CONF:1198-8475)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This encompassingEncounter <b>SHALL</b> contain exactly one
+                  [1..1] <b>dischargeDispositionCode</b>, which <b>SHOULD</b> be
+                  selected from ValueSet
+                  <b>NUBC UB-04 FL17 Patient Status
+                    2.16.840.1.113883.3.88.12.80.33</b><b> DYNAMIC</b><b> (CONF:1198-8476)</b>.
+                </li>
+                <li>
+                  This encompassingEncounter <b>MAY</b> contain zero or one
+                  [0..1] <b>responsibleParty</b><b> (CONF:1198-8479)</b>.
+                  <ul>
+                    <li>
+                      The responsibleParty, if present, <b>SHALL</b> contain
+                      exactly one [1..1] <b>assignedEntity</b><b> (CONF:1198-32613)</b>.
+                      <ul>
+                        <li>
+                          <p>
+                            This assignedEntity <strong>SHALL</strong> contain
+                            an assignedPerson or a representedOrganization or
+                            both (CONF:1198-32898).
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This encompassingEncounter <b>MAY</b> contain zero or more
+                  [0..*] <b>encounterParticipant</b><b> (CONF:1198-8478)</b>.
+                  <ul>
+                    <li>
+                      The encounterParticipant, if present, <b>SHALL</b> contain
+                      exactly one [1..1] <b>assignedEntity</b><b> (CONF:1198-32615)</b>.
+                      <ul>
+                        <li>
+                          <p>
+                            This assignedEntity <strong>SHALL</strong> contain
+                            an assignedPerson or a representedOrganization or
+                            both (CONF:1198-32899).
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            In this template (templateId 2.16.840.1.113883.10.20.22.1.8.2),
+            coded entries are optional.
+          </p>
+          <b>SHALL</b> contain exactly one [1..1] <b>component</b><b> (CONF:1198-9539)</b>.
+          <ul>
+            <li>
+              This component <b>SHALL</b> contain exactly one [1..1]
+              <b>structuredBody</b><b> (CONF:1198-30518)</b>.
+              <ul>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30519)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Allergies and
+                      Intolerances Section (entries optional) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.6)</b><b> (CONF:1198-30520)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30521)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Hospital Course
+                      Section<b> (identifier: 1.3.6.1.4.1.19376.1.5.3.1.3.5)</b><b> (CONF:1198-30522)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30523)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Discharge
+                      Diagnosis Section (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.24)</b><b> (CONF:1198-30524)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHOULD</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30525)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Discharge
+                      Medications Section (entries optional) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.11)</b><b> (CONF:1198-30526)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>SHALL</b> contain exactly one [1..1]
+                  <b>component</b><b> (CONF:1198-30527)</b>
+                  such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Plan of Treatment
+                      Section (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.10)</b><b> (CONF:1198-30528)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30529)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Chief Complaint
+                      Section<b>
+                        (identifier: 1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1)</b><b> (CONF:1198-30530)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30531)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Chief Complaint
+                      and Reason for Visit Section<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.13)</b><b> (CONF:1198-30532)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30533)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Nutrition
+                      Section<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.57)</b><b> (CONF:1198-30534)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30535)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Family History
+                      Section (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.15)</b><b> (CONF:1198-30536)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30537)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Functional Status
+                      Section (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.14)</b><b> (CONF:1198-30538)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30539)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Past Medical
+                      History (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.20)</b><b> (CONF:1198-30540)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30541)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] History of Present
+                      Illness Section<b>
+                        (identifier: 1.3.6.1.4.1.19376.1.5.3.1.3.4)</b><b> (CONF:1198-30542)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30543)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Admission
+                      Diagnosis Section (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.43)</b><b> (CONF:1198-30544)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30545)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Admission
+                      Medications Section (entries optional) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.44)</b><b> (CONF:1198-30546)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30547)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Hospital
+                      Consultations Section<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.42)</b><b> (CONF:1198-30548)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30549)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Hospital Discharge
+                      Instructions Section<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.41)</b><b> (CONF:1198-30550)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30551)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Hospital Discharge
+                      Physical Section<b>
+                        (identifier: 1.3.6.1.4.1.19376.1.5.3.1.3.26)</b><b> (CONF:1198-30552)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30553)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Hospital Discharge
+                      Studies Summary Section<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.16)</b><b> (CONF:1198-30554)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30555)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Immunizations
+                      Section (entries optional) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.2)</b><b> (CONF:1198-30556)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30557)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Problem Section
+                      (entries optional) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.5)</b><b> (CONF:1198-30558)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30559)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Procedures Section
+                      (entries optional) (V2)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.7)</b><b> (CONF:1198-30560)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30561)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Reason for Visit
+                      Section<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.12)</b><b> (CONF:1198-30562)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30563)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Review of Systems
+                      Section<b> (identifier: 1.3.6.1.4.1.19376.1.5.3.1.3.18)</b><b> (CONF:1198-30564)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30565)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Social History
+                      Section (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.17)</b><b> (CONF:1198-30566)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-30567)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Vital Signs
+                      Section (entries optional) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.4)</b><b> (CONF:1198-30568)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This structuredBody <b>MAY</b> contain zero or one [0..1]
+                  <b>component</b><b> (CONF:1198-31586)</b> such that it
+                  <ul>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] Discharge
+                      Medications Section (entries required) (V3)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.2.11.1)</b><b> (CONF:1198-31587)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>
+                    This structuredBody
+                    <em><strong>SHALL NOT</strong></em> contain a Chief
+                    Complaint and Reason for Visit Section
+                    (2.16.840.1.113883.10.20.22.2.13) when either a Chief
+                    Complaint Section (1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1) or a
+                    Reason for Visit Section (2.16.840.1.113883.10.20.22.2.12)
+                    is present (CONF:1198-30569).
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-discharge-summary-header-example.html" file="2.16.840.1.113883.10.20.22.1.8.html">discharge-summary-header-example</a></li>
+</ul>
+      <br>
+
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

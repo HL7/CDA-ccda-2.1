@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        UDI Organizer
+        <small class="text-muted">[organizer, 2.16.840.1.113883.10.20.22.4.311, release 2019-06-21,
+          open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.4.311.pdf"><i class="fas fa-file-pdf"></i> view pdf</a>
+        <a href="https://hl7.org/cda/us/ccda/StructureDefinition-UDIOrganizer.html" target="_blank" style="color: green"><i class="fas fa-external-link-alt"></i> View Updated C-CDA</a>
+        
+        </small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          This template is nested in an entryRelationship/Procedure Activity
+          Procedure to record all the UDI-related templates to exchange the
+          parsed UDI data elements and associated data.
+        </p>
+        <ul>
+          <li>
+            <strong>Device Identifier</strong>2.16.840.1.113883.10.20.22.4.304:
+            2019-06-21 NCIt: C101722 SHALL be included in UDI Organizer
+          </li>
+          <li>
+            <strong>Lot or Batch Number</strong>2.16.840.1.113883.10.20.22.4.315: 2019-06-21 NCIt:C101672 SHOULD be
+            included in UDI Organizer if present in UDI
+          </li>
+          <li>
+            <strong>Serial Number</strong>2.16.840.1.113883.10.20.22.4.319:
+            2019-06-21 NCIt: C101671 SHOULD be included in UDI Organizer if
+            present in UDI
+          </li>
+          <li>
+            <strong>Manufacturing Date</strong><br>2.16.840.1.113883.10.20.22.4.316: 2019-06-21 NCIt:C101669
+            SHOULD be included in UDI Organizer if present in UDI
+          </li>
+          <li>
+            <strong>Expiration Date</strong>2.16.840.1.113883.10.20.22.4.309:
+            2019-06-21 NCIt: C101670 SHOULD be included in UDI Organizer if
+            present in UDI
+          </li>
+          <li>
+            <strong>Distinct Identification Code</strong>2.16.840.1.113883.10.20.22.4.308: 2019-06-21 NCIt: C113843 SHOULD
+            be included in UDI Organizer if present in UDI
+          </li>
+          <li>
+            <strong>Brand Name</strong>2.16.840.1.113883.10.20.22.4.301:
+            2019-06-21 NCIt: C71898 MAY be included in the UDI Organizer if
+            available
+          </li>
+          <li>
+            <strong>Model Number</strong>2.16.840.1.113883.10.20.22.4.317:
+            2019-06-21 NCIt: C99285 MAY be included in the UDI Organizer if
+            available
+          </li>
+          <li>
+            <strong>Catalog Number</strong>2.16.840.1.113883.10.20.22.4.302:
+            2019-06-21 NCIt: C99286 MAY be included in the UDI Organizer if
+            available
+          </li>
+          <li>
+            <strong>Company Name</strong>2.16.840.1.113883.10.20.22.4.303:
+            2019-06-21 NCIt: C54131 MAY be included in the UDI Organizer if
+            available
+          </li>
+          <li>
+            <strong>MRI Safety</strong>2.16.840.1.113883.10.20.22.4.318:
+            2019-06-21 NCIt: C106044 MAY be included in the UDI Organizer if
+            available
+          </li>
+          <li>
+            <strong>Latex Safety</strong>2.16.840.1.113883.10.20.22.4.314:
+            2019-06-21 NCIt: C160938 MAY be included in the UDI Organizer if
+            available
+          </li>
+          <li>
+            <strong>Implantable Device Status</strong>2.16.840.1.113883.10.20.22.4.305 2019-06-21 NCIt: C160939 MAY be
+            included in the UDI Organizer if available
+          </li>
+        </ul>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">none</td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.4.304.html">Device Identifier Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.315.html">Lot or Batch Number Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.319.html">Serial Number Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.316.html">Manufacturing Date Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.317.html">Model Number Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.301.html">Brand Name Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.308.html">Distinct Identification Code Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.309.html">Expiration Date Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.302.html">Catalog Number Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.314.html">Latex Safety Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.305.html">Implantable Device Status Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.318.html">MRI Safety Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.303.html">Company Name Observation</a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@classCode</b>=<b>"CLUSTER"</b><b> (CONF:4437-3482)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@moodCode</b>=<b>"EVN"</b><b> (CONF:4437-3483)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:4437-3480)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.311"</b><b> (CONF:4437-3484)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b>"2019-06-21"</b><b> (CONF:4437-3485)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>id</b><b> (CONF:4437-3541)</b>.
+          <ul>
+            <li>
+              This id <b>SHALL</b> contain exactly one [1..1] <b>@root</b><b> (CONF:4437-3542)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>code</b><b> (CONF:4437-3481)</b>.
+          <ul>
+            <li>
+              The code, if present, <b>MAY</b> contain zero or one [0..1]
+              <b>@code</b>=<b>"74711-3"</b> Unique Device Identifier
+              (CodeSystem:
+              <b>LOINC:
+                <a href="https://loinc.org/" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.6.1</a></b>)<b> (CONF:4437-3486)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              The code, if present, <b>SHALL</b> contain exactly one [1..1]
+              <b>@codeSystem</b>=<b>"2.16.840.1.113883.6.1"</b><b> (CONF:4437-3487)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>statusCode</b><b> (CONF:4437-3490)</b>.
+          <ul>
+            <li>
+              This statusCode <b>SHALL</b> contain exactly one [1..1]
+              <b>@code</b>=<b>"completed"</b> Completed (CodeSystem:
+              <b>HL7ActStatus
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActStatus.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.14</a></b>)<b> (CONF:4437-3543)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>component</b><b> (CONF:4437-3488)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Device Identifier
+              Observation<b> (identifier: 2.16.840.1.113883.10.20.22.4.304)</b><b> (CONF:4437-3489)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3513)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Lot or Batch Number
+              Observation<b> (identifier: 2.16.840.1.113883.10.20.22.4.315)</b><b> (CONF:4437-3514)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3515)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Serial Number
+              Observation<b> (identifier: 2.16.840.1.113883.10.20.22.4.319)</b><b> (CONF:4437-3516)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3517)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Manufacturing Date
+              Observation<b> (identifier: 2.16.840.1.113883.10.20.22.4.316)</b><b> (CONF:4437-3518)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3525)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Expiration Date
+              Observation<b> (identifier: 2.16.840.1.113883.10.20.22.4.309)</b><b> (CONF:4437-3526)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3523)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Distinct Identification
+              Code Observation<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.308)</b><b> (CONF:4437-3524)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3521)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Brand Name Observation<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.301)</b><b> (CONF:4437-3522)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3519)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Model Number Observation<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.317)</b><b> (CONF:4437-3520)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3535)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Company Name Observation<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.303)</b><b> (CONF:4437-3536)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3527)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Catalog Number
+              Observation<b> (identifier: 2.16.840.1.113883.10.20.22.4.302)</b><b> (CONF:4437-3528)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3529)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Latex Safety Observation<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.314)</b><b> (CONF:4437-3530)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3533)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] MRI Safety Observation<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.318)</b><b> (CONF:4437-3534)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>component</b><b> (CONF:4437-3531)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Implantable Device Status
+              Observation<b> (identifier: 2.16.840.1.113883.10.20.22.4.305)</b><b> (CONF:4437-3532)</b>.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-udi-organizer-example.html" file="2.16.840.1.113883.10.20.22.4.311.html">udi-organizer-example</a></li>
+</ul>
+      <br>
+
+      <h4 id="cdasearch">CDA Search Examples</h4>
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

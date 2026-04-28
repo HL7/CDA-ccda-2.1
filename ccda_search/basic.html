@@ -1,0 +1,3260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>C-CDA Online</title>
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "C-CDA Online",
+        "url": "https://www.hl7.org/ccdasearch/",
+        "description": "A web-based tool for browsing, searching, and exploring the HL7 Consolidated Clinical Document Architecture (C-CDA) templates, constraints, and definitions.",
+        "creator": "HL7 International",
+        "image": "https://www.hl7.org/ccdasearch/img/cda.png",
+        "applicationCategory": "Health Data Interoperability"
+      }
+    </script>
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      crossorigin="anonymous"
+    />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div
+      class="jumbotron container-fluid"
+      style="padding-bottom: 24px; padding-top: 24px"
+    >
+      <div class="display-3 row">
+        <div class="col-12">
+          <img
+            class="rounded"
+            style="max-width: 20%"
+            src="img/cda.png"
+            alt="HL7 CDA Logo"
+          />
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500">C-CDA Online</strong
+            ><span>: A navigation website for C-CDA 2.1</span>
+            <br />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-lg-10" style="font-size: 1.4em">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a
+              href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492"
+              >HL7 C-CDA Page</a
+            >
+            which remains the definitive source for the standards. In 2024, HL7
+            launched a patch process to allow for formal guidance on C-CDA
+            between releases. You can review the patch process and approved
+            patches on the
+            <a
+              href="https://confluence.hl7.org/spaces/SD/pages/220693320/C-CDA+Patch+Process"
+              target="_blank"
+              >HL7 Confluence Site</a
+            >.
+          </p>
+          <p>
+            <b
+              ><a href="https://hl7.org/cda/us/ccda/3.0.0/" style="color: green"
+                >C-CDA 3.0</a
+              ></b
+            >
+            and
+            <b
+              ><a href="https://hl7.org/cda/us/ccda/4.0.0/" style="color: green"
+                >C-CDA 4.0</a
+              ></b
+            >
+            have now been published using the newer web format for HL7
+            publishing.
+            <br />
+            Throughout this guide, newer templates are referenced through
+            <b
+              ><a
+                href="https://hl7.org/cda/us/ccda/"
+                target="_blank"
+                style="color: green"
+                ><i class="fas fa-external-link-alt"> </i> Green Links</a
+              ></b
+            >
+            when available.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr />
+      <div style="font-size: 1.1em">
+        <p>
+          CDA and C-CDA are copyright property of
+          <a href="https://www.hl7.org/index.cfm"> Health Level Seven (HL7)</a>
+          and subject to the terms of
+          <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          Those terms are also included in Volume 1 of the C-CDA guide linked
+          below.
+        </p>
+        HL7 encourages users to sign up for an account, which is free! Please
+        <u
+          ><a
+            class="btn btn-primary"
+            href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister"
+            >sign up <i class="fas fa-user-plus"></i></a
+        ></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid" style="font-size: 2em">
+      <div class="row">
+        <div class="col-xs-6" style="font-size: 0.75em; min-width: 40%;padding-left: 2%;">
+          <div>
+            <strong>Read Narrative Introductions</strong>
+          </div>
+          <ul class="list-unstyled" style="font-size: 0.8em">
+            <li>
+              <a href="pdfs/CCDA_Volume_One.pdf"
+                ><i class="fas fa-file-pdf"></i>&nbsp;C-CDA 2.1 Introduction
+                (Volume 1) Sept 2022 Errata</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-6" style="font-size: 0.75em;padding-left: 2%;">
+          <div>
+            <strong>&nbsp;</strong>
+          </div>
+          <ul class="list-unstyled" style="font-size: 0.8em">
+            <li>
+              <a href="pdfs/Companion_Guide.pdf"
+                ><i class="fas fa-file-pdf"></i>&nbsp;C-CDA 2.1 Companion Guide
+                R4.1 June 2023 Publication</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <div style="font-size: 0.8em" id="backup-table">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Template OID</th>
+              <th>Page</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.15.html">Care Plan </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.15</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.15.pdf"
+                  ><i class="fas fa-file-pdf"></i> 87-101</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.4.html">Consultation Note </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.4</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.4.pdf"
+                  ><i class="fas fa-file-pdf"></i> 101-117</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.1.2.html"
+                  >Continuity of Care Document (CCD)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.1.2</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.2.pdf"
+                  ><i class="fas fa-file-pdf"></i> 117-127</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.5.html">Diagnostic Imaging Report </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.5</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.5.pdf"
+                  ><i class="fas fa-file-pdf"></i> 127-139</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.8.html">Discharge Summary </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.8</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.8.pdf"
+                  ><i class="fas fa-file-pdf"></i> 139-153</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.3.html">History and Physical </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.3</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.3.pdf"
+                  ><i class="fas fa-file-pdf"></i> 153-164</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.7.html">Operative Note </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.7</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.7.pdf"
+                  ><i class="fas fa-file-pdf"></i> 164-176</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.6.html">Procedure Note </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.6</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.6.pdf"
+                  ><i class="fas fa-file-pdf"></i> 176-192</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.9.html">Progress Note </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.9</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.9.pdf"
+                  ><i class="fas fa-file-pdf"></i> 192-202</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.14.html">Referral Note </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.14</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.14.pdf"
+                  ><i class="fas fa-file-pdf"></i> 202-215</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.13.html">Transfer Summary </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.13</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.13.pdf"
+                  ><i class="fas fa-file-pdf"></i> 215-229</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.1.10.html">Unstructured Document </a></td>
+              <td>2.16.840.1.113883.10.20.22.1.10</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.10.pdf"
+                  ><i class="fas fa-file-pdf"></i> 229-233</a
+                >
+              </td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.1.1.html"
+                  >US Realm Header (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.1.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.1.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_10-61</a
+                >
+              </td>
+              <td>Document Header</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.29.1.html"
+                  >US Realm Header for Patient Generated Document (Companion
+                  Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.29.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.29.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 233-255</a
+                >
+              </td>
+              <td>Document Header</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.43.html">Admission Diagnosis Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.43</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.43.pdf"
+                  ><i class="fas fa-file-pdf"></i> 255-257</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.44.html"
+                  >Admission Medications Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.44</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.44.pdf"
+                  ><i class="fas fa-file-pdf"></i> 257-258</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.21.html"
+                  >Advance Directives Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.21</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.21.pdf"
+                  ><i class="fas fa-file-pdf"></i> 258-260</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.21.1.html"
+                  >Advance Directives Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.21.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.21.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 260-263</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.6.html"
+                  >Allergies and Intolerances Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.6</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.6.pdf"
+                  ><i class="fas fa-file-pdf"></i> 263-264</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.6.1.html"
+                  >Allergies and Intolerances Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.6.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.6.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 264-266</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.25.html">Anesthesia Section </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.25</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.25.pdf"
+                  ><i class="fas fa-file-pdf"></i> 266-269</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.9.html">Assessment and Plan Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.9</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.9.pdf"
+                  ><i class="fas fa-file-pdf"></i> 269-270</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.8.html">Assessment Section </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.8</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.8.pdf"
+                  ><i class="fas fa-file-pdf"></i> 270-272</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.500.html"
+                  >Care Teams Section (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.500</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.500.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_61-63</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.13.html"
+                  >Chief Complaint and Reason for Visit Section
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.13</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.13.pdf"
+                  ><i class="fas fa-file-pdf"></i> 272-273</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1.html">Chief Complaint Section</a></td>
+              <td>1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1</td>
+              <td>
+                <a href="pdfs/1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 273-274</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.37.html">Complications Section </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.37</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.37.pdf"
+                  ><i class="fas fa-file-pdf"></i> 274-276</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.64.html">Course of Care Section</a></td>
+              <td>2.16.840.1.113883.10.20.22.2.64</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.64.pdf"
+                  ><i class="fas fa-file-pdf"></i> 276-278</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.6.1.1.html"
+                  >DICOM Object Catalog Section - DCM 121181
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.6.1.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.1.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 278-281</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.24.html">Discharge Diagnosis Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.24</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.24.pdf"
+                  ><i class="fas fa-file-pdf"></i> 281-283</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/1.3.6.1.4.1.19376.1.5.3.1.3.33.html"
+                  >Discharge Diet Section (DEPRECATED)
+                </a>
+              </td>
+              <td>1.3.6.1.4.1.19376.1.5.3.1.3.33</td>
+              <td>
+                <a href="pdfs/1.3.6.1.4.1.19376.1.5.3.1.3.33.pdf"
+                  ><i class="fas fa-file-pdf"></i> 283-284</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.11.html"
+                  >Discharge Medications Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.11</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.11.pdf"
+                  ><i class="fas fa-file-pdf"></i> 284-286</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.11.1.html"
+                  >Discharge Medications Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.11.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.11.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 286-289</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.22.html"
+                  >Encounters Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.22</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.22.pdf"
+                  ><i class="fas fa-file-pdf"></i> 289-290</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.22.1.html"
+                  >Encounters Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.22.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.22.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 290-292</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.15.html">Family History Section </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.15</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.15.pdf"
+                  ><i class="fas fa-file-pdf"></i> 292-294</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.6.2.3.html">Fetus Subject Context</a></td>
+              <td>2.16.840.1.113883.10.20.6.2.3</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.3.pdf"
+                  ><i class="fas fa-file-pdf"></i> 294-296</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.6.1.2.html">Findings Section (DIR)</a></td>
+              <td>2.16.840.1.113883.10.20.6.1.2</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.1.2.pdf"
+                  ><i class="fas fa-file-pdf"></i> 296-297</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.14.html">Functional Status Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.14</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.14.pdf"
+                  ><i class="fas fa-file-pdf"></i> 297-302</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.2.5.html">General Status Section</a></td>
+              <td>2.16.840.1.113883.10.20.2.5</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.2.5.pdf"
+                  ><i class="fas fa-file-pdf"></i> 302-303</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.60.html">Goals Section</a></td>
+              <td>2.16.840.1.113883.10.20.22.2.60</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.60.pdf"
+                  ><i class="fas fa-file-pdf"></i> 303-305</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.58.html">Health Concerns Section </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.58</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.58.pdf"
+                  ><i class="fas fa-file-pdf"></i> 305-308</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.61.html"
+                  >Health Status Evaluations and Outcomes Section</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.61</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.61.pdf"
+                  ><i class="fas fa-file-pdf"></i> 308-310</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/1.3.6.1.4.1.19376.1.5.3.1.3.4.html"
+                  >History of Present Illness Section</a
+                >
+              </td>
+              <td>1.3.6.1.4.1.19376.1.5.3.1.3.4</td>
+              <td>
+                <a href="pdfs/1.3.6.1.4.1.19376.1.5.3.1.3.4.pdf"
+                  ><i class="fas fa-file-pdf"></i> 310-312</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.42.html">Hospital Consultations Section</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.42</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.42.pdf"
+                  ><i class="fas fa-file-pdf"></i> 312-314</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/1.3.6.1.4.1.19376.1.5.3.1.3.5.html">Hospital Course Section </a></td>
+              <td>1.3.6.1.4.1.19376.1.5.3.1.3.5</td>
+              <td>
+                <a href="pdfs/1.3.6.1.4.1.19376.1.5.3.1.3.5.pdf"
+                  ><i class="fas fa-file-pdf"></i> 314-315</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.41.html"
+                  >Hospital Discharge Instructions Section
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.41</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.41.pdf"
+                  ><i class="fas fa-file-pdf"></i> 315-316</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/1.3.6.1.4.1.19376.1.5.3.1.3.26.html"
+                  >Hospital Discharge Physical Section
+                </a>
+              </td>
+              <td>1.3.6.1.4.1.19376.1.5.3.1.3.26</td>
+              <td>
+                <a href="pdfs/1.3.6.1.4.1.19376.1.5.3.1.3.26.pdf"
+                  ><i class="fas fa-file-pdf"></i> 316-318</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.16.html"
+                  >Hospital Discharge Studies Summary Section</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.16</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.16.pdf"
+                  ><i class="fas fa-file-pdf"></i> 318-320</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.2.html"
+                  >Immunizations Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.2</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.2.pdf"
+                  ><i class="fas fa-file-pdf"></i> 320-321</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.2.1.html"
+                  >Immunizations Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.2.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.2.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 321-325</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.33.html">Implants Section (DEPRECATED) </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.33</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.33.pdf"
+                  ><i class="fas fa-file-pdf"></i> 325-326</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.45.html">Instructions Section </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.45</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.45.pdf"
+                  ><i class="fas fa-file-pdf"></i> 326-328</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.21.2.3.html">Interventions Section </a></td>
+              <td>2.16.840.1.113883.10.20.21.2.3</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.21.2.3.pdf"
+                  ><i class="fas fa-file-pdf"></i> 328-330</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.39.html"
+                  >Medical (General) History Section
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.39</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.39.pdf"
+                  ><i class="fas fa-file-pdf"></i> 330-331</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.23.html">Medical Equipment Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.23</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.23.pdf"
+                  ><i class="fas fa-file-pdf"></i> 331-334</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.38.html"
+                  >Medications Administered Section
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.38</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.38.pdf"
+                  ><i class="fas fa-file-pdf"></i> 334-337</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.1.html"
+                  >Medications Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 337-338</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.1.1.html"
+                  >Medications Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.1.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.1.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 338-340</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.56.html">Mental Status Section </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.56</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.56.pdf"
+                  ><i class="fas fa-file-pdf"></i> 340-345</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.65.html">Notes Section (Companion Guide)</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.65</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.65.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_63-68</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.57.html">Nutrition Section</a></td>
+              <td>2.16.840.1.113883.10.20.22.2.57</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.57.pdf"
+                  ><i class="fas fa-file-pdf"></i> 345-347</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.21.2.1.html">Objective Section</a></td>
+              <td>2.16.840.1.113883.10.20.21.2.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.21.2.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 347-348</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.6.2.4.html">Observer Context </a></td>
+              <td>2.16.840.1.113883.10.20.6.2.4</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.4.pdf"
+                  ><i class="fas fa-file-pdf"></i> 348-349</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.7.12.html">Operative Note Fluids Section</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.7.12</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.7.12.pdf"
+                  ><i class="fas fa-file-pdf"></i> 349-350</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.7.14.html"
+                  >Operative Note Surgical Procedure Section</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.7.14</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.7.14.pdf"
+                  ><i class="fas fa-file-pdf"></i> 350-352</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.20.html">Past Medical History </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.20</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.20.pdf"
+                  ><i class="fas fa-file-pdf"></i> 352-353</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.18.html">Payers Section </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.18</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.18.pdf"
+                  ><i class="fas fa-file-pdf"></i> 353-356</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.2.10.html">Physical Exam Section </a></td>
+              <td>2.16.840.1.113883.10.20.2.10</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.2.10.pdf"
+                  ><i class="fas fa-file-pdf"></i> 356-360</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.10.html">Plan of Treatment Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.10</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.10.pdf"
+                  ><i class="fas fa-file-pdf"></i> 360-365</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.30.html">Planned Procedure Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.30</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.30.pdf"
+                  ><i class="fas fa-file-pdf"></i> 365-367</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.35.html">Postoperative Diagnosis Section</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.35</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.35.pdf"
+                  ><i class="fas fa-file-pdf"></i> 367-368</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.36.html">Postprocedure Diagnosis Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.36</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.36.pdf"
+                  ><i class="fas fa-file-pdf"></i> 368-370</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.34.html">Preoperative Diagnosis Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.34</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.34.pdf"
+                  ><i class="fas fa-file-pdf"></i> 370-372</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.5.html"
+                  >Problem Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.5</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.5.pdf"
+                  ><i class="fas fa-file-pdf"></i> 372-374</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.5.1.html"
+                  >Problem Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.5.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.5.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 374-378</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.27.html">Procedure Description Section</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.27</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.27.pdf"
+                  ><i class="fas fa-file-pdf"></i> 378-380</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.18.2.12.html">Procedure Disposition Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.18.2.12</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.18.2.12.pdf"
+                  ><i class="fas fa-file-pdf"></i> 380-381</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.18.2.9.html"
+                  >Procedure Estimated Blood Loss Section</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.18.2.9</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.18.2.9.pdf"
+                  ><i class="fas fa-file-pdf"></i> 381-382</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.28.html">Procedure Findings Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.28</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.28.pdf"
+                  ><i class="fas fa-file-pdf"></i> 382-384</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.40.html">Procedure Implants Section</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.40</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.40.pdf"
+                  ><i class="fas fa-file-pdf"></i> 384-385</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.29.html">Procedure Indications Section </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.29</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.29.pdf"
+                  ><i class="fas fa-file-pdf"></i> 385-387</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.31.html"
+                  >Procedure Specimens Taken Section</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.31</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.31.pdf"
+                  ><i class="fas fa-file-pdf"></i> 387-388</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.7.html"
+                  >Procedures Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.7</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.7.pdf"
+                  ><i class="fas fa-file-pdf"></i> 388-390</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.7.1.html"
+                  >Procedures Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.7.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.7.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 390-393</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/1.3.6.1.4.1.19376.1.5.3.1.3.1.html">Reason for Referral Section </a>
+              </td>
+              <td>1.3.6.1.4.1.19376.1.5.3.1.3.1</td>
+              <td>
+                <a href="pdfs/1.3.6.1.4.1.19376.1.5.3.1.3.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 393-395</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.12.html">Reason for Visit Section</a></td>
+              <td>2.16.840.1.113883.10.20.22.2.12</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.12.pdf"
+                  ><i class="fas fa-file-pdf"></i> 395-397</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.3.html"
+                  >Results Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.3</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.3.pdf"
+                  ><i class="fas fa-file-pdf"></i> 397-399</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.3.1.html"
+                  >Results Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.3.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.3.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 399-401</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/1.3.6.1.4.1.19376.1.5.3.1.3.18.html">Review of Systems Section</a></td>
+              <td>1.3.6.1.4.1.19376.1.5.3.1.3.18</td>
+              <td>
+                <a href="pdfs/1.3.6.1.4.1.19376.1.5.3.1.3.18.pdf"
+                  ><i class="fas fa-file-pdf"></i> 401-403</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.2.17.html">Social History Section </a></td>
+              <td>2.16.840.1.113883.10.20.22.2.17</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.17.pdf"
+                  ><i class="fas fa-file-pdf"></i> 403-407</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.21.2.2.html">Subjective Section</a></td>
+              <td>2.16.840.1.113883.10.20.21.2.2</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.21.2.2.pdf"
+                  ><i class="fas fa-file-pdf"></i> 407-408</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.26.html"
+                  >Surgery Description Section (DEPRECATED)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.26</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.26.pdf"
+                  ><i class="fas fa-file-pdf"></i> 408-409</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.7.13.html">Surgical Drains Section</a></td>
+              <td>2.16.840.1.113883.10.20.7.13</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.7.13.pdf"
+                  ><i class="fas fa-file-pdf"></i> 409-411</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.4.html"
+                  >Vital Signs Section (entries optional)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.4</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.4.pdf"
+                  ><i class="fas fa-file-pdf"></i> 411-412</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.2.4.1.html"
+                  >Vital Signs Section (entries required)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.2.4.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.2.4.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 412-415</a
+                >
+              </td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.36.html">Admission Medication </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.36</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.36.pdf"
+                  ><i class="fas fa-file-pdf"></i> 415-417</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.48.html">Advance Directive Observation </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.48</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.48.pdf"
+                  ><i class="fas fa-file-pdf"></i> 417-426</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.108.html">Advance Directive Organizer </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.108</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.108.pdf"
+                  ><i class="fas fa-file-pdf"></i> 426-430</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.31.html">Age Observation</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.31</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.31.pdf"
+                  ><i class="fas fa-file-pdf"></i> 430-432</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.7.html"
+                  >Allergy - Intolerance Observation
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.7</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.7.pdf"
+                  ><i class="fas fa-file-pdf"></i> 862-868</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.30.html">Allergy Concern Act </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.30</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.30.pdf"
+                  ><i class="fas fa-file-pdf"></i> 432-436</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.28.html">Allergy Status Observation </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.28</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.28.pdf"
+                  ><i class="fas fa-file-pdf"></i> 436-438</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.69.html"
+                  >Assessment Scale Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.69</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.69.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_68-73</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.86.html"
+                  >Assessment Scale Supporting Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.86</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.86.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_73-74</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.1.19.html">Authorization Activity</a></td>
+              <td>2.16.840.1.113883.10.20.1.19</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.1.19.pdf"
+                  ><i class="fas fa-file-pdf"></i> 443-444</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.504.html"
+                  >Basic Industry Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.504</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.504.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_222-224</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.503.html"
+                  >Basic Occupation Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.503</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.503.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_224-228</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.200.html"
+                  >Birth Sex Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.200</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.200.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_74-77</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.6.2.11.html">Boundary Observation </a></td>
+              <td>2.16.840.1.113883.10.20.6.2.11</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.11.pdf"
+                  ><i class="fas fa-file-pdf"></i> 444-445</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.301.html"
+                  >Brand Name Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.301</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.301.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_17-18</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.500.1.html"
+                  >Care Team Member Act (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.500.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.500.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_77-85</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.500.3.html"
+                  >Care Team Member Schedule Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.500.3</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.500.3.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_85-87</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.500.html"
+                  >Care Team Organizer (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.500</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.500.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_87-97</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.500.2.html"
+                  >Care Team Type Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.500.2</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.500.2.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_94-97</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.72.html">Caregiver Characteristics </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.72</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.72.pdf"
+                  ><i class="fas fa-file-pdf"></i> 445-447</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.302.html"
+                  >Catalog Number Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.302</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.302.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_18-20</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.109.html"
+                  >Characteristics of Home Environment</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.109</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.109.pdf"
+                  ><i class="fas fa-file-pdf"></i> 447-450</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.6.2.13.html">Code Observations </a></td>
+              <td>2.16.840.1.113883.10.20.6.2.13</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.13.pdf"
+                  ><i class="fas fa-file-pdf"></i> 450-452</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.73.html"
+                  >Cognitive Status Problem Observation (DEPRECATED)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.73</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.73.pdf"
+                  ><i class="fas fa-file-pdf"></i> 452-455</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.64.html">Comment Activity</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.64</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.64.pdf"
+                  ><i class="fas fa-file-pdf"></i> 455-457</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.303.html"
+                  >Company Name Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.303</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.303.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_20-22</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.60.html"
+                  >Coverage Activity (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.60</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.60.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_97-100</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.145.html">Criticality Observation</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.145</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.145.pdf"
+                  ><i class="fas fa-file-pdf"></i> 460-462</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.111.html"
+                  >Cultural and Religious Observation
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.111</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.111.pdf"
+                  ><i class="fas fa-file-pdf"></i> 462-463</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.502.html"
+                  >Date of Diagnosis Act (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.502</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.502.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_100-102</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.79.html">Deceased Observation </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.79</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.79.pdf"
+                  ><i class="fas fa-file-pdf"></i> 463-467</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.304.html"
+                  >Device Identifier Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.304</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.304.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_22-24</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.505.html"
+                  >Disability Status Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.505</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.505.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_102-107</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.35.html">Discharge Medication </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.35</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.35.pdf"
+                  ><i class="fas fa-file-pdf"></i> 467-470</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.308.html"
+                  >Distinct Identification Code Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.308</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.308.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_25-26</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.123.html">Drug Monitoring Act</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.123</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.123.pdf"
+                  ><i class="fas fa-file-pdf"></i> 470-474</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.24.html">Drug Vehicle </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.24</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.24.pdf"
+                  ><i class="fas fa-file-pdf"></i> 474-475</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.49.html">Encounter Activity </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.49</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.49.pdf"
+                  ><i class="fas fa-file-pdf"></i> 475-487</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.80.html">Encounter Diagnosis </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.80</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.80.pdf"
+                  ><i class="fas fa-file-pdf"></i> 487-489</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.122.html">Entry Reference </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.122</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.122.pdf"
+                  ><i class="fas fa-file-pdf"></i> 489-494</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.15.3.1.html">Estimated Date of Delivery </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.15.3.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.15.3.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 494-495</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.309.html"
+                  >Expiration Date Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.309</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.309.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_26-28</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.115.html">External Document Reference </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.115</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.115.pdf"
+                  ><i class="fas fa-file-pdf"></i> 495-497</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.47.html"
+                  >Family History Death Observation
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.47</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.47.pdf"
+                  ><i class="fas fa-file-pdf"></i> 497-499</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.46.html">Family History Observation </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.46</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.46.pdf"
+                  ><i class="fas fa-file-pdf"></i> 499-504</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.45.html">Family History Organizer </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.45</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.45.pdf"
+                  ><i class="fas fa-file-pdf"></i> 504-508</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.67.html">Functional Status Observation </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.67</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.67.pdf"
+                  ><i class="fas fa-file-pdf"></i> 508-511</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.66.html">Functional Status Organizer </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.66</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.66.pdf"
+                  ><i class="fas fa-file-pdf"></i> 511-515</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.68.html"
+                  >Functional Status Problem Observation (DEPRECATED)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.68</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.68.pdf"
+                  ><i class="fas fa-file-pdf"></i> 515-518</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.34.3.45.html"
+                  >Gender Identity Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.34.3.45</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.34.3.45.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_228-232</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.121.html"
+                  >Goal Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.121</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.121.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_107-115</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.141.html"
+                  >Handoff Communication Participants
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.141</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.141.pdf"
+                  ><i class="fas fa-file-pdf"></i> 524-528</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.132.html"
+                  >Health Concern Act (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.132</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.132.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_115-133</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.5.html">Health Status Observation </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.5</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.5.pdf"
+                  ><i class="fas fa-file-pdf"></i> 544-547</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.77.html">Highest Pressure Ulcer Stage</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.77</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.77.pdf"
+                  ><i class="fas fa-file-pdf"></i> 547-548</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.34.html">Hospital Admission Diagnosis </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.34</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.34.pdf"
+                  ><i class="fas fa-file-pdf"></i> 548-550</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.33.html">Hospital Discharge Diagnosis </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.33</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.33.pdf"
+                  ><i class="fas fa-file-pdf"></i> 550-553</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.52.html">Immunization Activity </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.52</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.52.pdf"
+                  ><i class="fas fa-file-pdf"></i> 553-567</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.54.html"
+                  >Immunization Medication Information
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.54</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.54.pdf"
+                  ><i class="fas fa-file-pdf"></i> 567-573</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.53.html">Immunization Refusal Reason </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.53</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.53.pdf"
+                  ><i class="fas fa-file-pdf"></i> 573-575</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.305.html"
+                  >Implantable Device Status Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.305</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.305.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_28-30</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/156.html"
+                  >Indication (Companion Guide) (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.19</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.19.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_133-138</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/157.html">Instruction </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.20</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.20.pdf"
+                  ><i class="fas fa-file-pdf"></i> 578-581</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.131.html">Intervention Act </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.131</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.131.pdf"
+                  ><i class="fas fa-file-pdf"></i> 581-590</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.314.html"
+                  >Latex Safety Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.314</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.314.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_31-33</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.114.html"
+                  >Longitudinal Care Wound Observation
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.114</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.114.pdf"
+                  ><i class="fas fa-file-pdf"></i> 750-756</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.315.html"
+                  >Lot or Batch Number Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.315</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.315.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_33-35</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.316.html"
+                  >Manufacturing Date Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.316</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.316.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_35-37</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.135.html">Medical Equipment Organizer</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.135</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.135.pdf"
+                  ><i class="fas fa-file-pdf"></i> 590-594</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.16.html">Medication Activity </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.16</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.16.pdf"
+                  ><i class="fas fa-file-pdf"></i> 594-604</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.18.html"
+                  >Medication Dispense (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.18</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.18.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_138-144</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.147.html">Medication Free Text Sig </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.147</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.147.pdf"
+                  ><i class="fas fa-file-pdf"></i> 607-609</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.23.html">Medication Information </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.23</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.23.pdf"
+                  ><i class="fas fa-file-pdf"></i> 609-617</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.17.html">Medication Supply Order </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.17</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.17.pdf"
+                  ><i class="fas fa-file-pdf"></i> 617-620</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.74.html">Mental Status Observation </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.74</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.74.pdf"
+                  ><i class="fas fa-file-pdf"></i> 620-625</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.75.html">Mental Status Organizer </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.75</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.75.pdf"
+                  ><i class="fas fa-file-pdf"></i> 625-628</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.317.html"
+                  >Model Number Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.317</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.317.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_37-39</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.318.html"
+                  >MRI Safety Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.318</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.318.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_39-41</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.50.html">Non-Medicinal Supply Activity </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.50</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.50.pdf"
+                  ><i class="fas fa-file-pdf"></i> 628-631</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.202.html">Note Activity (Companion Guide)</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.202</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.202.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_144-153</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.76.html"
+                  >Number of Pressure Ulcers Observation
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.76</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.76.pdf"
+                  ><i class="fas fa-file-pdf"></i> 631-635</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.138.html">Nutrition Assessment</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.138</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.138.pdf"
+                  ><i class="fas fa-file-pdf"></i> 635-638</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.130.html">Nutrition Recommendation</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.130</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.130.pdf"
+                  ><i class="fas fa-file-pdf"></i> 638-643</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.124.html">Nutritional Status Observation</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.124</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.124.pdf"
+                  ><i class="fas fa-file-pdf"></i> 643-647</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.144.html">Outcome Observation</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.144</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.144.pdf"
+                  ><i class="fas fa-file-pdf"></i> 647-651</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.140.html">Patient Referral Act </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.140</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.140.pdf"
+                  ><i class="fas fa-file-pdf"></i> 651-660</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.39.html">Planned Act </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.39</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.39.pdf"
+                  ><i class="fas fa-file-pdf"></i> 660-663</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.129.html">Planned Coverage</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.129</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.129.pdf"
+                  ><i class="fas fa-file-pdf"></i> 663-667</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.40.html">Planned Encounter </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.40</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.40.pdf"
+                  ><i class="fas fa-file-pdf"></i> 667-671</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.120.html">Planned Immunization Activity </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.120</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.120.pdf"
+                  ><i class="fas fa-file-pdf"></i> 671-677</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.146.html">Planned Intervention Act </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.146</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.146.pdf"
+                  ><i class="fas fa-file-pdf"></i> 677-686</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.42.html">Planned Medication Activity </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.42</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.42.pdf"
+                  ><i class="fas fa-file-pdf"></i> 686-692</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.44.html">Planned Observation </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.44</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.44.pdf"
+                  ><i class="fas fa-file-pdf"></i> 692-697</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.41.html"
+                  >Planned Procedure (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.41</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.41.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_153-161</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.43.html">Planned Supply </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.43</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.43.pdf"
+                  ><i class="fas fa-file-pdf"></i> 703-709</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.61.html"
+                  >Policy Activity (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.61</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.61.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_161-175</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.51.html">Postprocedure Diagnosis </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.51</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.51.pdf"
+                  ><i class="fas fa-file-pdf"></i> 721-723</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.25.html"
+                  >Precondition for Substance Administration
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.25</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.25.pdf"
+                  ><i class="fas fa-file-pdf"></i> 723-725</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.281.html"
+                  >Pregnancy Intention in Next Year (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.281</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.281.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_175-178</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.15.3.8.html">Pregnancy Observation</a></td>
+              <td>2.16.840.1.113883.10.20.15.3.8</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.15.3.8.pdf"
+                  ><i class="fas fa-file-pdf"></i> 725-727</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.65.html">Preoperative Diagnosis </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.65</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.65.pdf"
+                  ><i class="fas fa-file-pdf"></i> 727-729</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.70.html"
+                  >Pressure Ulcer Observation (DEPRECATED)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.70</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.70.pdf"
+                  ><i class="fas fa-file-pdf"></i> 729-735</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.143.html">Priority Preference</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.143</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.143.pdf"
+                  ><i class="fas fa-file-pdf"></i> 735-738</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.3.html">Problem Concern Act </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.3</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.3.pdf"
+                  ><i class="fas fa-file-pdf"></i> 738-743</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.4.html"
+                  >Problem Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.4</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.4.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_188-198</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.6.html">Problem Status </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.6</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.6.pdf"
+                  ><i class="fas fa-file-pdf"></i> 756-758</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.12.html">Procedure Activity Act </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.12</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.12.pdf"
+                  ><i class="fas fa-file-pdf"></i> 758-765</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/202.html">Procedure Activity Observation </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.13</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.13.pdf"
+                  ><i class="fas fa-file-pdf"></i> 765-772</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.14.html">Procedure Activity Procedure </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.14</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.14.pdf"
+                  ><i class="fas fa-file-pdf"></i> 772-779</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.6.2.5.html">Procedure Context</a></td>
+              <td>2.16.840.1.113883.10.20.6.2.5</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.5.pdf"
+                  ><i class="fas fa-file-pdf"></i> 779-781</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.37.html">Product Instance</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.37</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.37.pdf"
+                  ><i class="fas fa-file-pdf"></i> 781-783</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.113.html">Prognosis Observation</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.113</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.113.pdf"
+                  ><i class="fas fa-file-pdf"></i> 783-785</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.110.html"
+                  >Progress Toward Goal Observation
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.110</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.110.pdf"
+                  ><i class="fas fa-file-pdf"></i> 785-787</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.6.2.9.html"
+                  >Purpose of Reference Observation</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.6.2.9</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.9.pdf"
+                  ><i class="fas fa-file-pdf"></i> 787-789</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.6.2.14.html"
+                  >Quantity Measurement Observation
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.6.2.14</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.14.pdf"
+                  ><i class="fas fa-file-pdf"></i> 789-793</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.9.html">Reaction Observation </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.9</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.9.pdf"
+                  ><i class="fas fa-file-pdf"></i> 793-797</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.24.3.88.html">Reason (Companion Guide)</a></td>
+              <td>2.16.840.1.113883.10.20.24.3.88</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.24.3.88.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_198-200</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.6.2.10.html">Referenced Frames Observation</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.6.2.10</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.10.pdf"
+                  ><i class="fas fa-file-pdf"></i> 797-798</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.2.html"
+                  >Result Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.2</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.2.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_200-207</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.1.html"
+                  >Result Organizer (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_207-211</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.136.html"
+                  >Risk Concern Act (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.136</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.136.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_207-211</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.201.html"
+                  >Section Time Range Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.201</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.201.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_211-213</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.128.html"
+                  >Self-Care Activities (ADL and IADL)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.128</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.128.pdf"
+                  ><i class="fas fa-file-pdf"></i> 823-826</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.127.html">Sensory Status</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.127</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.127.pdf"
+                  ><i class="fas fa-file-pdf"></i> 826-831</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.319.html"
+                  >Serial Number Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.319</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.319.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_41-43</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.63.html">Series Act </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.63</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.63.pdf"
+                  ><i class="fas fa-file-pdf"></i> 831-834</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.32.html">Service Delivery Location</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.32</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.32.pdf"
+                  ><i class="fas fa-file-pdf"></i> 834-837</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.8.html">Severity Observation </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.8</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.8.pdf"
+                  ><i class="fas fa-file-pdf"></i> 837-840</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.507.html"
+                  >Sex Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.507</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.507.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_213-216</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.501.html"
+                  >Sexual Orientation Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.501</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.501.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_232-235</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.78.html"
+                  >Smoking Status - Meaningful Use
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.78</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.78.pdf"
+                  ><i class="fas fa-file-pdf"></i> 840-844</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.38.html"
+                  >Social History Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.38</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.38.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_216-222</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.6.2.8.html">SOP Instance Observation</a></td>
+              <td>2.16.840.1.113883.10.20.6.2.8</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.8.pdf"
+                  ><i class="fas fa-file-pdf"></i> 848-851</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.6.2.6.html">Study Act</a></td>
+              <td>2.16.840.1.113883.10.20.6.2.6</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.6.pdf"
+                  ><i class="fas fa-file-pdf"></i> 851-853</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.118.html">Substance Administered Act</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.118</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.118.pdf"
+                  ><i class="fas fa-file-pdf"></i> 853-855</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.24.3.90.html"
+                  >Substance or Device Allergy - Intolerance Observation
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.24.3.90</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.24.3.90.pdf"
+                  ><i class="fas fa-file-pdf"></i> 855-862</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.6.2.12.html">Text Observation</a></td>
+              <td>2.16.840.1.113883.10.20.6.2.12</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.12.pdf"
+                  ><i class="fas fa-file-pdf"></i> 868-871</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.85.html">Tobacco Use </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.85</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.85.pdf"
+                  ><i class="fas fa-file-pdf"></i> 871-875</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.506.html"
+                  >Tribal Affiliation Observation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.506</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.506.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_235-239</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.311.html">UDI Organizer (Companion Guide)</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.311</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.311.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_B_6-16</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.27.html">Vital Sign Observation </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.27</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.27.pdf"
+                  ><i class="fas fa-file-pdf"></i> 875-879</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.26.html">Vital Signs Organizer </a></td>
+              <td>2.16.840.1.113883.10.20.22.4.26</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.26.pdf"
+                  ><i class="fas fa-file-pdf"></i> 879-883</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.134.html">Wound Characteristic</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.134</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.134.pdf"
+                  ><i class="fas fa-file-pdf"></i> 883-885</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.4.133.html">Wound Measurement Observation</a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.4.133</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.133.pdf"
+                  ><i class="fas fa-file-pdf"></i> 885-888</a
+                >
+              </td>
+              <td>Entry</td>
+            </tr>
+            <tr>
+              <td><a href="templates/2.16.840.1.113883.10.20.22.4.119.html">Author Participation</a></td>
+              <td>2.16.840.1.113883.10.20.22.4.119</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.4.119.pdf"
+                  ><i class="fas fa-file-pdf"></i> 888-892</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.6.2.2.html"
+                  >Physician of Record Participant
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.6.2.2</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.2.pdf"
+                  ><i class="fas fa-file-pdf"></i> 892-894</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.6.2.1.html"
+                  >Physician Reading Study Performer
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.6.2.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.6.2.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 894-896</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.5.7.html"
+                  >Provenance - Assembler Participation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.5.7</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.5.7.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_239-241</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.5.6.html"
+                  >Provenance - Author Participation (Companion Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.5.6</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.5.6.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_241-246</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.5.8.html"
+                  >Related Person Relationship and Name Participant (Companion
+                  Guide)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.5.8</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.5.8.pdf"
+                  ><i class="fas fa-file-pdf"></i> CG_A_246-249</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.5.2.html"
+                  >US Realm Address (AD.US.FIELDED)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.5.2</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.5.2.pdf"
+                  ><i class="fas fa-file-pdf"></i> 896-900</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.5.3.html"
+                  >US Realm Date and Time (DT.US.FIELDED)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.5.3</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.5.3.pdf"
+                  ><i class="fas fa-file-pdf"></i> 900-900</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.5.4.html"
+                  >US Realm Date and Time (DTM.US.FIELDED)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.5.4</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.5.4.pdf"
+                  ><i class="fas fa-file-pdf"></i> 900-901</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.5.1.html"
+                  >US Realm Patient Name (PTN.US.FIELDED)</a
+                >
+              </td>
+              <td>2.16.840.1.113883.10.20.22.5.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.5.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 901-904</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="templates/2.16.840.1.113883.10.20.22.5.1.1.html"
+                  >US Realm Person Name (PN.US.FIELDED)
+                </a>
+              </td>
+              <td>2.16.840.1.113883.10.20.22.5.1.1</td>
+              <td>
+                <a href="pdfs/2.16.840.1.113883.10.20.22.5.1.1.pdf"
+                  ><i class="fas fa-file-pdf"></i> 904-904</a
+                >
+              </td>
+              <td>Other</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <img
+        class="rounded float-left"
+        style="max-width: 10%"
+        src="img/hl7-logo.png"
+        alt="HL7 Logo"
+      />
+
+      <br />
+      <br />
+      <div style="font-size: 0.5em">
+        To log an issue on C-CDA Standard, go to
+        <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+        To report an issue with this webpage (but not underlying standard)
+        please log in
+        <a href="https://github.com/jddamore/ccda-search/issues"
+          >C-CDA Search Github Repository</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

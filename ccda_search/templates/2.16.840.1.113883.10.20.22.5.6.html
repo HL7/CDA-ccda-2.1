@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      crossorigin="anonymous"
+    />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div
+      class="jumbotron container-fluid"
+      style="padding-bottom: 24px; padding-top: 24px"
+    >
+      <div class="display-3 row">
+        <div class="col-12">
+          <img
+            class="rounded"
+            style="max-width: 20%"
+            src="../img/cda.png"
+            alt="HL7 CDA Logo"
+          />
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"
+              ><a href="../index.html">C-CDA Online</a></strong
+            ><span>: A navigation website for C-CDA 2.1</span>
+            <br />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a
+              href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492"
+              >HL7 C-CDA Page</a
+            >
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a
+            >
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u
+          ><a
+            class="btn btn-primary"
+            href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister"
+            >sign up <i class="fas fa-user-plus"></i></a
+        ></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Provenance - Author Participation (V2)
+        <small class="text-muted"
+          >[author, 2.16.840.1.113883.10.20.22.5.6, release 2019-10-01, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.5.6.pdf"
+            ><i class="fas fa-file-pdf"></i> view pdf</a
+          >
+          <a
+            href="https://hl7.org/cda/us/ccda/StructureDefinition-ProvenanceAuthorParticipation.html"
+            target="_blank"
+            style="color: green"
+          >
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a
+          >
+        </small>
+      </h2>
+      <hr />
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          This template represents the key information to record Provenance in
+          an Author Participation.
+        </p>
+        <p>
+          This Participation is appropriate at any place CDA allows an author.
+          For example, at the CDA Header, CDA Section, CDA Entry, or within a
+          CDA entry (e.g. Organizer and contained Observation(s)).
+        </p>
+        <p>
+          This template is consistent with the C-CDA Author Participation,
+          however, it doesn't use a formal 'conforms to' relationship. All
+          constraints for conformance are defined in this template which
+          specializes the Author Participation
+          (2.16.840.1.113883.10.20.22.4.119).
+        </p>
+        <p>
+          This template is used to identify primary authorship for an entry. An
+          entry may have many authors, but recipients need a single
+          authoritative point of contact for resolving issues. This is typically
+          the last provider to make substantive changes to the entry If two
+          providers are simultaneously involved in that activity, the
+          implementer must choose one, ideally in a repeatable way.
+        </p>
+        <p>
+          The assignedAuthor/id may be set equal to (a pointer to) an id on a
+          participant elsewhere in the document (header or entries) or a new
+          author participant can be described here.
+        </p>
+        <p>
+          Note: The Provenance template title includes a version 2 to support
+          moving from the 'Basic Provenance' guide to the this Companion Guide,
+          so the templateId has not changed.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">none</td>
+            <td id="Contains">none</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i
+        >HL7 Code Systems are available
+        <a
+          href="https://terminology.hl7.org/codesystems-cda.html"
+          target="_blank"
+          >here</a
+        >. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank"
+          >here</a
+        >. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i
+      >
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b
+          ><b> (CONF:4440-6)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b
+                >"2.16.840.1.113883.10.20.22.5.6"</b
+              ><b> (CONF:4440-15)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b
+                >"2019-10-01"</b
+              ><b> (CONF:4440-36)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>time</b
+          ><b> (CONF:4440-7)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>assignedAuthor</b
+          ><b> (CONF:4440-1)</b>.
+          <ul>
+            <li>
+              This assignedAuthor <b>SHALL</b> contain at least one [1..*]
+              <b>id</b><b> (CONF:4440-2)</b>.
+              <ul>
+                <li>
+                  If the assignedAuthor/id is not referencing a Provenance
+                  Author described elsewhere in the document with a
+                  representedOrganization populated, this assignedAuthor SHALL
+                  contain exactly one [1..1] representedOrganization
+                  (CONF:4440-64).
+                </li>
+              </ul>
+            </li>
+            <li>
+              This assignedAuthor <b>SHALL</b> contain exactly one [1..1]
+              <b>id</b><b> (CONF:4440-20)</b> such that it
+              <ul>
+                <li>
+                  If id with <b>@root</b>="2.16.840.1.113883.4.6" National
+                  Provider Identifier is unknown then <br /><b>MAY</b> contain
+                  zero or one [0..1] <b>@nullFlavor</b>=<b>"UNK"</b> Unknown
+                  (CodeSystem:
+                  <b
+                    >HL7NullFlavor
+                    <a
+                      href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-NullFlavor.html"
+                      target="_blank"
+                      ><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.5.1008</a
+                    ></b
+                  >) <b>(CONF:4440-21)</b>.
+                </li>
+                <li>
+                  <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b
+                    >"2.16.840.1.113883.4.6"</b
+                  >
+                  National Provider Identifier <b>(CONF:4440-22)</b>.
+                </li>
+                <li>
+                  <b>SHOULD</b> contain zero or one [0..1] <b>@extension</b>
+                  <b>(CONF:4440-23)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              When the author is a person who is not acting in the role of a
+              clinician, this code encodes the personal or legal relationship
+              between author and the patient.<br />
+              This assignedAuthor <b>SHOULD</b> contain zero or one [0..1]
+              <b>code</b><b> (CONF:4440-33)</b>.
+
+              <ul>
+                <li>
+                  If the content is provider authored, the code SHOULD be
+                  selected from the ValueSet
+                  <b
+                    >Healthcare Provider Taxonomy
+                    <a
+                      href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.114222.4.11.1066/expansion/Latest"
+                      target="_blank"
+                      ><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.114222.4.11.1066</a
+                    ></b
+                  >
+                  <b>DYNAMIC</b> <b>(CONF:4440-56)</b>.
+                </li>
+                <li>
+                  If the author is a person who is not acting in the role of a
+                  clinician, the code SHOULD be selected from the ValueSet
+                  <b
+                    >Personal And Legal Relationship Role Type
+                    <a
+                      href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.12.1/expansion/Latest"
+                      target="_blank"
+                      ><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.11.20.12.1</a
+                    ></b
+                  ><b> DYNAMIC</b> <b>(CONF:4440-57)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              This assignedAuthor <b>SHOULD</b> contain zero or one [0..1]
+              <b>assignedPerson</b><b> (CONF:4440-3)</b>.
+              <ul>
+                <li>
+                  The assignedPerson, if present, <b>SHALL</b> contain at least
+                  one [1..*] <b>name</b><b> (CONF:4440-9)</b>.
+                  <ul>
+                    <li>
+                      Such names <b>SHALL</b> contain exactly one [1..1]
+                      <b>family</b><b> (CONF:4440-17)</b>.
+                    </li>
+                    <li>
+                      Such names <b>SHOULD</b> contain zero or more [0..*]
+                      <b>given</b><b> (CONF:4440-18)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              This assignedAuthor <b>MAY</b> contain zero or one [0..1]
+              <b>assignedAuthoringDevice</b><b> (CONF:4440-32)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              If the assignedAuthor/id is not referencing a Provenance Author
+              described elsewhere in the document with a
+              <b>representedOrganization</b> populated, this assignedAuthor
+              <b>SHALL</b> contain exactly one [1..1]
+              <b>representedOrganization</b> (See - CONF:4440-64). This
+              assignedAuthor <br /><b>MAY</b> contain zero or one [0..1]
+              <b>representedOrganization</b><b> (CONF:4440-4)</b>.
+              <ul>
+                <li>
+                  A nullFlavor of "NA" is allowed If the assignedAuthor is not a
+                  clinician.<br />
+                  This representedOrganization <b>MAY</b> contain zero or one
+                  [0..1] <b>@nullFlavor</b><b> (CONF:4440-35)</b>.
+                </li>
+                <li>
+                  This representedOrganization, if present, <b>SHALL</b> contain
+                  at least one [1..*] <b>id</b><b> (CONF:4440-10)</b>.
+                </li>
+                <li>
+                  This representedOrganization, if present, <b>SHALL</b> contain
+                  exactly one [1..1] <b>id </b><b> (CONF:4440-24)</b> such that
+                  it
+                  <ul>
+                    <li>
+                      If id with @root="2.16.840.1.113883.4.2" Tax ID Number is
+                      unknown then <br /><b>MAY</b> contain zero or one [0..1]
+                      <b>@nullFlavor</b>=<b>"UNK"</b> Unknown (CodeSystem:
+                      <b
+                        >HL7NullFlavor
+                        <a
+                          href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-NullFlavor.html"
+                          target="_blank"
+                          ><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.5.1008</a
+                        ></b
+                      >)<b> (CONF:4440-25)</b>.
+                    </li>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1]
+                      <b>@root</b>="2.16.840.1.113883.4.2" Tax ID
+                      Number<b>(CONF:4440-26)</b>.
+                    </li>
+                    <li>
+                      <b>SHOULD</b> contain zero or one [0..1] <b>@extension</b>
+                      <b>(CONF:4440-27)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This representedOrganization, if present, <b>SHALL</b> contain
+                  exactly one [1..1] <b>id</b><b>(CONF:4440-28)</b> such that it
+                  <ul>
+                    <li>
+                      If id with @root="2.16.840.1.113883.4.6" National Provider
+                      Identifier is unknown then<br />
+                      <b>MAY</b> contain zero or one [0..1]
+                      <b>@nullFlavor</b>=<b>"UNK"</b>
+                      Unknown (CodeSystem:
+                      <b
+                        >HL7NullFlavor
+                        <a
+                          href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-NullFlavor.html"
+                          target="_blank"
+                          ><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.5.1008</a
+                        ></b
+                      >)<b> (CONF:4440-29)</b>.
+                    </li>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1]
+                      <b>@root</b>="2.16.840.1.113883.4.6" National Provider
+                      Identifier<b> (CONF:4440-30)</b>.
+                    </li>
+                    <li>
+                      <b>SHOULD</b> contain zero or one [0..1] <b>@extension</b>
+                      <b>(CONF:4440-31)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  This representedOrganization <b>SHALL</b> contain exactly one
+                  [1..1] <b>name</b><b> (CONF:4440-11)</b>.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  This representedOrganization <b>SHOULD</b> contain zero or
+                  more [0..*] <b>telecom</b><b> (CONF:4440-12)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br />
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+        <li>
+          <a
+            href="https://hl7.org/cda/us/ccda/Binary-advance-directive-existence-observation-example.html"
+            file="2.16.840.1.113883.10.20.22.5.6.html"
+            >advance-directive-existence-observation-example</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hl7.org/cda/us/ccda/Binary-advance-directives-section-example.html"
+            file="2.16.840.1.113883.10.20.22.5.6.html"
+            >advance-directives-section-example</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hl7.org/cda/us/ccda/Binary-ccd-header-example.html"
+            file="2.16.840.1.113883.10.20.22.5.6.html"
+            >ccd-header-example</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://hl7.org/cda/us/ccda/Binary-provenance-author-participation-example.html"
+            file="2.16.840.1.113883.10.20.22.5.6.html"
+            >provenance-author-participation-example</a
+          >
+        </li>
+      </ul>
+      <br />
+
+      <ul id="cdasearch_examples"></ul>
+      <a href="https://build.fhir.org/ig/HL7/CDA-Examples/"
+        >Additional C-CDA Examples Available here</a
+      >
+
+      <hr />
+      <br />To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      log in
+      contact HL7 Structured Documents Working Group.<br /><br /><img
+        class="rounded float-left"
+        style="max-width: 10%"
+        src="../img/hl7-logo.png"
+        alt="HL7 Logo"
+      />
+    </div>
+  </body>
+</html>

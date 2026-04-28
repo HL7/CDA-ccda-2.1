@@ -1,0 +1,595 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Medication Activity (V2)
+        <small class="text-muted">[substanceAdministration, 2.16.840.1.113883.10.20.22.4.16, release
+          2014-06-09, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.4.16.pdf"><i class="fas fa-file-pdf"></i> view pdf</a><a href="https://hl7.org/cda/us/ccda/StructureDefinition-MedicationActivity.html" target="_blank" style="color: green">
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a></small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          A Medication Activity describes substance administrations that have
+          actually occurred (e.g., pills ingested or injections given) or are
+          intended to occur (e.g., "take 2 tablets twice a day for the next 10
+          days"). Medication activities in "INT" mood are reflections of what a
+          clinician intends a patient to be taking. For example, a clinician may
+          intend that a patient be administered Lisinopril 20 mg PO for blood
+          pressure control. If what was actually administered was Lisinopril 10
+          mg., then the Medication activities in the "EVN" mood would reflect
+          actual use.
+        </p>
+        <p>
+          A moodCode of INT is allowed, but it is recommended that the Planned
+          Medication Activity (V2) template be used for moodCodes other than EVN
+          if the document type contains a section that includes Planned
+          Medication Activity (V2) (for example a Care Plan document with Plan
+          of Treatment, Intervention, or Goal sections).At a minimum, a
+          Medication Activity shall include an effectiveTime indicating the
+          duration of the administration (or single-administration timestamp).
+          Ambulatory medication lists generally provide a summary of use for a
+          given medication over time - a medication activity in event mood with
+          the duration reflecting when the medication started and stopped.
+          Ongoing medications will not have a stop date (or will have a stop
+          date with a suitable NULL value). Ambulatory medication lists will
+          generally also have a frequency (e.g., a medication is being taken
+          twice a day). Inpatient medications generally record each
+          administration as a separate act.
+        </p>
+        <p>
+          The dose (doseQuantity) represents how many of the consumables are to
+          be administered at each administration event. As a result, the dose is
+          always relative to the consumable and the interval of administration.
+          Thus, a patient consuming a single "metoprolol 25mg tablet" per
+          administration will have a doseQuantity of "1", whereas a patient
+          consuming "metoprolol" will have a dose of "25 mg".
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">
+              <a href="2.16.840.1.113883.10.20.22.2.1.1.html">Medications Section (entries required) </a><br><a href="2.16.840.1.113883.10.20.22.2.1.html">Medications Section (entries optional) </a><br><a href="2.16.840.1.113883.10.20.22.4.9.html">Reaction Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.12.html">Procedure Activity Act </a><br><a href="2.16.840.1.113883.10.20.22.4.14.html">Procedure Activity Procedure </a><br><a href="2.16.840.1.113883.10.20.22.4.13.html">Procedure Activity Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.36.html">Admission Medication </a><br><a href="2.16.840.1.113883.10.20.22.2.38.html">Medications Administered Section </a><br><a href="2.16.840.1.113883.10.20.22.2.25.html">Anesthesia Section </a><br><a href="2.16.840.1.113883.10.20.22.4.146.html">Planned Intervention Act </a><br><a href="2.16.840.1.113883.10.20.22.4.131.html">Intervention Act </a><br><a href="2.16.840.1.113883.10.20.22.4.35.html">Discharge Medication </a><br>
+            </td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.4.23.html">Medication Information </a><br><a href="2.16.840.1.113883.10.20.22.4.24.html">Drug Vehicle</a><br><a href="2.16.840.1.113883.10.20.22.4.19.html">Indication </a><br><a href="2.16.840.1.113883.10.20.22.4.20.html">Instruction </a><br><a href="2.16.840.1.113883.10.20.22.4.17.html">Medication Supply Order </a><br><a href="2.16.840.1.113883.10.20.22.4.18.html">Medication Dispense </a><br><a href="2.16.840.1.113883.10.20.22.4.9.html">Reaction Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.123.html">Drug Monitoring Act</a><br><a href="2.16.840.1.113883.10.20.22.4.119.html">Author Participation</a><br><a href="2.16.840.1.113883.10.20.22.4.118.html">Substance Administered Act</a><br><a href="2.16.840.1.113883.10.20.22.4.25.html">Precondition for Substance Administration </a><br><a href="2.16.840.1.113883.10.20.22.4.147.html">Medication Free Text Sig</a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@classCode</b>=<b>"SBADM"</b>
+          (CodeSystem:
+          <b>HL7ActClass
+            <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActClass.html" target="_blank"><i class="fas fa-external-link-alt"></i> 2.16.840.1.113883.5.6</a>&nbsp;</b><b> STATIC</b>)<b> (CONF:1098-7496)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@moodCode</b>, which
+          <b>SHALL</b> be selected from ValueSet
+          <b>MoodCodeEvnInt
+            <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.18/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.11.20.9.18</a></b><b> STATIC</b> 2011-04-03<b> (CONF:1098-7497)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1098-7499)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.16"</b><b> (CONF:1098-10504)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b>"2014-06-09"</b><b> (CONF:1098-32498)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain at least one [1..*] <b>id</b><b> (CONF:1098-7500)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>code</b><b> (CONF:1098-7506)</b>.<br>Note: SubstanceAdministration.code is
+          an optional field. Per HL7 Pharmacy Committee, "this is intended to
+          further specify the nature of the substance administration act. To
+          date the committee has made no use of this attribute". Because the
+          type of substance administration is generally implicit in the
+          routeCode, in the consumable participant, etc., the field is generally
+          not used, and there is no defined value set.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>statusCode</b><b> (CONF:1098-7507)</b>.
+          <ul>
+            <li>
+              This statusCode <b>SHALL</b> contain exactly one [1..1]
+              <b>@code</b>, which <b>SHALL</b> be selected from ValueSet
+              <b>Medication Status
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.11/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113762.1.4.1099.11</a></b><b> DYNAMIC</b><b> (CONF:1098-32360)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            The substance administration effectiveTime field can repeat, in
+            order to represent varying levels of complex dosing. effectiveTime
+            can be used to represent the duration of administration (e.g., "10
+            days"), the frequency of administration (e.g., "every 8 hours"), and
+            more. Here, we require that there <b>SHALL</b> be an effectiveTime
+            documentation of the duration (or single-administration timestamp),
+            and that there <b>SHOULD</b> be an effectiveTime documentation of
+            the frequency. Other timing nuances, supported by the base CDA R2
+            standard, may also be included.<br>
+          </p>
+          <b>SHALL</b> contain exactly one [1..1] <b>effectiveTime</b><b> (CONF:1098-7508)</b> such that it<br>Note: This effectiveTime
+          represents either the medication duration (i.e., the time the
+          medication was started and stopped) or the single-administration
+          timestamp.
+          <ul>
+            <li>
+              <b>SHOULD</b> contain zero or one [0..1] <b>@value</b><b> (CONF:1098-32775)</b>.<br>Note: indicates a
+              single-administration timestamp
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHOULD</b> contain zero or one [0..1] <b>low</b><b> (CONF:1098-32776)</b>.<br>Note: indicates when medication
+              started
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>MAY</b> contain zero or one [0..1] <b>high</b><b> (CONF:1098-32777)</b>.<br>Note: indicates when medication
+              stopped
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                This effectiveTime <strong>SHALL</strong> contain either a low
+                or a @value but not both (CONF:1098-32890).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>effectiveTime</b><b> (CONF:1098-7513)</b> such that it<br>Note: This effectiveTime
+          represents the medication frequency (e.g., administration times per
+          day).
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@operator</b>=<b>"A"</b><b> (CONF:1098-9106)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <strong>SHALL</strong> contain exactly one [1..1]
+                @xsi:type="PIVL_TS" or "EIVL_TS" (CONF:1098-28499).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            In "INT" (intent) mood, the repeatNumber defines the number of
+            allowed administrations. For example, a repeatNumber of "3" means
+            that the substance can be administered up to 3 times. In "EVN"
+            (event) mood, the repeatNumber is the number of occurrences. For
+            example, a repeatNumber of "3" in a substance administration event
+            means that the current administration is the 3rd in a series.<br>
+          </p>
+          <b>MAY</b> contain zero or one [0..1] <b>repeatNumber</b><b> (CONF:1098-7555)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>routeCode</b>, which
+          <b>SHALL</b> be selected from ValueSet
+          <b>SPL Drug Route of Administration Terminology
+            <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.88.12.3221.8.7/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.3.88.12.3221.8.7</a></b><b> DYNAMIC</b><b> (CONF:1098-7514)</b>.
+          <ul>
+            <li>
+              The routeCode, if present, <b>SHOULD</b> contain zero or more
+              [0..*] <b>translation</b>, which <b>SHALL</b> be selected from
+              ValueSet
+              <b>Medication Route
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.12/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113762.1.4.1099.12</a></b><b> DYNAMIC</b><b> (CONF:1098-32950)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>approachSiteCode</b>, where
+          the code <b>SHALL</b> be selected from ValueSet
+          <b>Body Site
+            <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.88.12.3221.8.9/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.3.88.12.3221.8.9</a></b><b> DYNAMIC</b><b> (CONF:1098-7515)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>doseQuantity</b><b> (CONF:1098-7516)</b>.
+          <ul>
+            <li>
+              Note: The base CDA R2.0 standard requires @unit to be drawn from
+              UCUM, and best practice is to use case sensitive UCUM units <br>
+              This doseQuantity <b>SHOULD</b> contain zero or one [0..1]
+              <b>@unit</b>, which <b>SHOULD</b> be selected from ValueSet
+              <b>UnitsOfMeasureCaseSensitive
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.12839/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.1.11.12839</a></b><b> DYNAMIC</b><b> (CONF:1098-7526)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                Pre-coordinated consumable: If the consumable code is a
+                pre-coordinated unit dose (e.g., "metoprolol 25mg tablet") then
+                doseQuantity is a unitless number that indicates the number of
+                products given per administration (e.g., "2", meaning 2 x
+                "metoprolol 25mg tablet" per administration) (CONF:1098-16878).
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                Not pre-coordinated consumable: If the consumable code is not
+                pre-coordinated (e.g., is simply "metoprolol"), then
+                doseQuantity must represent a physical quantity with @unit,
+                e.g., "25" and "mg", specifying the amount of product given per
+                administration (CONF:1098-16879).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>rateQuantity</b><b> (CONF:1098-7517)</b>.
+          <ul>
+            <li>
+              The rateQuantity, if present, <b>SHALL</b> contain exactly one
+              [1..1] <b>@unit</b>, which <b>SHALL</b> be selected from ValueSet
+              <b>UnitsOfMeasureCaseSensitive
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.12839/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.1.11.12839</a></b><b> DYNAMIC</b><b> (CONF:1098-7525)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>maxDoseQuantity</b><b> (CONF:1098-7518)</b>.
+        </li>
+        <li class="list-group-item">
+          <p>
+            administrationUnitCode@code describes the units of medication
+            administration for an item using a code that is pre-coordinated to
+            include a physical unit form (ointment, powder, solution, etc.)
+            which differs from the units used in administering the consumable
+            (capful, spray, drop, etc.). For example when recording medication
+            administrations, 'metric drop (C48491)' would be appropriate to
+            accompany the RxNorm code of 198283 (Timolol 0.25% Ophthalmic
+            Solution) where the number of drops would be specified in
+            doseQuantity@value.<br>
+          </p>
+          <b>MAY</b> contain zero or one [0..1] <b>administrationUnitCode</b>,
+          which <b>SHALL</b> be selected from ValueSet
+          <b>AdministrationUnitDoseForm
+            <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1021.30/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113762.1.4.1021.30</a></b><b> DYNAMIC</b><b> (CONF:1098-7519)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>consumable</b><b> (CONF:1098-7520)</b>.
+          <ul>
+            <li>
+              This consumable <b>SHALL</b> contain exactly one [1..1] Medication
+              Information (V2)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.23)</b><b> (CONF:1098-16085)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>performer</b><b> (CONF:1098-7522)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or more [0..*] Author Participation<b>
+            (identifier: 2.16.840.1.113883.10.20.22.4.119)</b><b> (CONF:1098-31150)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>participant</b><b> (CONF:1098-7523)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"CSM"</b>
+              (CodeSystem:
+              <b>HL7ParticipationType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a>)</b><b> STATIC</b>)<b> (CONF:1098-7524)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Drug Vehicle<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.24)</b><b> (CONF:1098-16086)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>entryRelationship</b><b> (CONF:1098-7536)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"RSON"</b>
+              (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b><b> STATIC</b>)<b> (CONF:1098-7537)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Indication (V2)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.19)</b><b> (CONF:1098-16087)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>entryRelationship</b><b> (CONF:1098-7539)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"SUBJ"</b>
+              (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b><b> STATIC</b>)<b> (CONF:1098-7540)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@inversionInd</b>=<b>"true"</b>
+              True<b> (CONF:1098-7542)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Instruction (V2)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.20)</b><b> (CONF:1098-31387)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>entryRelationship</b><b> (CONF:1098-7543)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"REFR"</b>
+              (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b><b> STATIC</b>)<b> (CONF:1098-7547)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Medication Supply Order
+              (V2)<b> (identifier: 2.16.840.1.113883.10.20.22.4.17)</b><b> (CONF:1098-16089)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>entryRelationship</b><b> (CONF:1098-7549)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"REFR"</b>
+              (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b><b> STATIC</b>)<b> (CONF:1098-7553)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Medication Dispense (V2)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.18)</b><b> (CONF:1098-16090)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>entryRelationship</b><b> (CONF:1098-7552)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"CAUS"</b>
+              (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b><b> STATIC</b>)<b> (CONF:1098-7544)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Reaction Observation
+              (V2)<b> (identifier: 2.16.840.1.113883.10.20.22.4.9)</b><b> (CONF:1098-16091)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>entryRelationship</b><b> (CONF:1098-30820)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"COMP"</b>
+              Has component<b> (CONF:1098-30821)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Drug Monitoring Act<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.123)</b><b> (CONF:1098-30822)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            The following entryRelationship is used to indicate a given
+            medication's order in a series. The nested Substance Administered
+            Act identifies an administration in the series. The
+            entryRelationship/sequenceNumber shows the order of this particular
+            administration in that series.<br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>entryRelationship</b><b> (CONF:1098-31515)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"COMP"</b>
+              Component (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b>)<b> (CONF:1098-31516)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@inversionInd</b>=<b>"true"</b><b> (CONF:1098-31517)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>MAY</b> contain zero or one [0..1] <b>sequenceNumber</b><b> (CONF:1098-31518)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Substance Administered
+              Act<b> (identifier: 2.16.840.1.113883.10.20.22.4.118)</b><b> (CONF:1098-31519)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>entryRelationship</b><b> (CONF:1098-32907)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"COMP"</b>
+              Has component (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b>)<b> (CONF:1098-32908)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Medication Free Text Sig<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.147)</b><b> (CONF:1098-32909)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>precondition</b><b> (CONF:1098-31520)</b>.
+          <ul>
+            <li>
+              The precondition, if present, <b>SHALL</b> contain exactly one
+              [1..1] <b>@typeCode</b>=<b>"PRCN"</b><b> (CONF:1098-31882)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              The precondition, if present, <b>SHALL</b> contain exactly one
+              [1..1] Precondition for Substance Administration (V2)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.25)</b><b> (CONF:1098-31883)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Medication Activity <strong>SHOULD</strong> include doseQuantity
+            <strong>OR</strong> rateQuantity (CONF:1098-30800).
+          </p>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-admission-medication-example.html" file="2.16.840.1.113883.10.20.22.4.16.html">admission-medication-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-anesthesia-section-example.html" file="2.16.840.1.113883.10.20.22.4.16.html">anesthesia-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-discharge-medication-example.html" file="2.16.840.1.113883.10.20.22.4.16.html">discharge-medication-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-discharge-medications-section-example.html" file="2.16.840.1.113883.10.20.22.4.16.html">discharge-medications-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-medication-activity-example.html" file="2.16.840.1.113883.10.20.22.4.16.html">medication-activity-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-medications-administered-section-example.html" file="2.16.840.1.113883.10.20.22.4.16.html">medications-administered-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-medications-section-example.html" file="2.16.840.1.113883.10.20.22.4.16.html">medications-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-no-known-medications-example.html" file="2.16.840.1.113883.10.20.22.4.16.html">no-known-medications-example</a></li>
+</ul>
+      <br>
+
+      <h4 id="cdasearch">CDA Search Examples</h4>
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,1337 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        US Realm Header (V4)
+        <small class="text-muted">[ClinicalDocument, 2.16.840.1.113883.10.20.22.1.1, release
+          2023-05-01, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.1.1.pdf"><i class="fas fa-file-pdf"></i> view pdf</a><a href="https://hl7.org/cda/us/ccda/StructureDefinition-USRealmHeader.html" target="_blank" style="color: green">
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a></small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          This template defines constraints that represent common administrative
+          and demographic concepts for US Realm CDA documents. Further
+          specification, such as ClinicalDocument/code, are provided in document
+          templates that conform to this template.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">none</td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.5.4.html">US Realm Date and Time (DTM.US.FIELDED)</a><br><a href="2.16.840.1.113883.10.20.22.5.2.html">US Realm Address (AD.US.FIELDED)</a><br><a href="2.16.840.1.113883.10.20.22.5.1.html">US Realm Patient Name (PTN.US.FIELDED)</a><br><a href="2.16.840.1.113883.10.20.22.5.1.1.html">US Realm Person Name (PN.US.FIELDED)</a><br><a href="2.16.840.1.113883.10.20.22.5.8.html">Related Person Relationship and Name Participant</a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>realmCode</b>=<b>"US"</b><b> (CONF:1198-16791)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>typeId</b><b> (CONF:1198-5361)</b>.
+          <ul>
+            <li>
+              This typeId <b>SHALL</b> contain exactly one [1..1]
+              <b>@root</b>=<b>"2.16.840.1.113883.1.3"</b><b> (CONF:1198-5250)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              This typeId <b>SHALL</b> contain exactly one [1..1]
+              <b>@extension</b>=<b>"POCD_HD000040"</b><b> (CONF:1198-5251)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1198-5252)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.1.1"</b><b> (CONF:1198-10036)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b>"2023-05-01"</b><b> (CONF:1198-32503)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>id</b><b> (CONF:1198-5363)</b>.
+          <ul>
+            <li>
+              <p>
+                This id <strong>SHALL</strong> be a globally unique identifier
+                for the document <b>(CONF:1198-9991)</b>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>code</b><b> (CONF:1198-5253)</b>.
+          <ul>
+            <li>
+              <p>
+                This code <strong>SHALL</strong> specify the particular kind of
+                document (e.g., History and Physical, Discharge Summary,
+                Progress Note) <b>(CONF:1198-9992)</b>.
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                This code <strong>SHALL</strong> be drawn from the LOINC
+                document type ontology (LOINC codes where SCALE = DOC)
+                <b>(CONF:1198-32948)</b>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>title</b><b> (CONF:1198-5254)</b>.<br>Note: The title can either be a
+          locally defined name or the displayName corresponding to
+          clinicalDocument/code
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] US Realm Date and Time
+          (DTM.US.FIELDED)<b> (identifier: 2.16.840.1.113883.10.20.22.5.4)</b><b> (CONF:1198-5256)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>confidentialityCode</b>,
+          which <b>SHOULD</b> be selected from ValueSet HL7
+          <b>BasicConfidentialityKind
+            <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.16926/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.1.11.16926</a></b><b> DYNAMIC</b><b> (CONF:1198-5259)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>languageCode</b>, which
+          <b>SHALL</b> be selected from ValueSet Language<b>
+            <a href="https://terminology.hl7.org/3.1.0/ValueSet-v3-HumanLanguage.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.1.11.11526</a></b><b> DYNAMIC</b><b> (CONF:1198-5372)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>setId</b><b> (CONF:1198-5261)</b>.
+          <ul>
+            <li>
+              <p>
+                If setId is present versionNumber <strong>SHALL</strong> be
+                present (CONF:1198-6380).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>versionNumber</b><b> (CONF:1198-5264)</b>.
+          <ul>
+            <li>
+              <p>
+                If versionNumber is present setId <strong>SHALL</strong> be
+                present (CONF:1198-6387).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: recordTarget<br>The recordTarget records the
+            administrative and demographic data of the patient whose health
+            information is described by the clinical document; each recordTarget
+            must contain at least one patientRole element<br>
+          </p>
+          <b>SHALL</b> contain at least one [1..*] <b>recordTarget</b><b> (CONF:1198-5266)</b>.
+          <ul>
+            <li>
+              Such recordTargets <b>SHALL</b> contain exactly one [1..1]
+              <b>patientRole</b><b> (CONF:1198-5267)</b>.
+              <ul>
+                <li>
+                  This patientRole <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-5268)</b>.
+                </li>
+                <li>
+                  This patientRole <b>SHALL</b> contain at least one [1..*] US
+                  Realm Address (AD.US.FIELDED)<b>
+                    (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-5271)</b>.
+                </li>
+                <li>
+                  This patientRole <b>SHALL</b> contain at least one [1..*]
+                  <b>telecom</b><b> (CONF:1198-5280)</b>.
+                  <ul>
+                    <li>
+                      Such telecoms <b>SHOULD</b> contain zero or one [0..1]
+                      <b>@use</b>, which <b>SHALL</b> be selected from ValueSet
+                      <b>Telecom Use (US Realm Header)
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.20/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.11.20.9.20</a></b><b> DYNAMIC</b><b> (CONF:1198-5375)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This patientRole <b>SHALL</b> contain exactly one [1..1]
+                  <b>patient</b><b> (CONF:1198-5283)</b>.
+                  <ul>
+                    <li>
+                      This patient <b>SHALL</b> contain at least one [1..*] US
+                      Realm Patient Name (PTN.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.1)</b><b> (CONF:1198-5284)</b>.
+                    </li>
+                    <li>
+                      This patient <b>SHALL</b> contain exactly one [1..1]
+                      <b>administrativeGenderCode</b>, which <b>SHALL</b> be
+                      selected from ValueSet
+                      <b>Administrative Gender (HL7 V3)
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.1/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.1.11.1</a></b><b> DYNAMIC</b><b> (CONF:1198-6394)</b>.
+                    </li>
+                    <li>
+                      This patient <b>SHALL</b> contain exactly one [1..1]
+                      <b>birthTime</b><b> (CONF:1198-5298)</b>.
+                      <ul>
+                        <li>
+                          <strong>SHALL</strong> be precise to year
+                          (CONF:1198-5299).
+                        </li>
+                        <li>
+                          <strong>SHOULD</strong> be precise to day
+                          (CONF:1198-5300).
+                        </li>
+                        <li>
+                          <strong>MAY</strong> be precise to the minute
+                          (CONF:1198-32418).
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      This patient MAY contain zero or one [0..1]
+                      sdtc:deceasedInd (CONF:4537-32990).
+                      <ul>
+                        <li>
+                          If sdtc:deceasedInd="true", then sdtc:deceasedTime
+                          SHALL be present (CONF:4537-32993).
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      This patient MAY contain zero or one [0..1]
+                      sdtc:deceasedTime (CONF:4537-32988).
+                      <ul>
+                        <li>
+                          The sdtc:deceasedTime, if present, SHOULD contain zero
+                          or one [0..1] @value (CONF:4537-32989).
+                          <ul>
+                            <li>
+                              SHALL be precise to to the year (CONF:4537-32991).
+                            </li>
+                            <li>
+                              SHOULD be precise to the day (CONF:4537-32992)
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      This patient <b>SHOULD</b> contain zero or one [0..1]
+                      <b>maritalStatusCode</b>, which <b>SHALL</b> be selected
+                      from ValueSet
+                      <b>Marital Status
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.12212/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.1.11.12212</a></b><b> DYNAMIC</b><b> (CONF:1198-5303)</b>.
+                    </li>
+                    <li>
+                      This patient <b>MAY</b> contain zero or one [0..1]
+                      <b>religiousAffiliationCode</b>, which <b>SHALL</b> be
+                      selected from ValueSet
+                      <b>Religious Affiliation
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.19185/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.1.11.19185</a></b><b> DYNAMIC</b><b> (CONF:1198-5317)</b>.
+                    </li>
+                    <li>
+                      This patient <b>SHALL</b> contain exactly one [1..1]
+                      <b>raceCode</b>, which <b>SHALL</b> be selected from
+                      ValueSet
+                      <b>Race Category Excluding Nulls
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.2074.1.1.3/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.3.2074.1.1.3</a></b><b> DYNAMIC</b><b> (CONF:1198-5322)</b>.
+                    </li>
+                    <li>
+                      This patient <b>MAY</b> contain zero or more [0..*]
+                      <b>sdtc:raceCode</b>, which <b>SHALL</b> be selected from
+                      ValueSet
+                      <b>Race Value Set
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.14914/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.1.11.14914</a></b><b> DYNAMIC</b><b> (CONF:1198-7263)</b>.<br>Note: The
+                      sdtc:raceCode is only used to record additional values
+                      when the patient has indicated multiple races or
+                      additional race detail beyond the five categories required
+                      for Meaningful Use Stage 2. The prefix sdtc: SHALL be
+                      bound to the namespace urn:hl7-org:sdtc. The use of the
+                      namespace provides a necessary extension to CDA R2 for the
+                      use of the additional raceCode elements.
+                      <ul>
+                        <li>
+                          <p>
+                            If sdtc:raceCode is present, then the patient
+                            <strong>SHALL</strong> contain [1..1] raceCode
+                            (CONF:1198-31347).
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      This patient <b>SHALL</b> contain exactly one [1..1]
+                      <b>ethnicGroupCode</b>, which <b>SHALL</b> be selected
+                      from ValueSet
+                      <b>Ethnicity
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.114222.4.11.837/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.114222.4.11.837</a></b><b> DYNAMIC</b><b> (CONF:1198-5323)</b>.
+                    </li>
+                    <li>
+                      This patient <b>MAY</b> contain zero or more [0..*]
+                      <b>sdtc:ethnicGroupCode</b>, which <b>SHALL</b> be
+                      selected from ValueSet
+                      <b>Detailed Ethnicity
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.114222.4.11.877/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.114222.4.11.877</a></b><b> DYNAMIC</b><b> (CONF:1198-32901)</b>.
+                    </li>
+                    <li>
+                      This patient <b>MAY</b> contain zero or more [0..*]
+                      <b>guardian</b><b> (CONF:1198-5325)</b>.
+                      <ul>
+                        <li>
+                          The guardian, if present, <b>SHOULD</b> contain zero
+                          or one [0..1] <b>code</b>, which <b>SHALL</b> be
+                          selected from ValueSet
+                          <b>Personal And Legal Relationship Role Type
+                            <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.12.1/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                              2.16.840.1.113883.11.20.12.1</a></b><b> DYNAMIC</b><b> (CONF:1198-5326)</b>.
+                        </li>
+
+                        <li>
+                          The guardian, if present, <b>SHOULD</b> contain zero
+                          or more [0..*] US Realm Address (AD.US.FIELDED)<b>
+                            (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-5359)</b>.
+                        </li>
+                        <li>
+                          The guardian, if present, <b>SHOULD</b> contain zero
+                          or more [0..*] <b>telecom</b><b> (CONF:1198-5382)</b>.
+                          <ul>
+                            <li>
+                              The telecom, if present, <b>SHOULD</b> contain
+                              zero or one [0..1] <b>@use</b>, which
+                              <b>SHALL</b> be selected from ValueSet
+                              <b>Telecom Use (US Realm Header)
+                                2.16.840.1.113883.11.20.9.20</b><b> DYNAMIC</b><b> (CONF:1198-7993)</b>.
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          The guardian, if present, <b>SHALL</b> contain exactly
+                          one [1..1] <b>guardianPerson</b><b> (CONF:1198-5385)</b>.
+                          <ul>
+                            <li>
+                              This guardianPerson <b>SHALL</b> contain at least
+                              one [1..*] US Realm Person Name (PN.US.FIELDED)<b>
+                                (identifier:
+                                2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:1198-5386)</b>.
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      This patient <b>MAY</b> contain zero or one [0..1]
+                      <b>birthplace</b><b> (CONF:1198-5395)</b>.
+                      <ul>
+                        <li>
+                          The birthplace, if present, <b>SHALL</b> contain
+                          exactly one [1..1] <b>place</b><b> (CONF:1198-5396)</b>.
+                          <ul>
+                            <li>
+                              This place <b>SHALL</b> contain exactly one [1..1]
+                              <b>addr</b><b> (CONF:1198-5397)</b>.
+                              <ul>
+                                <li>
+                                  This addr <b>SHOULD</b> contain zero or one
+                                  [0..1] <b>country</b>, which <b>SHALL</b> be
+                                  selected from ValueSet
+                                  <b>Country 2.16.840.1.113883.3.88.12.80.63</b><b> DYNAMIC</b><b> (CONF:1198-5404)</b>.
+                                </li>
+                                <li>
+                                  If country is US, this addr
+                                  <strong>SHALL</strong> contain exactly one
+                                  [1..1] state, which <strong>SHALL</strong> be
+                                  selected from ValueSet
+                                  <b>StateValueSet
+                                    2.16.840.1.113883.3.88.12.80.1</b>
+                                  <b>DYNAMIC</b> (CONF:1198-5402). <br>
+                                  Note: A nullFlavor of 'UNK' may be used if the
+                                  state is unknown.
+                                </li>
+                                <li>
+                                  If country is US, this addr
+                                  <strong>MAY</strong> contain zero or one
+                                  [0..1] postalCode, which
+                                  <strong>SHALL</strong> be selected from
+                                  ValueSet
+                                  <b>PostalCode 2.16.840.1.113883.3.88.12.80.2
+                                  </b>
+                                  <b>DYNAMIC</b> (CONF:1198-5403).
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      This patient <b>SHOULD</b> contain zero or more [0..*]
+                      <b>languageCommunication</b><b> (CONF:1198-5406)</b>.
+                      <ul>
+                        <li>
+                          The languageCommunication, if present,
+                          <b>SHALL</b> contain exactly one [1..1]
+                          <b>languageCode</b>, which <b>SHALL</b> be selected
+                          from ValueSet
+                          <b>Language
+                            <a href="https://terminology.hl7.org/3.1.0/ValueSet-v3-HumanLanguage.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                              2.16.840.1.113883.1.11.11526</a></b><b> DYNAMIC</b><b> (CONF:1198-5407)</b>.
+                        </li>
+                        <li>
+                          The languageCommunication, if present,
+                          <b>MAY</b> contain zero or one [0..1] <b>modeCode</b>,
+                          which <b>SHALL</b> be selected from ValueSet
+                          <b>LanguageAbilityMode
+                            <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.12249/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                              2.16.840.1.113883.1.11.12249</a></b><b> DYNAMIC</b><b> (CONF:1198-5409)</b>.
+                        </li>
+                        <li>
+                          The languageCommunication, if present,
+                          <b>SHOULD</b> contain zero or one [0..1]
+                          <b>proficiencyLevelCode</b>, which <b>SHALL</b> be
+                          selected from ValueSet
+                          <b>LanguageAbilityProficiency
+                            <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.12199/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                              2.16.840.1.113883.1.11.12199</a></b><b> DYNAMIC</b><b> (CONF:1198-9965)</b>.
+                        </li>
+                        <li>
+                          The languageCommunication, if present,
+                          <b>SHOULD</b> contain zero or one [0..1]
+                          <b>preferenceInd</b><b> (CONF:1198-5414)</b>.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This patientRole <b>MAY</b> contain zero or one [0..1]
+                  <b>providerOrganization</b><b> (CONF:1198-5416)</b>.
+                  <ul>
+                    <li>
+                      The providerOrganization, if present, <b>SHALL</b> contain
+                      at least one [1..*] <b>id</b><b> (CONF:1198-5417)</b>.
+                      <ul>
+                        <li>
+                          Such ids <b>SHOULD</b> contain zero or one [0..1]
+                          <b>@root</b>=<b>"2.16.840.1.113883.4.6"</b> National
+                          Provider Identifier<b> (CONF:1198-16820)</b>.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      The providerOrganization, if present, <b>SHALL</b> contain
+                      at least one [1..*] <b>name</b><b> (CONF:1198-5419)</b>.
+                    </li>
+                    <li>
+                      The providerOrganization, if present, <b>SHALL</b> contain
+                      at least one [1..*] <b>telecom</b><b> (CONF:1198-5420)</b>.
+                      <ul>
+                        <li>
+                          Such telecoms <b>SHOULD</b> contain zero or one [0..1]
+                          <b>@use</b>, which <b>SHALL</b> be selected from
+                          <b>ValueSet Telecom Use (US Realm Header)
+                            2.16.840.1.113883.11.20.9.20</b><b> DYNAMIC</b><b> (CONF:1198-7994)</b>.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      The providerOrganization, if present, <b>SHALL</b> contain
+                      at least one [1..*] US Realm Address (AD.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-5422)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: author<br>The author element represents the creator of
+            the clinical document. The author may be a device or a person.
+            <br>
+          </p>
+          <b>SHALL</b> contain at least one [1..*] <b>author</b><b> (CONF:1198-5444)</b>.
+          <ul>
+            <li>
+              Such authors <b>SHALL</b> contain exactly one [1..1] US Realm Date
+              and Time (DTM.US.FIELDED)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.5.4)</b><b> (CONF:1198-5445)</b>.
+            </li>
+            <li>
+              Such authors <b>SHALL</b> contain exactly one [1..1]
+              <b>assignedAuthor</b><b> (CONF:1198-5448)</b>.
+              <ul>
+                <li>
+                  This assignedAuthor <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-5449)</b>.
+                </li>
+                <li>
+                  This assignedAuthor <b>SHOULD</b> contain zero or one [0..1]
+                  <b>id</b><b> (CONF:1198-32882)</b> such that it
+                  <ul>
+                    <li>
+                      <b>MAY</b> contain zero or one [0..1]
+                      <b>@nullFlavor</b>=<b>"UNK"</b> Unknown (CodeSystem:
+                      <b>HL7NullFlavor
+                        <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-NullFlavor.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.5.1008</a></b>)<b> (CONF:1198-32883)</b>.
+                    </li>
+                    <li>
+                      <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.4.6"</b>
+                      National Provider Identifier<b> (CONF:1198-32884)</b>.
+                    </li>
+                    <li>
+                      <b>SHOULD</b> contain zero or one [0..1] <b>@extension</b><b> (CONF:1198-32885)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedAuthor <b>SHOULD</b> contain zero or one [0..1]
+                  <b>code</b><b> (CONF:1198-16787)</b>.
+                  <ul>
+                    <li>
+                      The code, if present, <b>SHALL</b> contain exactly one
+                      [1..1] <b>@code</b>, which <b>SHOULD</b> be selected from
+                      ValueSet
+                      <b>Healthcare Provider Taxonomy
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.114222.4.11.1066/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.114222.4.11.1066</a></b><b> DYNAMIC</b><b> (CONF:1198-16788)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedAuthor <b>SHALL</b> contain at least one [1..*]
+                  US Realm Address (AD.US.FIELDED)<b>
+                    (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-5452)</b>.
+                </li>
+                <li>
+                  This assignedAuthor <b>SHALL</b> contain at least one [1..*]
+                  <b>telecom</b><b> (CONF:1198-5428)</b>.
+                  <ul>
+                    <li>
+                      Such telecoms <b>SHOULD</b> contain zero or one [0..1]
+                      <b>@use</b>, which <b>SHALL</b> be selected from ValueSet
+                      <b>Telecom Use (US Realm Header)
+                        2.16.840.1.113883.11.20.9.20</b><b> DYNAMIC</b><b> (CONF:1198-7995)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedAuthor <b>SHOULD</b> contain zero or one [0..1]
+                  <b>assignedPerson</b><b> (CONF:1198-5430)</b>.
+                  <ul>
+                    <li>
+                      The assignedPerson, if present, <b>SHALL</b> contain at
+                      least one [1..*] US Realm Person Name (PN.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:1198-16789)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedAuthor <b>SHOULD</b> contain zero or one [0..1]
+                  <b>assignedAuthoringDevice</b><b> (CONF:1198-16783)</b>.
+                  <ul>
+                    <li>
+                      The assignedAuthoringDevice, if present,
+                      <b>SHALL</b> contain exactly one [1..1]
+                      <b>manufacturerModelName</b><b> (CONF:1198-16784)</b>.
+                    </li>
+                    <li>
+                      The assignedAuthoringDevice, if present,
+                      <b>SHALL</b> contain exactly one [1..1] <b>softwareName</b><b> (CONF:1198-16785)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>
+                    There <strong>SHALL</strong> be exactly one
+                    assignedAuthor/assignedPerson or exactly one
+                    assignedAuthor/assignedAuthoringDevice (CONF:1198-16790).
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: dataEnterer<br>The dataEnterer element represents the
+            person who transferred the content, written or dictated, into the
+            clinical document. To clarify, an author provides the content found
+            within the header or body of a document, subject to their own
+            interpretation; a dataEnterer adds an author's information to the
+            electronic system.<br>
+          </p>
+          <b>MAY</b> contain zero or one [0..1] <b>dataEnterer</b><b> (CONF:1198-5441)</b>.
+          <ul>
+            <li>
+              The dataEnterer, if present, <b>SHALL</b> contain exactly one
+              [1..1] <b>assignedEntity</b><b> (CONF:1198-5442)</b>.
+              <ul>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-5443)</b>.
+                  <ul>
+                    <li>
+                      Such ids <b>SHOULD</b> contain zero or one [0..1]
+                      <b>@root</b>=<b>"2.16.840.1.113883.4.6"</b> National
+                      Provider Identifier<b> (CONF:1198-16821)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>MAY</b> contain zero or one [0..1]
+                  <b>code</b>, which <b>SHOULD</b> be selected from ValueSet
+                  <b>Healthcare Provider Taxonomy 2.16.840.1.114222.4.11.1066</b><b> DYNAMIC</b><b> (CONF:1198-32173)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  US Realm Address (AD.US.FIELDED)<b>
+                    (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-5460)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>telecom</b><b> (CONF:1198-5466)</b>.
+                  <ul>
+                    <li>
+                      Such telecoms <b>SHOULD</b> contain zero or one [0..1]
+                      <b>@use</b>, which <b>SHALL</b> be selected from ValueSet
+                      <b>Telecom Use (US Realm Header)
+                        2.16.840.1.113883.11.20.9.20</b><b> DYNAMIC</b><b> (CONF:1198-7996)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain exactly one [1..1]
+                  <b>assignedPerson</b><b> (CONF:1198-5469)</b>.
+                  <ul>
+                    <li>
+                      This assignedPerson <b>SHALL</b> contain at least one
+                      [1..*] US Realm Person Name (PN.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:1198-5470)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: informant<br>The informant element describes an
+            information source for any content within the clinical document.
+            This informant is constrained for use when the source of information
+            is an assigned health care provider for the patient.<br><br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>informant</b><b> (CONF:1198-8001)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>assignedEntity</b><b> (CONF:1198-8002)</b>.
+              <ul>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-9945)</b>.
+                  <ul>
+                    <li>
+                      If assignedEntity/id is a provider then this id,
+                      <strong>SHOULD</strong> include zero or one [0..1] id
+                      where id/@root ="2.16.840.1.113883.4.6" National Provider
+                      Identifier (CONF:1198-9946).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>MAY</b> contain zero or one [0..1]
+                  <b>code</b>, which <b>SHOULD</b> be selected from ValueSet
+                  <b>Healthcare Provider Taxonomy 2.16.840.1.114222.4.11.1066</b><b> DYNAMIC</b><b> (CONF:1198-32174)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  US Realm Address (AD.US.FIELDED)<b>
+                    (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-8220)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain exactly one [1..1]
+                  <b>assignedPerson</b><b> (CONF:1198-8221)</b>.
+                  <ul>
+                    <li>
+                      This assignedPerson <b>SHALL</b> contain at least one
+                      [1..*] US Realm Person Name (PN.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:1198-8222)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: informant<br>The informant element describes an
+            information source (who is not a provider) for any content within
+            the clinical document. This informant would be used when the source
+            of information has a personal relationship with the patient or is
+            the patient.<br><br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>informant</b><b> (CONF:1198-31355)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>relatedEntity</b><b> (CONF:1198-31356)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: custodian<br>The custodian element represents the
+            organization that is in charge of maintaining and is entrusted with
+            the care of the document.<br>There is only one custodian per CDA
+            document. Allowing that a CDA document may not represent the
+            original form of the authenticated document, the custodian
+            represents the steward of the original source document. The
+            custodian may be the document originator, a health information
+            exchange, or other responsible party.<br>
+          </p>
+          <b>SHALL</b> contain exactly one [1..1] <b>custodian</b><b> (CONF:1198-5519)</b>.
+          <ul>
+            <li>
+              This custodian <b>SHALL</b> contain exactly one [1..1]
+              <b>assignedCustodian</b><b> (CONF:1198-5520)</b>.
+              <ul>
+                <li>
+                  This assignedCustodian <b>SHALL</b> contain exactly one [1..1]
+                  <b>representedCustodianOrganization</b><b> (CONF:1198-5521)</b>.
+                  <ul>
+                    <li>
+                      This representedCustodianOrganization <b>SHALL</b> contain
+                      at least one [1..*] <b>id</b><b> (CONF:1198-5522)</b>.
+                      <ul>
+                        <li>
+                          Such ids <b>SHOULD</b> contain zero or one [0..1]
+                          <b>@root</b>=<b>"2.16.840.1.113883.4.6"</b> National
+                          Provider Identifier<b> (CONF:1198-16822)</b>.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      This representedCustodianOrganization <b>SHALL</b> contain
+                      exactly one [1..1] <b>name</b><b> (CONF:1198-5524)</b>.
+                    </li>
+                    <li>
+                      This representedCustodianOrganization <b>SHALL</b> contain
+                      exactly one [1..1] <b>telecom</b><b> (CONF:1198-5525)</b>.
+                      <ul>
+                        <li>
+                          This telecom <b>SHOULD</b> contain zero or one [0..1]
+                          <b>@use</b>, which <b>SHALL</b> be selected from
+                          ValueSet
+                          <b>Telecom Use (US Realm Header)
+                            2.16.840.1.113883.11.20.9.20</b><b> DYNAMIC</b><b> (CONF:1198-7998)</b>.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      This representedCustodianOrganization <b>SHALL</b> contain
+                      exactly one [1..1] US Realm Address (AD.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-5559)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: informationRecipient<br>The informationRecipient element
+            records the intended recipient of the information at the time the
+            document was created. In cases where the intended recipient of the
+            document is the patient's health chart, set the receivedOrganization
+            to the scoping organization for that chart.<br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>informationRecipient</b><b> (CONF:1198-5565)</b>.
+          <ul>
+            <li>
+              The informationRecipient, if present, <b>SHALL</b> contain exactly
+              one [1..1] <b>intendedRecipient</b><b> (CONF:1198-5566)</b>.
+              <ul>
+                <li>
+                  This intendedRecipient <b>MAY</b> contain zero or more [0..*]
+                  <b>id</b><b> (CONF:1198-32399)</b>.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  This intendedRecipient <b>MAY</b> contain zero or one [0..1]
+                  <b>informationRecipient</b><b> (CONF:1198-5567)</b>.
+                  <ul>
+                    <li>
+                      The informationRecipient, if present, <b>SHALL</b> contain
+                      at least one [1..*] US Realm Person Name (PN.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:1198-5568)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  This intendedRecipient <b>MAY</b> contain zero or one [0..1]
+                  <b>receivedOrganization</b><b> (CONF:1198-5577)</b>.
+                  <ul>
+                    <li>
+                      The receivedOrganization, if present, <b>SHALL</b> contain
+                      exactly one [1..1] <b>name</b><b> (CONF:1198-5578)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: sdtc:signatureText<br>The sdtc:signatureText extension
+            provides a location in CDA for a textual or multimedia depiction of
+            the signature by which the participant endorses and accepts
+            responsibility for his or her participation in the Act as specified
+            in the Participation.typeCode. Details of what goes in the field are
+            described in the HL7 CDA Digital Signature Standard balloted in Fall
+            2013.
+          </p>
+          <p>
+            Heading: legalAuthenticator<br>The legalAuthenticator identifies
+            the single person legally responsible for the document and must be
+            present if the document has been legally authenticated. A clinical
+            document that does not contain this element has not been legally
+            authenticated.<br>The act of legal authentication requires a
+            certain privilege be granted to the legal authenticator depending
+            upon local policy. Based on local practice, clinical documents may
+            be released before legal authentication. <br>All clinical
+            documents have the potential for legal authentication, given the
+            appropriate credentials.<br>Local policies MAY choose to delegate
+            the function of legal authentication to a device or system that
+            generates the clinical document. In these cases, the legal
+            authenticator is a person accepting responsibility for the document,
+            not the generating device or system.<br>Note that the legal
+            authenticator, if present, must be a person.<br>
+          </p>
+          <b>SHOULD</b> contain zero or one [0..1] <b>legalAuthenticator</b><b> (CONF:1198-5579)</b>.
+          <ul>
+            <li>
+              The legalAuthenticator, if present, <b>SHALL</b> contain exactly
+              one [1..1] US Realm Date and Time (DTM.US.FIELDED)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.5.4)</b><b> (CONF:1198-5580)</b>.
+            </li>
+            <li>
+              The legalAuthenticator, if present, <b>SHALL</b> contain exactly
+              one [1..1] <b>signatureCode</b><b> (CONF:1198-5583)</b>.
+              <ul>
+                <li>
+                  This signatureCode <b>SHALL</b> contain exactly one [1..1]
+                  <b>@code</b>=<b>"S"</b> (CodeSystem:
+                  <b>HL7ParticipationSignature
+                    <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationSignature.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.5.89</a></b><b> STATIC</b>)<b> (CONF:1198-5584)</b>.
+                </li>
+              </ul>
+            </li>
+            <li>
+              The legalAuthenticator, if present, <b>MAY</b> contain zero or one
+              [0..1] <b>sdtc:signatureText</b><b> (CONF:1198-30810)</b>.<br>Note: The signature can be
+              represented either inline or by reference according to the ED data
+              type. Typical cases for CDA are:1) Electronic signature: this
+              attribute can represent virtually any electronic signature
+              scheme.2) Digital signature: this attribute can represent digital
+              signatures by reference to a signature data block that is
+              constructed in accordance to a digital signature standard, such as
+              XML-DSIG, PKCS#7, PGP, etc.
+            </li>
+            <li>
+              The legalAuthenticator, if present, <b>SHALL</b> contain exactly
+              one [1..1] <b>assignedEntity</b><b> (CONF:1198-5585)</b>.
+              <ul>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-5586)</b>.
+                  <ul>
+                    <li>
+                      Such ids <b>MAY</b> contain zero or one [0..1]
+                      <b>@root</b>=<b>"2.16.840.1.113883.4.6"</b> National
+                      Provider Identifier<b> (CONF:1198-16823)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>MAY</b> contain zero or one [0..1]
+                  <b>code</b>, which <b>SHOULD</b> be selected from ValueSet
+                  <b>Healthcare Provider Taxonomy 2.16.840.1.114222.4.11.1066</b><b> DYNAMIC</b><b> (CONF:1198-17000)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  US Realm Address (AD.US.FIELDED)<b>
+                    (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-5589)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>telecom</b><b> (CONF:1198-5595)</b>.
+                  <ul>
+                    <li>
+                      Such telecoms <b>SHOULD</b> contain zero or one [0..1]
+                      <b>@use</b>, which <b>SHALL</b> be selected from ValueSet
+                      <b>Telecom Use (US Realm Header)
+                        2.16.840.1.113883.11.20.9.20</b><b> DYNAMIC</b><b> (CONF:1198-7999)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain exactly one [1..1]
+                  <b>assignedPerson</b><b> (CONF:1198-5597)</b>.
+                  <ul>
+                    <li>
+                      This assignedPerson <b>SHALL</b> contain at least one
+                      [1..*] US Realm Person Name (PN.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:1198-5598)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            The sdtc:signatureText extension provides a location in CDA for a
+            textual or multimedia depiction of the signature by which the
+            participant endorses and accepts responsibility for his or her
+            participation in the Act as specified in the Participation.typeCode.
+            Details of what goes in the field are described in the HL7 CDA
+            Digital Signature Standard balloted in Fall of 2013.<br>
+          </p>
+          <p>
+            Heading: authenticator<br>The authenticator identifies a
+            participant or participants who attest to the accuracy of the
+            information in the document.<br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>authenticator</b><b> (CONF:1198-5607)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] US Realm Date and Time
+              (DTM.US.FIELDED)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.5.4)</b><b> (CONF:1198-5608)</b>.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>signatureCode</b><b> (CONF:1198-5610)</b>.
+              <ul>
+                <li>
+                  This signatureCode <b>SHALL</b> contain exactly one [1..1]
+                  <b>@code</b>=<b>"S"</b> (CodeSystem:
+                  <b>HL7ParticipationSignature
+                    <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationSignature.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.5.89</a></b><b> STATIC</b>)<b> (CONF:1198-5611)</b>.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>MAY</b> contain zero or one [0..1] <b>sdtc:signatureText</b><b> (CONF:1198-30811)</b>.<br>Note: The signature can be
+              represented either inline or by reference according to the ED data
+              type. Typical cases for CDA are:1) Electronic signature: this
+              attribute can represent virtually any electronic signature
+              scheme.2) Digital signature: this attribute can represent digital
+              signatures by reference to a signature data block that is
+              constructed in accordance to a digital signature standard, such as
+              XML-DSIG, PKCS#7, PGP, etc.
+            </li>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>assignedEntity</b><b> (CONF:1198-5612)</b>.
+              <ul>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1198-5613)</b>.
+                  <ul>
+                    <li>
+                      Such ids <b>SHOULD</b> contain zero or one [0..1]
+                      <b>@root</b>=<b>"2.16.840.1.113883.4.6"</b> National
+                      Provider Identifier <b> (CONF:1198-16824)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>MAY</b> contain zero or one [0..1]
+                  <b>code</b><b> (CONF:1198-16825)</b>.
+                  <ul>
+                    <li>
+                      The code, if present, <b>MAY</b> contain zero or one
+                      [0..1] <b>@code</b>, which <b>SHOULD</b> be selected from
+                      ValueSet
+                      <b>Healthcare Provider Taxonomy
+                        2.16.840.1.114222.4.11.1066</b><b> DYNAMIC</b><b> (CONF:1198-16826)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  US Realm Address (AD.US.FIELDED)<b>
+                    (identifier: 2.16.840.1.113883.10.20.22.5.2)</b><b> (CONF:1198-5616)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>telecom</b><b> (CONF:1198-5622)</b>.
+                  <ul>
+                    <li>
+                      Such telecoms <b>SHOULD</b> contain zero or one [0..1]
+                      <b>@use</b>, which <b>SHALL</b> be selected from ValueSet
+                      <b>Telecom Use (US Realm Header)
+                        2.16.840.1.113883.11.20.9.20</b><b> DYNAMIC</b><b> (CONF:1198-8000)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain exactly one [1..1]
+                  <b>assignedPerson</b><b> (CONF:1198-5624)</b>.
+                  <ul>
+                    <li>
+                      This assignedPerson <b>SHALL</b> contain at least one
+                      [1..*] US Realm Person Name (PN.US.FIELDED)<b>
+                        (identifier: 2.16.840.1.113883.10.20.22.5.1.1)</b><b> (CONF:1198-5625)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: participant<br>The participant element identifies
+            supporting entities, including parents, relatives, caregivers,
+            insurance policyholders, guarantors, and others related in some way
+            to the patient. <br>A supporting person or organization is an
+            individual or an organization with a relationship to the patient. A
+            supporting person who is playing multiple roles would be recorded in
+            multiple participants (e.g., emergency contact and next-of-kin).<br><br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>participant</b><b> (CONF:1198-10003)</b> such that it
+          <ul>
+            <li>
+              <b>MAY</b> contain zero or one [0..1] <b>time</b><b> (CONF:1198-10004)</b>.
+            </li>
+            <li>
+              <p>
+                <strong>SHALL</strong> contain associatedEntity/associatedPerson
+                <em>AND/OR</em> associatedEntity/scopingOrganization
+                (CONF:1198-10006).
+              </p>
+            </li>
+            <li>
+              <p>
+                When participant/@typeCode is <em>IND</em>,
+                associatedEntity/@classCode <strong>SHOULD</strong> be selected
+                from ValueSet
+                <b>INDRoleclassCodes<a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.33/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                    2.16.840.1.113883.11.20.9.33 </a>DYNAMIC</b>
+                (CONF:1198-10007).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: inFulfillmentOf<br>The inFulfillmentOf element represents
+            orders that are fulfilled by this document such as a radiologists'
+            report of an x-ray.<br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>inFulfillmentOf</b><b> (CONF:1198-9952)</b>.
+          <ul>
+            <li>
+              The inFulfillmentOf, if present, <b>SHALL</b> contain exactly one
+              [1..1] <b>order</b><b> (CONF:1198-9953)</b>.
+              <ul>
+                <li>
+                  This order <b>SHALL</b> contain at least one [1..*] <b>id</b><b> (CONF:1198-9954)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            A serviceEvent represents the main act being documented, such as a
+            colonoscopy or a cardiac stress study. In a provision of healthcare
+            serviceEvent, the care providers, PCP, or other longitudinal
+            providers, are recorded within the serviceEvent. If the document is
+            about a single encounter, the providers associated can be recorded
+            in the componentOf/encompassingEncounter template.
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>documentationOf</b><b> (CONF:1198-14835)</b>.
+          <ul>
+            <li>
+              The documentationOf, if present, <b>SHALL</b> contain exactly one
+              [1..1] <b>serviceEvent</b><b> (CONF:1198-14836)</b>.
+              <ul>
+                <li>
+                  This serviceEvent <b>SHALL</b> contain exactly one [1..1]
+                  <b>effectiveTime</b><b> (CONF:1198-14837)</b>.
+                  <ul>
+                    <li>
+                      This effectiveTime <b>SHALL</b> contain exactly one [1..1]
+                      <b>low</b><b> (CONF:1198-14838)</b>.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  The performer participant represents clinicians who actually
+                  and principally carry out the serviceEvent. In a transfer of
+                  care this represents the healthcare providers involved in the
+                  current or pertinent historical care of the patient.
+                  Preferably, the patient’s key healthcare care team members
+                  would be listed, particularly their primary physician and any
+                  active consulting physicians, therapists, and counselors.<br>
+                  This serviceEvent <b>SHOULD</b> contain zero or more [0..*]
+                  <b>performer</b><b> (CONF:1198-14839)</b>.
+                  <ul>
+                    <li>
+                      The performer, if present, <b>SHALL</b> contain exactly
+                      one [1..1] <b>@typeCode</b>, which <b>SHALL</b> be
+                      selected from ValueSet
+                      <b>x_ServiceEventPerformer
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.19601/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.1.11.19601</a></b><b> STATIC</b><b> (CONF:1198-14840)</b>.
+                    </li>
+                    <li>
+                      The performer, if present, <b>MAY</b> contain zero or one
+                      [0..1] <b>functionCode</b><b> (CONF:1198-16818)</b>.
+                    </li>
+                    <!-- Value set edited in CDA-20570 which should be managed by link -->
+                    <li>
+                      The functionCode, if present, <b>SHOULD</b> contain zero
+                      or one [0..1] <b>@code</b>, which <b>SHOULD</b> be
+                      selected from ValueSet
+                      <b>Care Team Member Function
+                        <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.30/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113762.1.4.1099.30</a></b><b> DYNAMIC</b><b> (CONF:1198-32889)</b>.
+                    </li>
+                    <li>
+                      The performer, if present, <b>SHALL</b> contain exactly
+                      one [1..1] <b>assignedEntity</b><b> (CONF:1198-14841)</b>.
+                      <ul>
+                        <li>
+                          This assignedEntity <b>SHALL</b> contain at least one
+                          [1..*] <b>id</b><b> (CONF:1198-14846)</b>.
+                          <ul>
+                            <li>
+                              Such ids <b>SHOULD</b> contain zero or one [0..1]
+                              <b>@root</b>=<b>"2.16.840.1.113883.4.6"</b>
+                              National Provider Identifier<b>
+                                (CONF:1198-14847)</b>.
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          This assignedEntity <b>SHOULD</b> contain zero or one
+                          [0..1] <b>code</b>, which <b>SHOULD</b> be selected
+                          from ValueSet
+                          <b>Healthcare Provider Taxonomy
+                            2.16.840.1.114222.4.11.1066</b><b> DYNAMIC</b><b> (CONF:1198-14842)</b>.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: authorization<br>The authorization element represents
+            information about the patient's consent.<br>The type of consent is
+            conveyed in consent/code. Consents in the header have been finalized
+            (consent/statusCode must equal Completed) and should be on file.
+            This specification does not address how 'Privacy Consent' is
+            represented, but does not preclude the inclusion of Privacy
+            Consent.<br>The authorization consent is used for referring to
+            consents that are documented elsewhere in the EHR or medical record
+            for a health condition and/or treatment that is described in the CDA
+            document.<br><br>
+          </p>
+          <b>MAY</b> contain zero or more [0..*] <b>authorization</b><b> (CONF:1198-16792)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>consent</b><b> (CONF:1198-16793)</b>.
+              <ul>
+                <li>
+                  This consent <b>MAY</b> contain zero or more [0..*] <b>id</b><b> (CONF:1198-16794)</b>.
+                </li>
+                <li>
+                  This consent <b>MAY</b> contain zero or one [0..1] <b>code</b><b> (CONF:1198-16795)</b>.<br>Note: The type of consent
+                  (e.g., a consent to perform the related serviceEvent) is
+                  conveyed in consent/code.
+                </li>
+                <li>
+                  This consent <b>SHALL</b> contain exactly one [1..1]
+                  <b>statusCode</b><b> (CONF:1198-16797)</b>.
+                  <ul>
+                    <li>
+                      This statusCode <b>SHALL</b> contain exactly one [1..1]
+                      <b>@code</b>=<b>"completed"</b> Completed (CodeSystem:
+                      <b>HL7ActClass
+                        <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActClass.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                          2.16.840.1.113883.5.6</a>&nbsp;</b>)<b> (CONF:1198-16798)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <p>
+            Heading: componentOf<br>The encompassing encounter represents the
+            setting of the clinical encounter during which the document act(s)
+            or ServiceEvent(s) occurred. In order to represent providers
+            associated with a specific encounter, they are recorded within the
+            encompassingEncounter as participants. In a CCD, the
+            encompassingEncounter may be used when documenting a specific
+            encounter and its participants. All relevant encounters in a CCD may
+            be listed in the encounters section.<br><br>
+          </p>
+          <b>MAY</b> contain zero or one [0..1] <b>componentOf</b><b> (CONF:1198-9955)</b>.
+          <ul>
+            <li>
+              The componentOf, if present, <b>SHALL</b> contain exactly one
+              [1..1] <b>encompassingEncounter</b><b> (CONF:1198-9956)</b>.
+              <ul>
+                <li>
+                  This encompassingEncounter <b>SHALL</b> contain at least one
+                  [1..*] <b>id</b><b> (CONF:1198-9959)</b>.
+                </li>
+                <li>
+                  This encompassingEncounter <b>SHALL</b> contain exactly one
+                  [1..1] <b>effectiveTime</b><b> (CONF:1198-9958)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-care-plan-complete-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">care-plan-complete-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-ccd-header-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">ccd-header-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-consultation-note-complete-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">consultation-note-complete-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-discharge-summary-header-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">discharge-summary-header-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-history-and-physical-header-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">history-and-physical-header-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-operative-note-header-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">operative-note-header-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-patient-generated-document-informationrecipient.html" file="2.16.840.1.113883.10.20.22.1.1.html">patient-generated-document-informationrecipient</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-procedure-note-header-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">procedure-note-header-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-progress-note-header-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">progress-note-header-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-referral-note-header-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">referral-note-header-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-transfer-summary-header-example.html" file="2.16.840.1.113883.10.20.22.1.1.html">transfer-summary-header-example</a></li>
+</ul>
+      <br>
+
+      <h4 id="cdasearch">CDA Search Examples</h4>
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>
