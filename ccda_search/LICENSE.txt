@@ -1,0 +1,89 @@
+The content in this repository was developed for HL7. 
+
+Please see current terms of HL7 IP license here: http://www.hl7.org/legal/ippolicy.cfm
+
+A copy of the IP Terms from February 2021 is shown below
+
+_______________________
+
+Copyright Policy
+HL7 Policy Governing the Use of HL7® International Standards and Other Intellectual Property
+Health Level Seven® International (HL7) standards and other "Material," as defined below, and Material acquired through any channel (including through any HL7 Affiliate) are governed by the terms of this HL7 policy. All such Material are copyrighted by HL7 and protected by the Copyright Law of the United States and copyright provisions of various international treaties.
+
+"Material" collectively and individually means all work product developed and or released by HL7, including standards in any format (e.g., Word, PDF, HTML, XML, zip, Access database), implementation guides, databases and other electronic or fixed data or information of any kind distributed through any channel (including through any HL7 Affiliate).
+
+"Specified Material" collectively and individually means those items of Material from time to time designated by the Board of Directors as being available for free use. The items of Specified Materials made available to Members, as compared to Non-Members, and to some categories of Members as compared to others, shall be as from time to time designated by the Board of Directors.
+
+"Other Material" collectively and individually means all Material that is not Specified Material.
+
+Any use, copying or distribution (either with or without a fee) of Material, or development, copying or distributions of derivative works, whether in fixed or electronic media, not specifically authorized below is strictly prohibited.
+
+The following is a summary of the license rights and restrictions applicable to varying classes of Members, and to non-Members, in Specified Material, which can be found in greater detail in the full license terms applicable to such constituencies.
+
+HL7 AFFILIATES in good standing have such rights to use and distribute (or provide access to) Material as are from time to time permitted under the Affiliate Agreement with HL7 to which they are a party, subject to the terms of such agreement.
+
+HL7 ORGANIZATIONAL MEMBERS are authorized, without additional charge, to:
+
+reproduce and distribute Specified Material on an internal basis solely for use within their organization;
+reproduce and distribute excerpts of Specified Material (not entire domains or chapters) to any customers of a product or service implementing those Specified Material, provided that the HL7 Access database may not be included, either in whole or in part, in any product intended for direct or indirect commercial resale;
+use excerpts of Specified Material to create customized implementation guides; and
+use Specified Material in the development of products and services that implement Materials.
+This authorization is provided only during the years when the appropriate HL7 Organizational Membership dues are paid, and if and only if:
+
+HL7 is clearly identified as publisher and holder of the copyright; and,
+any modifications of the Material are clearly identified to end users in the text.
+HL7 INDIVIDUAL AND STUDENT MEMBERS, who register and agree to the terms of HL7's IP policy are authorized, without additional charge, to read, and to use Specified Material to develop and sell products and services that implement, but do not directly incorporate, the Specified Material in whole or in part without paying license fees to HL7.
+
+INDIVIDUAL AND STUDENT MEMBERS wishing to incorporate additional items of Specified Material in whole or part, into products and services, or to enjoy additional authorizations granted to HL7 ORGANIZATIONAL MEMBERS as noted above, must become ORGANIZATIONAL MEMBERS of HL7.
+
+NON-MEMBERS who register and agree to the terms of HL7's IP policy for Specified Material, are authorized, without additional charge, to read and use the Specified Material for evaluating whether to implement, or in implementing, the Specified Material, and to use Specified Material to develop and sell products and services that implement, but do not directly incorporate, the Specified Material in whole or in part.
+
+NON-MEMBERS wishing to incorporate additional items of Specified Material in whole or part, into products and services, or to enjoy the additional authorizations granted to HL7 ORGANIZATIONAL MEMBERS as noted above, must become ORGANIZATIONAL MEMBERS of HL7.
+
+Other Material: Other Material shall be available for use, if at all, on such license terms (including as to cost) and to such Members and Non-Members as the Board shall from time to time determine.
+
+SPECIAL PERMISSIONS: Other uses of Material, including redistribution, creation of derivative works (e.g., incorporation into standards by government agencies), may be permitted by HL7, in its sole discretion, subject to execution by the licensee of a written agreement satisfactory to HL7.
+
+By your acceptance of this Agreement, you agree to comply with the HL7 Bylaws, HL7 Governance and Operations Manual, and HL7 Policy Governing the Use of HL7 Standards, HL7 Trademarks and Other Intellectual Property, which are incorporated herein by reference.
+
+HL7®, HL7 (Design)®, HEALTH LEVEL SEVEN®, CARE CONNECTED BY HL7 (Design)®, CCD®, CDA®, GreenCDA™, FHIR® and the [FLAME DESIGN]® are the registered trademarks of HL7 and registered with the United States Patent and Trademark Office. The unauthorized use of the HL7®, HL7 (Design)®, CARE CONNECTED BY HL7 (Design)®, HEALTH LEVEL SEVEN®, CCD®, CDA®, GreenCDA™, FHIR® and the [FLAME DESIGN]® trademarks is strictly prohibited.  All non-trademark uses of the foregoing marks should include the ® or ™ symbol as appropriate and indicate in text that:
+
+"_________ is the registered trademark of Health Level Seven International and the use does not constitute endorsement by HL7."   For example: "HL7, CDA, FHIR and the FHIR [FLAME DESIGN] are the registered trademarks of Health Level Seven International and the use does not constitute endorsement by HL7."
+For more information about trademarks owned by HL7, visit Understanding Health Level Seven-owned Trademarks, the FHIR Trademark Policy and the HL7 FHIR Trademark FAQs. Please contact HL7trademarks@HL7.org if you have any questions regarding the use of HL7's registered or common law trademarks.
+
+By your application for, or renewal of, any category of HL7 membership you agree to comply with the HL7 Bylaws, HL7 Governance and Operations Manual, and HL7 Policy Governing the Use of HL7 Standards, HL7 Trademarks and other Intellectual Property.
+
+Ownership. Licensee agrees and acknowledges that HL7 owns all right, title, and interest, in and to the Trademarks. Licensee shall take no action contrary to, or inconsistent with, the foregoing.
+
+Licensee agrees and acknowledges that HL7 may not own all right, title, and interest, in and to the Materials and that the Materials may contain and/or reference intellectual property owned by third parties ("Third Party IP"). Acceptance of these License Terms does not grant Licensee any rights with respect to Third Party IP. Licensee alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize Third Party IP in connection with the Materials or otherwise. Any actions, claims or suits brought by a third party resulting from a breach of any Third Party IP right by the Licensee remains the Licensee's liability.
+
+Following is a non-exhaustive list of third-party terminologies that may require a separate license:
+
+Terminology
+
+Owner/Contact
+
+Current Procedures Terminology (CPT) code set
+
+American Medical Association
+https://www.ama-assn.org/practice-management/apply-cpt-license
+
+SNOMED CT
+
+SNOMED International
+http://www.snomed.org/snomed-ct/get-snomed-ct or info@ihtsdo.org
+
+Logical Observation Identifiers Names & Codes (LOINC)
+
+Regenstrief Institute
+
+International Classification of Diseases (ICD) codes
+
+World Health Organization (WHO)
+
+NUCC Health Care Provider Taxonomy code set
+
+American Medical Association. Please see www.nucc.org. AMA licensing contact: 312-464-5022 (AMA IP services)
+
+Updated 02/15/2019
+

@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      crossorigin="anonymous"
+    />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div
+      class="jumbotron container-fluid"
+      style="padding-bottom: 24px; padding-top: 24px"
+    >
+      <div class="display-3 row">
+        <div class="col-12">
+          <img
+            class="rounded"
+            style="max-width: 20%"
+            src="../img/cda.png"
+            alt="HL7 CDA Logo"
+          />
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"
+              ><a href="../index.html">C-CDA Online</a></strong
+            ><span>: A navigation website for C-CDA 2.1</span>
+            <br />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a
+              href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492"
+              >HL7 C-CDA Page</a
+            >
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a
+            >
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr />
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u
+          ><a
+            class="btn btn-primary"
+            href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister"
+            >sign up <i class="fas fa-user-plus"></i></a
+        ></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Procedure Activity Act (V2)
+        <small class="text-muted"
+          >[act, 2.16.840.1.113883.10.20.22.4.12, release 2014-06-09, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.4.12.pdf"
+            ><i class="fas fa-file-pdf"></i> view pdf</a
+          ></small
+        >
+      </h2>
+      <hr />
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          This template represents any act that cannot be classified as an
+          observation or procedure according to the HL7 RIM. Examples of these
+          acts are a dressing change, teaching or feeding a patient, or
+          providing comfort measures.The common notion of "procedure" is broader
+          than that specified by the HL7 Version 3 Reference Information Model
+          (RIM). Procedure templates can be represented with various RIM
+          classes: act (e.g., dressing change), observation (e.g., EEG),
+          procedure (e.g., splenectomy).
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">
+              <a href="2.16.840.1.113883.10.20.22.2.7.html"
+                >Procedures Section (entries optional) </a
+              ><br /><a href="2.16.840.1.113883.10.20.22.2.7.1.html"
+                >Procedures Section (entries required) </a
+              ><br /><a href="2.16.840.1.113883.10.20.22.4.146.html"
+                >Planned Intervention Act </a
+              ><br /><a href="2.16.840.1.113883.10.20.22.4.131.html"
+                >Intervention Act </a
+              ><br />
+            </td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.4.32.html"
+                >Service Delivery Location</a
+              ><br /><a href="2.16.840.1.113883.10.20.22.4.20.html"
+                >Instruction </a
+              ><br /><a href="2.16.840.1.113883.10.20.22.4.19.html"
+                >Indication </a
+              ><br /><a href="2.16.840.1.113883.10.20.22.4.16.html"
+                >Medication Activity </a
+              ><br /><a href="2.16.840.1.113883.10.20.22.4.119.html"
+                >Author Participation</a
+              ><br />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i
+        >HL7 Code Systems are available
+        <a
+          href="https://terminology.hl7.org/codesystems-cda.html"
+          target="_blank"
+          >here</a
+        >. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank"
+          >here</a
+        >. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i
+      >
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@classCode</b>=<b>"ACT"</b>
+          Act (CodeSystem:
+          <b
+            >HL7ActClass
+            <a
+              href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActClass.html"
+              target="_blank"
+              ><i class="fas fa-external-link-alt"></i> 2.16.840.1.113883.5.6</a
+            >&nbsp;</b
+          ><b> STATIC</b>)<b> (CONF:1098-8289)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@moodCode</b>=<b>"EVN"</b>
+          Event (CodeSystem:
+          <b
+            >HL7ActMood
+            <a
+              href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActMood.html"
+              target="_blank"
+              ><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.5.1001</a
+            ></b
+          ><b> STATIC</b>)<b> (CONF:1098-8290)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b
+          ><b> (CONF:1098-8291)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b
+                >"2.16.840.1.113883.10.20.22.4.12"</b
+              ><b> (CONF:1098-10519)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@extension</b>=<b
+                >"2014-06-09"</b
+              ><b> (CONF:1098-32505)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain at least one [1..*] <b>id</b
+          ><b> (CONF:1098-8292)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>code</b
+          ><b> (CONF:1098-8293)</b>.
+          <ul>
+            <li>
+              This code <b>SHOULD</b> contain zero or one [0..1]
+              <b>originalText</b><b> (CONF:1098-19186)</b>.
+              <ul>
+                <li>
+                  The originalText, if present, <b>MAY</b> contain zero or one
+                  [0..1] <b>reference</b><b> (CONF:1098-19187)</b>.
+                  <ul>
+                    <li>
+                      The reference, if present, <b>MAY</b> contain zero or one
+                      [0..1] <b>@value</b><b> (CONF:1098-19188)</b>.
+                      <ul>
+                        <li>
+                          <p>
+                            This reference/@value <strong>SHALL</strong> begin
+                            with a '#' and <strong>SHALL</strong> point to its
+                            corresponding narrative (using the approach defined
+                            in CDA Release 2, section 4.3.5.1)
+                            (CONF:1098-19189).
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                This @code <strong>SHOULD</strong> be selected from LOINC
+                (CodeSystem:
+                <a
+                  href="https://terminology.hl7.org/CodeSystem-v3-loinc.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.6.1</a
+                >) or SNOMED CT (CodeSystem:
+                <a
+                  href="https://terminology.hl7.org/CodeSystem-v3-snomed-CT.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.6.96</a
+                >), and <strong>MAY</strong> be selected from CPT-4 (CodeSystem:
+                <a
+                  href="https://terminology.hl7.org/CodeSystem-CPT.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.6.12</a
+                >) or ICD10 PCS (CodeSystem:
+                <a
+                  href="https://terminology.hl7.org/CodeSystem-icd10PCS.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.6.4</a
+                >) or CDT-2 (Code System:
+                <a
+                  href="https://terminology.hl7.org/CodeSystem-CDT.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.6.13</a
+                >) (CONF:1098-19190).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>statusCode</b
+          ><b> (CONF:1098-8298)</b>.
+          <ul>
+            <li>
+              This statusCode <b>SHALL</b> contain exactly one [1..1]
+              <b>@code</b>, which <b>SHALL</b> be selected from ValueSet
+              <b
+                >ProcedureAct statusCode
+                <a
+                  href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.22/expansion/Latest"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.11.20.9.22</a
+                ></b
+              ><b> STATIC</b> 2014-04-23<b> (CONF:1098-32364)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>effectiveTime</b
+          ><b> (CONF:1098-8299)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>priorityCode</b>, which
+          <b>SHALL</b> be selected from ValueSet ActPriority<b>
+            <a
+              href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.1.11.16866/expansion/Latest"
+              target="_blank"
+              ><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.1.11.16866</a
+            ></b
+          ><b> DYNAMIC</b><b> (CONF:1098-8300)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or more [0..*] <b>performer</b
+          ><b> (CONF:1098-8301)</b>.
+          <ul>
+            <li>
+              The performer, if present, <b>SHALL</b> contain exactly one [1..1]
+              <b>assignedEntity</b><b> (CONF:1098-8302)</b>.
+              <ul>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>id</b><b> (CONF:1098-8303)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>addr</b><b> (CONF:1098-8304)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHALL</b> contain at least one [1..*]
+                  <b>telecom</b><b> (CONF:1098-8305)</b>.
+                </li>
+                <li>
+                  This assignedEntity <b>SHOULD</b> contain zero or one [0..1]
+                  <b>representedOrganization</b><b> (CONF:1098-8306)</b>.
+                  <ul>
+                    <li>
+                      The representedOrganization, if present,
+                      <b>SHOULD</b> contain zero or more [0..*] <b>id</b
+                      ><b> (CONF:1098-8307)</b>.
+                    </li>
+                    <li>
+                      The representedOrganization, if present,
+                      <b>MAY</b> contain zero or more [0..*] <b>name</b
+                      ><b> (CONF:1098-8308)</b>.
+                    </li>
+                    <li>
+                      The representedOrganization, if present,
+                      <b>SHALL</b> contain at least one [1..*] <b>telecom</b
+                      ><b> (CONF:1098-8310)</b>.
+                    </li>
+                    <li>
+                      The representedOrganization, if present,
+                      <b>SHALL</b> contain at least one [1..*] <b>addr</b
+                      ><b> (CONF:1098-8309)</b>.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or more [0..*] Author Participation<b>
+            (identifier: 2.16.840.1.113883.10.20.22.4.119)</b
+          ><b> (CONF:1098-32477)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>participant</b
+          ><b> (CONF:1098-8311)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b
+                >"LOC"</b
+              >
+              Location (CodeSystem:
+              <b
+                >HL7ParticipationType
+                <a
+                  href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ParticipationType.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.90</a
+                >)</b
+              ><b> STATIC</b>)<b> (CONF:1098-8312)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Service Delivery
+              Location<b> (identifier: 2.16.840.1.113883.10.20.22.4.32)</b
+              ><b> (CONF:1098-15599)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>entryRelationship</b
+          ><b> (CONF:1098-8314)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b
+                >"COMP"</b
+              >
+              Has Component (CodeSystem:
+              <b
+                >HL7ActRelationshipType
+                <a
+                  href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a
+                ></b
+              ><b> STATIC</b>)<b> (CONF:1098-8315)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@inversionInd</b>=<b
+                >"true"</b
+              >
+              true<b> (CONF:1098-8316)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>encounter</b
+              ><b> (CONF:1098-8317)</b>.
+              <ul>
+                <li>
+                  This encounter <b>SHALL</b> contain exactly one [1..1]
+                  <b>@classCode</b>=<b>"ENC"</b> Encounter (CodeSystem:
+                  <b
+                    >HL7ActClass
+                    <a
+                      href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActClass.html"
+                      target="_blank"
+                      ><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.5.6</a
+                    >&nbsp;</b
+                  ><b> STATIC</b>)<b> (CONF:1098-8318)</b>.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  This encounter <b>SHALL</b> contain exactly one [1..1]
+                  <b>@moodCode</b>=<b>"EVN"</b> Event (CodeSystem:
+                  <b
+                    >HL7ActMood
+                    <a
+                      href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActMood.html"
+                      target="_blank"
+                      ><i class="fas fa-external-link-alt"></i>
+                      2.16.840.1.113883.5.1001</a
+                    ></b
+                  ><b> STATIC</b>)<b> (CONF:1098-8319)</b>.
+                </li>
+                <li>
+                  This encounter <b>SHALL</b> contain exactly one [1..1]
+                  <b>id</b><b> (CONF:1098-8320)</b>.
+                  <ul>
+                    <li>
+                      <p>
+                        Set the encounter ID to the ID of an encounter in
+                        another section to signify they are the same encounter
+                        (CONF:1098-16849).
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or one [0..1] <b>entryRelationship</b
+          ><b> (CONF:1098-8322)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b
+                >"SUBJ"</b
+              >
+              Has Subject (CodeSystem:
+              <b
+                >HL7ActRelationshipType
+                <a
+                  href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a
+                ></b
+              ><b> STATIC</b>)<b> (CONF:1098-8323)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@inversionInd</b>=<b
+                >"true"</b
+              >
+              true<b> (CONF:1098-8324)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Instruction (V2)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.20)</b
+              ><b> (CONF:1098-31396)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>entryRelationship</b
+          ><b> (CONF:1098-8326)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b
+                >"RSON"</b
+              >
+              Has Reason (CodeSystem:
+              <b
+                >HL7ActRelationshipType
+                <a
+                  href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a
+                ></b
+              ><b> STATIC</b>)<b> (CONF:1098-8327)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Indication (V2)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.19)</b
+              ><b> (CONF:1098-15601)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>entryRelationship</b
+          ><b> (CONF:1098-8329)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b
+                >"COMP"</b
+              >
+              Has Component (CodeSystem:
+              <b
+                >HL7ActRelationshipType
+                <a
+                  href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a
+                ></b
+              ><b> STATIC</b>)<b> (CONF:1098-8330)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Medication Activity (V2)<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.16)</b
+              ><b> (CONF:1098-15602)</b>.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br />
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples"></ul>
+      <br />
+
+      <h4 id="cdasearch">CDA Search Examples</h4>
+      <ul id="cdasearch_examples"></ul>
+      <a href="https://build.fhir.org/ig/HL7/CDA-Examples/"
+        >Additional C-CDA Examples Available here</a
+      >
+
+      <hr />
+      <br />To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br /><br /><img
+        class="rounded float-left"
+        style="max-width: 10%"
+        src="../img/hl7-logo.png"
+        alt="HL7 Logo"
+      />
+    </div>
+  </body>
+</html>

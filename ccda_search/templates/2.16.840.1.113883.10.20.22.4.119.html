@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Author Participation
+        <small class="text-muted">[author, 2.16.840.1.113883.10.20.22.4.119, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.4.119.pdf"><i class="fas fa-file-pdf"></i> view pdf</a><a href="https://hl7.org/cda/us/ccda/StructureDefinition-AuthorParticipation.html" target="_blank" style="color: green">
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a></small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          This template represents the Author Participation (including the
+          author timestamp). CDA R2 requires that Author and Author timestamp be
+          asserted in the document header. From there, authorship propagates to
+          contained sections and contained entries, unless explicitly
+          overridden.
+        </p>
+        <p>
+          The Author Participation template was added to those templates in
+          scope for analysis in R2. Although it is not explicitly stated in all
+          templates the Author Participation template can be used in any
+          template.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">
+              <a href="2.16.840.1.113883.10.20.22.4.64.html">Comment Activity</a><br><a href="2.16.840.1.113883.10.20.22.4.127.html">Sensory Status</a><br><a href="2.16.840.1.113883.10.20.22.4.128.html">Self-Care Activities (ADL and IADL)</a><br><a href="2.16.840.1.113883.10.20.22.4.16.html">Medication Activity </a><br><a href="2.16.840.1.113883.10.20.22.4.12.html">Procedure Activity Act </a><br><a href="2.16.840.1.113883.10.20.22.4.14.html">Procedure Activity Procedure </a><br><a href="2.16.840.1.113883.10.20.22.4.13.html">Procedure Activity Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.121.html">Goal Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.7.html">Allergy - Intolerance Observation </a><br><a href="2.16.840.1.113883.10.20.24.3.90.html">Substance or Device Allergy - Intolerance Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.138.html">Nutrition Assessment</a><br><a href="2.16.840.1.113883.10.20.22.4.39.html">Planned Act </a><br><a href="2.16.840.1.113883.10.20.22.4.40.html">Planned Encounter </a><br><a href="2.16.840.1.113883.10.20.22.4.41.html">Planned Procedure </a><br><a href="2.16.840.1.113883.10.20.22.4.44.html">Planned Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.43.html">Planned Supply </a><br><a href="2.16.840.1.113883.10.20.22.4.42.html">Planned Medication Activity </a><br><a href="2.16.840.1.113883.10.20.22.4.67.html">Functional Status Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.66.html">Functional Status Organizer </a><br><a href="2.16.840.1.113883.10.20.22.4.141.html">Handoff Communication Participants</a><br><a href="2.16.840.1.113883.10.20.22.4.140.html">Patient Referral Act</a><br><a href="2.16.840.1.113883.10.20.22.4.78.html">Smoking Status - Meaningful Use </a><br><a href="2.16.840.1.113883.10.20.22.4.27.html">Vital Sign Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.143.html">Priority Preference</a><br><a href="2.16.840.1.113883.10.20.22.4.85.html">Tobacco Use </a><br><a href="2.16.840.1.113883.10.20.22.4.144.html">Outcome Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.129.html">Planned Coverage</a><br><a href="2.16.840.1.113883.10.20.22.4.120.html">Planned Immunization Activity</a><br><a href="2.16.840.1.113883.10.20.22.4.26.html">Vital Signs Organizer </a><br><a href="2.16.840.1.113883.10.20.22.4.52.html">Immunization Activity </a><br><a href="2.16.840.1.113883.10.20.22.4.2.html">Result Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.74.html">Mental Status Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.48.html">Advance Directive Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.4.html">Problem Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.38.html">Social History Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.132.html">Health Concern Act </a><br><a href="2.16.840.1.113883.10.20.22.4.1.html">Result Organizer </a><br><a href="2.16.840.1.113883.10.20.22.4.108.html">Advance Directive Organizer </a><br><a href="2.16.840.1.113883.10.20.22.4.136.html">Risk Concern Act </a><br><a href="2.16.840.1.113883.10.20.22.4.3.html">Problem Concern Act </a><br><a href="2.16.840.1.113883.10.20.22.4.146.html">Planned Intervention Act </a><br><a href="2.16.840.1.113883.10.20.22.4.114.html">Longitudinal Care Wound Observation </a><br><a href="2.16.840.1.113883.10.20.22.4.131.html">Intervention Act </a><br><a href="2.16.840.1.113883.10.20.22.4.30.html">Allergy Concern Act </a><br>
+            </td>
+            <td id="Contains">none</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1098-32017)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.119"</b><b> (CONF:1098-32018)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>time</b><b> (CONF:1098-31471)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>assignedAuthor</b><b> (CONF:1098-31472)</b>.
+          <ul>
+            <li>
+              This assignedAuthor <b>SHALL</b> contain at least one [1..*]
+              <b>id</b><b> (CONF:1098-31473)</b>.<br>Note: This id may be set
+              equal to (a pointer to) an id on a participant elsewhere in the
+              document (header or entries) or a new author participant can be
+              described here. If the id is pointing to a participant already
+              described elsewhere in the document, assignedAuthor/id is
+              sufficient to identify this participant and none of the remaining
+              details of assignedAuthor are required to be set. Application
+              Software must be responsible for resolving the identifier back to
+              its original object and then rendering the information in the
+              correct place in the containing section's narrative text. This id
+              must be a pointer to another author participant.
+              <ul>
+                <li>
+                  <p>
+                    If the ID isn't referencing an author described elsewhere in
+                    the document, then the author components required in US
+                    Realm Header are required here as well (CONF:1098-32628).
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              This assignedAuthor <b>SHOULD</b> contain zero or one [0..1]
+              <b>code</b>, which <b>SHOULD</b> be selected from ValueSet
+              <b>Healthcare Provider Taxonomy
+                <a href="https://vsac.nlm.nih.gov/valueset/2.16.840.1.114222.4.11.1066/expansion/Latest" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.114222.4.11.1066</a></b><b> DYNAMIC</b><b> (CONF:1098-31671)</b>.
+              <ul>
+                <li>
+                  <p>
+                    If the content is patient authored the code
+                    <strong>SHOULD</strong> be selected from Personal And Legal
+                    Relationship Role Type (2.16.840.1.113883.11.20.12.1)
+                    (CONF:1098-32315).
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              This assignedAuthor <b>MAY</b> contain zero or one [0..1]
+              <b>assignedPerson</b><b> (CONF:1098-31474)</b>.
+              <ul>
+                <li>
+                  The assignedPerson, if present, <b>MAY</b> contain zero or
+                  more [0..*] <b>name</b><b> (CONF:1098-31475)</b>.
+                </li>
+              </ul>
+            </li>
+            <li>
+              This assignedAuthor <b>MAY</b> contain zero or one [0..1]
+              <b>representedOrganization</b><b> (CONF:1098-31476)</b>.
+              <ul>
+                <li>
+                  The representedOrganization, if present, <b>MAY</b> contain
+                  zero or more [0..*] <b>id</b><b> (CONF:1098-31478)</b>.
+                </li>
+                <li>
+                  The representedOrganization, if present, <b>MAY</b> contain
+                  zero or more [0..*] <b>name</b><b> (CONF:1098-31479)</b>.
+                </li>
+                <li>
+                  The representedOrganization, if present, <b>MAY</b> contain
+                  zero or more [0..*] <b>telecom</b><b> (CONF:1098-31480)</b>.
+                </li>
+                <li>
+                  The representedOrganization, if present, <b>MAY</b> contain
+                  zero or more [0..*] <b>addr</b><b> (CONF:1098-31481)</b>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-advance-directive-existence-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">advance-directive-existence-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-advance-directive-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">advance-directive-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-allergies-and-intolerances-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">allergies-and-intolerances-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-allergy-concern-act-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">allergy-concern-act-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-allergy-intolerance-observation-drugclass-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">allergy-intolerance-observation-drugclass-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-allergy-intolerance-observation-medication-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">allergy-intolerance-observation-medication-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-allergy-intolerance-observation-nonmedication-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">allergy-intolerance-observation-nonmedication-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-allergy-to-food-egg.html" file="2.16.840.1.113883.10.20.22.4.119.html">allergy-to-food-egg</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-assessment-and-plan-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">assessment-and-plan-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-average-bp-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">average-bp-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-basic-industry-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">basic-industry-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-basic-occupation-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">basic-occupation-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-birth-sex-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">birth-sex-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-comment-activity-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">comment-activity-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-encounter-diagnosis-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">encounter-diagnosis-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-functional-status-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">functional-status-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-functional-status-organizer-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">functional-status-organizer-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-goal-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">goal-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-goals-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">goals-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-handoff-communication-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">handoff-communication-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-hospital-admission-diagnosis-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">hospital-admission-diagnosis-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-hospital-discharge-diagnosis-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">hospital-discharge-diagnosis-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-medication-activity-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">medication-activity-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-medications-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">medications-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-new-author-participant-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">new-author-participant-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-no-known-problems-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">no-known-problems-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-note-activity-as-entryrelationship-to-ccda-entry-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">note-activity-as-entryrelationship-to-ccda-entry-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-note-activity-as-standalone-entry-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">note-activity-as-standalone-entry-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-planned-medication-activity-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">planned-medication-activity-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-postprocedure-diagnosis-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">postprocedure-diagnosis-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-postprocedure-diagnosis-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">postprocedure-diagnosis-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-preoperative-diagnosis-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">preoperative-diagnosis-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-preoperative-diagnosis-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">preoperative-diagnosis-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-priority-preference-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">priority-preference-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-problem-concern-act-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">problem-concern-act-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-problem-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">problem-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-problem-observation-postcoordsnomed-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">problem-observation-postcoordsnomed-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-problem-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">problem-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-progress-note-header-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">progress-note-header-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-referral-act-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">referral-act-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-result-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">result-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-result-organizer-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">result-organizer-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-results-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">results-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-self-care-activities-adl-and-iadl-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">self-care-activities-adl-and-iadl-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-sensory-and-speech-status-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">sensory-and-speech-status-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-sexual-orientation-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">sexual-orientation-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-sexual-orientation-observation-nullflavor-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">sexual-orientation-observation-nullflavor-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-smoking-status-meaningful-use-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">smoking-status-meaningful-use-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-social-history-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">social-history-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-social-history-section-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">social-history-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-tobacco-use-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">tobacco-use-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-transfer-summary-header-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">transfer-summary-header-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-tribal-affiliation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">tribal-affiliation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-vital-sign-observation-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">vital-sign-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-vital-signs-organizer-example.html" file="2.16.840.1.113883.10.20.22.4.119.html">vital-signs-organizer-example</a></li>
+</ul>
+      <br>
+
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

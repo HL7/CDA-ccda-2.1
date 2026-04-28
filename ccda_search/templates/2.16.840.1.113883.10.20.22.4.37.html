@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Product Instance
+        <small class="text-muted">[participantRole, 2.16.840.1.113883.10.20.22.4.37, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.4.37.pdf"><i class="fas fa-file-pdf"></i> view pdf</a><a href="https://hl7.org/cda/us/ccda/StructureDefinition-ProductInstance.html" target="_blank" style="color: green">
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a></small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          This clinical statement represents a particular device that was placed
+          in a patient or used as part of a procedure or other act. This
+          provides a record of the identifier and other details about the given
+          product that was used. For example, it is important to have a record
+          that indicates not just that a hip prostheses was placed in a patient
+          but that it was a particular hip prostheses number with a unique
+          identifier.
+        </p>
+        <p>
+          The FDA Amendments Act specifies the creation of a Unique Device
+          Identification (UDI) System that requires the label of devices to bear
+          a unique identifier that will standardize device identification and
+          identify the device through distribution and use.
+        </p>
+        <p>
+          The FDA permits an issuing agency to designate that their Device
+          Identifier (DI) + Production Identifier (PI) format qualifies as a UDI
+          through a process of accreditation. Currently, there are three
+          FDA-accredited issuing agencies that are allowed to call their format
+          a UDI. These organizations are GS1, HIBCC, and ICCBBA. For additional
+          information on technical formats that qualify as UDI from each of the
+          issuing agencies see the UDI Appendix.
+        </p>
+        <p>
+          When communicating only the issuing agency device identifier (i.e.,
+          subcomponent of the UDI), the use of the issuing agency OID is
+          appropriate. However, when communicating the unique device identifier
+          (DI + PI), the FDA OID (2.16.840.1.113883.3.3719) must be used.When
+          sending a UDI, populate the participantRole/id/@root with the FDA OID
+          (2.16.840.1.113883.3.3719) and participantRole/id/@extension with the
+          UDI.
+        </p>
+        <p>
+          When sending a DI, populate the participantRole/id/@root with the
+          appropriate assigning agency OID and participantRole/id/@extension
+          with the DI.The scopingEntity/id should correspond to FDA or the
+          appropriate issuing agency.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">
+              <a href="2.16.840.1.113883.10.20.22.4.14.html">Procedure Activity Procedure </a><br><a href="2.16.840.1.113883.10.20.22.4.50.html">Non-Medicinal Supply Activity </a><br><a href="2.16.840.1.113883.10.20.22.4.43.html">Planned Supply </a><br>
+            </td>
+            <td id="Contains">none</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@classCode</b>=<b>"MANU"</b>
+          Manufactured Product (CodeSystem:
+          <b>HL7RoleClass
+            <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-RoleClass.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.5.110</a></b><b> STATIC</b>)<b> (CONF:81-7900)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:81-7901)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.37"</b><b> (CONF:81-10522)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain at least one [1..*] <b>id</b><b> (CONF:81-7902)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>playingDevice</b><b> (CONF:81-7903)</b>.
+          <ul>
+            <li>
+              This playingDevice <b>SHOULD</b> contain zero or one [0..1]
+              <b>code</b><b> (CONF:81-16837)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>scopingEntity</b><b> (CONF:81-7905)</b>.
+          <ul>
+            <li>
+              This scopingEntity <b>SHALL</b> contain at least one [1..*]
+              <b>id</b><b> (CONF:81-7908)</b>.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-medical-equipment-section-example.html" file="2.16.840.1.113883.10.20.22.4.37.html">medical-equipment-section-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-non-medicinal-supply-activity-example.html" file="2.16.840.1.113883.10.20.22.4.37.html">non-medicinal-supply-activity-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-product-instance-example.html" file="2.16.840.1.113883.10.20.22.4.37.html">product-instance-example</a></li>
+</ul>
+      <br>
+
+      <h4 id="cdasearch">CDA Search Examples</h4>
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>C-CDA Online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="jumbotron container-fluid" style="padding-bottom: 24px; padding-top: 24px">
+      <div class="display-3 row">
+        <div class="col-12">
+          <img class="rounded" style="max-width: 20%" src="../img/cda.png" alt="HL7 CDA Logo">
+          <!-- <i class="fas fa-book-medical"></i>&nbsp;<strong>C-CDA Online</strong> -->
+          <div style="font-size: 0.4em; margin-bottom: 0.5%">
+            <strong style="font-weight: 500"><a href="../index.html">C-CDA Online</a></strong><span>: A navigation website for C-CDA 2.1</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <p style="margin-bottom: 0.25rem">
+            This navigation tool is generated from the published PDF of the
+            Consolidated Clinical Document Architecture (C-CDA) 2.1 (2.1.0.7,
+            September 2022) and the C-CDA 2.1 Companion Guide (4.1.1, June
+            2023). For the latest information on C-CDA, or to access the
+            Supplemental Implementation Guides, please refer to the
+            <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=492">HL7 C-CDA Page</a>
+            which remains the definitive source for the standards. CDA and C-CDA
+            are copyright property of
+            <a href="https://www.hl7.org/index.cfm">
+              Health Level Seven (HL7)</a>
+            and subject to the terms of
+            <a href="http://www.HL7.org/legal/ippolicy.cfm">HL7's IP policy</a>.
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <hr>
+      <div id="user-sign-up" style="font-size: 1rem">
+        <p>HL7 encourages users to sign up for an account, which is free!</p>
+        Please
+        <u><a class="btn btn-primary" href="https://hl7.my.site.com/LightningMemberPortal/s/login/SelfRegister">sign up <i class="fas fa-user-plus"></i></a></u>
+        if you do not have an account. C-CDA Online Navigator last updated:
+        February 2026.
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 id="title">
+        Outcome Observation
+        <small class="text-muted">[observation, 2.16.840.1.113883.10.20.22.4.144, open]
+          <a href="../pdfs/2.16.840.1.113883.10.20.22.4.144.pdf"><i class="fas fa-file-pdf"></i> view pdf</a><a href="https://hl7.org/cda/us/ccda/StructureDefinition-OutcomeObservation.html" target="_blank" style="color: green">
+            <i class="fas fa-external-link-alt"></i> View Updated C-CDA</a></small>
+      </h2>
+      <hr>
+      <h4>Description:</h4>
+
+      <div id="description">
+        <p>
+          This template represents the outcome of care resulting from the
+          interventions used to treat the patient. In the Care Planning
+          workflow, the judgment about how well the person is progressing
+          towards the goal is based on the observations made about the status of
+          the patient with respect to interventions performed in the pursuit of
+          achieving that goal.
+        </p>
+        <p>
+          Often thought of as an "actual outcome", the Outcome Observation may
+          be related to goals, progression toward goals, and the associated
+          interventions. For example, an observation outcome of a blood oxygen
+          saturation level of 95% is related to the goal of "Maintain Pulse Ox
+          greater than 92", which in turn is related to the health concern of
+          respiratory insufficiency and the problem of pneumonia. The template
+          makes use of the Entry Reference
+          (templateId:2.16.840.1.113883.10.20.22.4.122) to reference the
+          interventions and goals defined elsewhere in the Care Plan CDA
+          instance.
+        </p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contained By:</th>
+            <th>Contains:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="Contained_By">
+              <a href="2.16.840.1.113883.10.20.22.2.61.html">Health Status Evaluations and Outcomes Section</a><br>
+            </td>
+            <td id="Contains">
+              <a href="2.16.840.1.113883.10.20.22.4.119.html">Author Participation</a><br><a href="2.16.840.1.113883.10.20.22.4.110.html">Progress Toward Goal Observation</a><br><a href="2.16.840.1.113883.10.20.22.4.122.html">Entry Reference</a><br><a href="2.16.840.1.113883.10.20.22.4.115.html">External Document Reference</a><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Conformance Statements:</h4>
+      <i>HL7 Code Systems are available
+        <a href="https://terminology.hl7.org/codesystems-cda.html" target="_blank">here</a>. HL7 Value Sets are available
+        <a href="https://terminology.hl7.org/valuesets-cda.html" target="_blank">here</a>. Links to Value Set Authority Center (VSAC) are shown as hyperlinks
+        <i class="fas fa-external-link-alt"></i> and require
+        <a href="https://uts.nlm.nih.gov/uts/" target="_blank">UMLS login</a></i>
+      <ul id="conformance" class="list-group">
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@classCode</b>=<b>"OBS"</b>
+          (CodeSystem:
+          <b>HL7ActClass
+            <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActClass.html" target="_blank"><i class="fas fa-external-link-alt"></i> 2.16.840.1.113883.5.6</a>&nbsp;</b>)<b> (CONF:1098-31219)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>@moodCode</b>=<b>"EVN"</b>
+          (CodeSystem:
+          <b>HL7ActMood
+            <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActMood.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+              2.16.840.1.113883.5.1001</a></b>)<b> (CONF:1098-31220)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>templateId</b><b> (CONF:1098-31221)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@root</b>=<b>"2.16.840.1.113883.10.20.22.4.144"</b><b> (CONF:1098-31222)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain at least one [1..*] <b>id</b><b> (CONF:1098-31223)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain exactly one [1..1] <b>code</b>, which
+          <b>SHOULD</b> be selected from CodeSystem
+          <b>LOINC (<a href="https://terminology.hl7.org/CodeSystem-v3-loinc.html" target="_blank"><i class="fas fa-external-link-alt"></i> 2.16.840.1.113883.6.1</a>)</b><b> (CONF:1098-32746)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>value</b><b> (CONF:1098-32747)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or more [0..*] Author Participation<b>
+            (identifier: 2.16.840.1.113883.10.20.22.4.119)</b><b> (CONF:1098-31553)</b>.
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or more [0..*] <b>entryRelationship</b><b> (CONF:1098-31224)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"GEVL"</b>
+              Evaluates goal (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b>)<b> (CONF:1098-31225)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Entry Reference<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.122)</b><b> (CONF:1098-32465)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                This entryReference template <strong>SHALL</strong> reference an
+                instance of a Goal Observation template (CONF:1098-32461).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHOULD</b> contain zero or one [0..1] <b>entryRelationship</b><b> (CONF:1098-31427)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"SPRT"</b>
+              Has support (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b>)<b> (CONF:1098-31428)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@inversionInd</b>=<b>"true"</b><b> (CONF:1098-31429)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Progress Toward Goal
+              Observation<b> (identifier: 2.16.840.1.113883.10.20.22.4.110)</b><b> (CONF:1098-31430)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>entryRelationship</b><b> (CONF:1098-31688)</b> such that it
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] <b>@typeCode</b>=<b>"RSON"</b>
+              Has reason (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b>)<b> (CONF:1098-31689)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>SHALL</b> contain exactly one [1..1] Entry Reference<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.122)</b><b> (CONF:1098-31690)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                This entryReference template <strong>SHALL</strong> reference an
+                instance of a Intervention Act template (CONF:1098-32462).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>MAY</b> contain zero or more [0..*] <b>reference</b><b> (CONF:1098-32763)</b>.
+          <ul>
+            <li>
+              The reference, if present, <b>SHALL</b> contain exactly one [1..1]
+              <b>@typeCode</b>=<b>"REFR"</b> Refers to (CodeSystem:
+              <b>HL7ActRelationshipType
+                <a href="https://terminology.hl7.org/1.0.0/CodeSystem-v3-ActRelationshipType.html" target="_blank"><i class="fas fa-external-link-alt"></i>
+                  2.16.840.1.113883.5.1002</a></b>)<b> (CONF:1098-32764)</b>.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              The reference, if present, <b>SHALL</b> contain exactly one [1..1]
+              External Document Reference<b>
+                (identifier: 2.16.840.1.113883.10.20.22.4.115)</b><b> (CONF:1098-32765)</b>.
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <b>SHALL</b> contain at least one [1..*]
+          <b>entryRelationship</b> (CONF:1098-32782).<br>
+          Note: the above is now a modeled constraint, not a primitive
+          constraint with custom schematron.
+        </li>
+      </ul>
+      <br>
+
+      <h4>Guide Examples:</h4>
+      <ul id="guide_examples">
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-outcome-observation-example.html" file="2.16.840.1.113883.10.20.22.4.144.html">outcome-observation-example</a></li>
+  <li><a href="https://hl7.org/cda/us/ccda/Binary-outcomes-section-example.html" file="2.16.840.1.113883.10.20.22.4.144.html">outcomes-section-example</a></li>
+</ul>
+      <br>
+
+      <ul id="cdasearch_examples"></ul><a href="https://build.fhir.org/ig/HL7/CDA-Examples/">Additional C-CDA Examples Available here</a>
+
+      <hr>
+      <br>To log an issue on C-CDA Standard, go to
+      <a href="https://jira.hl7.org/projects/CDA/issues/">HL7 JIRA Tracker</a>
+      To report an issue with this webpage (but not underlying standard) please
+      contact HL7 Structured Documents Working Group.<br><br><img class="rounded float-left" style="max-width: 10%" src="../img/hl7-logo.png" alt="HL7 Logo">
+    </div>
+  
+
+</body></html>
